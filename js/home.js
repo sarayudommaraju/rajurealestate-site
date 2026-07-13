@@ -33,8 +33,10 @@
   fetch("data/testimonials.json", { cache: "no-cache" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (j) {
-      var items = (j && j.testimonials) || [];
+      var items = ((j && j.testimonials) || []).slice();
       if (!items.length) return;
+      // Show a random 9 so repeat visitors see different stories.
+      for (var i = items.length - 1; i > 0; i--) { var k = Math.floor(Math.random() * (i + 1)); var tmp = items[i]; items[i] = items[k]; items[k] = tmp; }
       var grid = document.getElementById("testimonials-grid");
       grid.innerHTML = items.slice(0, 9).map(function (t) {
         var r = Math.max(0, Math.min(5, t.rating == null ? 5 : t.rating));

@@ -153,6 +153,41 @@
     });
   }
 
+  /* ---------- Anchor scroll fallback for the Testimonials link ----------
+     Native #hash scrolling can fail when the target loads after the click
+     (testimonials render async and start hidden). This handles both the
+     same-page click and arriving via a cross-page link with the hash set. */
+  function smoothScrollTo(el) {
+    if (!el) return;
+    try { el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    catch (e) { el.scrollIntoView(); }
+  }
+  function scrollToTestimonials() {
+    if (location.hash !== "#testimonials-section") return;
+    var el = document.getElementById("testimonials-section");
+    if (!el) return;
+    var n = 0; // section starts display:none until testimonials load; retry briefly
+    (function attempt() {
+      var shown = el.offsetParent !== null && getComputedStyle(el).display !== "none";
+      if (shown) smoothScrollTo(el);
+      else if (n++ < 25) setTimeout(attempt, 120);
+    })();
+  }
+  function setupAnchorScroll() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href$="#testimonials-section"]');
+      if (!a) return;
+      var el = document.getElementById("testimonials-section");
+      if (!el) return; // cross-page link, no section here: let it navigate normally
+      e.preventDefault();
+      var links = document.querySelector(".nav-links"); if (links) links.classList.remove("open");
+      if (history && history.replaceState) history.replaceState(null, "", "#testimonials-section");
+      smoothScrollTo(el);
+    });
+    window.addEventListener("hashchange", scrollToTestimonials);
+    if (location.hash === "#testimonials-section") scrollToTestimonials();
+  }
+
   /* ---------- GA4 (only if id present) ---------- */
   function loadGA() {
     if (!C.ga4Id) return;
@@ -179,6 +214,7 @@
     injectShared();
     injectSchema();
     setupTracking();
+    setupAnchorScroll();
     loadGA();
     reveal();
   });
