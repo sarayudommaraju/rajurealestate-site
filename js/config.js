@@ -10,11 +10,11 @@ window.RRE_CONFIG = {
   brandName: "Raju Real Estate",
 
   /* === FILL THESE BEFORE DEPLOY === */
-  phoneDisplay: "+91 90000 00000",     // shown on the site
-  phoneDial: "+919000000000",          // used in tel: links, no spaces
-  email: "leads@rajurealestate.com",   // shown + used in mailto:
-  whatsapp: "919000000000",            // country code + number, no +, no spaces
-  addressLine: "Office address, City, State PIN",
+  phoneDisplay: "+91 89196 24297",     // shown on the site
+  phoneDial: "+9189196 24297",          // used in tel: links, no spaces
+  email: "noreply@rajurealestate.com",   // shown + used in mailto:
+  whatsapp: "918919624297",            // country code + number, no +, no spaces
+  addressLine: "Kukatpally, Hyderabad",
   officeHours: "Mon–Sat, 9:30 AM – 7:00 PM IST",
 
   /* Analytics: paste your GA4 Measurement ID, e.g. G-ABCD12345. Leave blank to disable. */
