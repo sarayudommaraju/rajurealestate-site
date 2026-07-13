@@ -1,0 +1,72 @@
+<svg width="760" height="520" viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="South India skyline illustration">
+  <!-- Self-made architectural line art. Navy strokes, copper accents. License-safe. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#c17a3f" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="520" fill="url(#sky)"/>
+  <!-- Sun / accent -->
+  <circle cx="612" cy="118" r="46" fill="#c17a3f" fill-opacity="0.12"/>
+  <circle cx="612" cy="118" r="46" stroke="#c17a3f" stroke-width="2" stroke-opacity="0.5"/>
+
+  <g stroke="#23395d" stroke-width="2.4" stroke-linejoin="round" fill="none">
+    <!-- Tall tower left -->
+    <path d="M70 470 V150 h74 V470"/>
+    <path d="M70 150 l37 -34 l37 34"/>
+    <line x1="88" y1="180" x2="126" y2="180"/><line x1="88" y1="212" x2="126" y2="212"/>
+    <line x1="88" y1="244" x2="126" y2="244"/><line x1="88" y1="276" x2="126" y2="276"/>
+    <line x1="88" y1="308" x2="126" y2="308"/><line x1="88" y1="340" x2="126" y2="340"/>
+    <line x1="107" y1="150" x2="107" y2="470"/>
+
+    <!-- Mid building -->
+    <path d="M168 470 V232 h96 V470"/>
+    <path d="M168 232 h96"/>
+    <line x1="192" y1="262" x2="192" y2="470"/><line x1="216" y1="262" x2="216" y2="470"/><line x1="240" y1="262" x2="240" y2="470"/>
+    <line x1="168" y1="300" x2="264" y2="300"/><line x1="168" y1="360" x2="264" y2="360"/><line x1="168" y1="420" x2="264" y2="420"/>
+
+    <!-- Slim high-rise -->
+    <path d="M290 470 V96 h52 V470"/>
+    <path d="M290 96 h52"/>
+    <line x1="290" y1="130" x2="342" y2="130"/><line x1="290" y1="166" x2="342" y2="166"/>
+    <line x1="290" y1="202" x2="342" y2="202"/><line x1="290" y1="238" x2="342" y2="238"/>
+    <line x1="290" y1="274" x2="342" y2="274"/><line x1="290" y1="310" x2="342" y2="310"/>
+    <line x1="316" y1="96" x2="316" y2="470"/>
+    <line x1="316" y1="96" x2="316" y2="66"/>
+
+    <!-- House with pitched roof (mid) -->
+    <path d="M366 470 V330 h84 V470"/>
+    <path d="M360 330 l48 -40 l48 40"/>
+    <rect x="396" y="392" width="26" height="78"/>
+    <line x1="378" y1="360" x2="392" y2="360"/><line x1="426" y1="360" x2="440" y2="360"/>
+
+    <!-- Tower right -->
+    <path d="M470 470 V188 h80 V470"/>
+    <path d="M470 188 h80"/>
+    <line x1="494" y1="220" x2="494" y2="470"/><line x1="524" y1="220" x2="524" y2="470"/>
+    <line x1="470" y1="256" x2="550" y2="256"/><line x1="470" y1="320" x2="550" y2="320"/><line x1="470" y1="384" x2="550" y2="384"/>
+
+    <!-- Far tall -->
+    <path d="M578 470 V210 h70 V470"/>
+    <path d="M578 210 l35 -30 l35 30"/>
+    <line x1="596" y1="244" x2="630" y2="244"/><line x1="596" y1="284" x2="630" y2="284"/>
+    <line x1="596" y1="324" x2="630" y2="324"/><line x1="596" y1="364" x2="630" y2="364"/>
+    <line x1="613" y1="210" x2="613" y2="470"/>
+
+    <!-- Low block far right -->
+    <path d="M672 470 V300 h58 V470"/>
+    <path d="M672 300 h58"/>
+    <line x1="672" y1="345" x2="730" y2="345"/><line x1="672" y1="400" x2="730" y2="400"/>
+    <line x1="701" y1="300" x2="701" y2="470"/>
+  </g>
+
+  <!-- Copper accents on select rooflines -->
+  <g stroke="#c17a3f" stroke-width="3" stroke-linecap="round">
+    <path d="M290 66 h52" fill="none"/>
+    <line x1="316" y1="60" x2="316" y2="48"/>
+    <path d="M360 330 l48 -40 l48 40" fill="none" stroke-opacity="0.9"/>
+  </g>
+  <!-- Ground line -->
+  <line x1="20" y1="470" x2="740" y2="470" stroke="#23395d" stroke-width="2.4"/>
+</svg>

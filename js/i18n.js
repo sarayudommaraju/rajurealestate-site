@@ -25,6 +25,7 @@
       "hero.title": "Find your next <span class=\"hl\">address</span> across South India",
       "hero.lead": "Verified homes, villas, apartments and HMDA/RERA-clear plots in Hyderabad, Chennai, Bengaluru and Vijayawada. One trusted advisor, end to end.",
       "hero.stat.cities": "Cities covered", "hero.stat.live": "Live listings", "hero.stat.verified": "Title-verified",
+      "trust.verified": "RERA / HMDA verified", "trust.title": "Clear title only", "trust.support": "End-to-end support",
 
       "qs.city": "City", "qs.type": "Type", "qs.for": "For", "qs.budget": "Max budget",
       "qs.allCities": "All cities", "qs.anyType": "Any type", "qs.buyOrRent": "Buy or Rent",
@@ -95,6 +96,7 @@
       "hero.title": "దక్షిణ భారతదేశంలో మీ తదుపరి <span class=\"hl\">చిరునామా</span> కనుగొనండి",
       "hero.lead": "హైదరాబాద్, చెన్నై, బెంగళూరు మరియు విజయవాడలో ధృవీకరించిన ఇళ్లు, విల్లాలు, అపార్ట్‌మెంట్లు మరియు HMDA/RERA క్లియర్ ప్లాట్లు. మొదటి నుండి చివరి వరకు ఒకే నమ్మకమైన సలహాదారు.",
       "hero.stat.cities": "నగరాలు", "hero.stat.live": "అందుబాటులో ఉన్న ప్రాపర్టీలు", "hero.stat.verified": "టైటిల్ ధృవీకరించబడింది",
+      "trust.verified": "RERA / HMDA ధృవీకరించబడింది", "trust.title": "స్పష్టమైన టైటిల్ మాత్రమే", "trust.support": "పూర్తి మద్దతు",
 
       "qs.city": "నగరం", "qs.type": "రకం", "qs.for": "కోసం", "qs.budget": "గరిష్ట బడ్జెట్",
       "qs.allCities": "అన్ని నగరాలు", "qs.anyType": "ఏదైనా రకం", "qs.buyOrRent": "కొనుగోలు లేదా అద్దె",

@@ -100,6 +100,19 @@
       document.body.appendChild(a);
     }
 
+    // Header agent avatar (top-right, every page, links to Contact)
+    var navCta = document.querySelector(".nav-cta");
+    if (navCta && !navCta.querySelector(".header-agent")) {
+      var ag = document.createElement("a");
+      ag.className = "header-agent";
+      ag.href = "contact.html";
+      ag.title = "Radhakrishnama Raju — Managing Director";
+      ag.setAttribute("aria-label", "Contact Radhakrishnama Raju");
+      ag.innerHTML = '<img src="images/team/agent-raju.png" alt="Radhakrishnama Raju" ' +
+        "onerror=\"this.onerror=null;this.parentNode.classList.add('is-fallback');this.remove();this.parentNode.textContent='R';\">";
+      navCta.appendChild(ag); // last child => far right
+    }
+
     // Mobile nav toggle
     var toggle = document.querySelector(".nav-toggle");
     var links = document.querySelector(".nav-links");
