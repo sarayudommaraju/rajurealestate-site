@@ -101,7 +101,7 @@
 
       '<aside class="pd-aside">' +
         '<div class="agent-card">' +
-          '<div class="who"><div class="avatar">R</div><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
+          '<div class="who"><img class="avatar" src="images/team/agent-raju.png" alt="' + esc((l.agent && l.agent.name) || "Raju") + '" onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;avatar&quot;>R</div>\'"><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
           '<a class="btn btn--primary btn--block" data-contact="phone" data-keep-text href="#" style="margin-bottom:8px">Call now</a>' +
           '<a class="btn btn--wa btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '">Enquire on WhatsApp</a>' +
         '</div>' +

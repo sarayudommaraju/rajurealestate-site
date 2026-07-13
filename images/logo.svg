@@ -1,11 +1,21 @@
-<svg width="248" height="48" viewBox="0 0 248 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Raju Real Estate">
-  <!-- Emblem: stacked roofline forming an R-notch, indigo body with amber roof accent -->
-  <rect x="2" y="2" width="44" height="44" rx="12" fill="#4338ca"/>
-  <path d="M11 25 L24 13 L37 25" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M15 24 V36 H21 V29 H27 V36 H33 V24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="35.5" cy="14" r="2.4" fill="#fbbf24"/>
+<svg width="264" height="64" viewBox="0 0 264 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Raju Real Estate">
+  <!--
+    Refined from the client's existing brand (navy + copper, roofline motif, serif wordmark).
+    Rebuilt as clean transparent SVG: fixes AI-artifact spacing in the original JPEGs.
+    Colors: navy #23395d wordmark, copper #c17a3f accent, harmonised with the site brand token.
+  -->
+  <!-- Roofline: outer peak spanning the mark -->
+  <path d="M14 34 L54 12 L94 34" stroke="#23395d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Inner roof line (double-line brand cue) -->
+  <path d="M24 33 L54 17 L84 33" stroke="#23395d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.55"/>
+  <!-- Copper accent slats under the apex -->
+  <path d="M46 30 V22 M52 31 V20 M58 30 V22" stroke="#c17a3f" stroke-width="2" stroke-linecap="round"/>
+  <!-- Small chimney -->
+  <path d="M74 22 V15 H79 V26" stroke="#23395d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- Wordmark -->
-  <text x="58" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#1e1b4b" letter-spacing="-0.4">Raju</text>
-  <text x="106" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#4338ca" letter-spacing="-0.4">Real Estate</text>
-  <text x="58" y="39" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="#4b5168" letter-spacing="2.4">HYD · CHE · BLR · VJA</text>
+  <text x="16" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="700" fill="#23395d" letter-spacing="1">RAJU</text>
+  <!-- Underline flourish with copper tick -->
+  <path d="M17 57 H60" stroke="#23395d" stroke-width="1.4"/>
+  <path d="M63 57 H72" stroke="#c17a3f" stroke-width="1.4"/>
+  <text x="100" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="600" fill="#23395d" letter-spacing="3.5">REAL ESTATE</text>
 </svg>

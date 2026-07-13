@@ -1,6 +1,8 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="48" height="48" rx="12" fill="#4338ca"/>
-  <path d="M11 25 L24 13 L37 25" stroke="#fbbf24" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M15 24 V36 H21 V29 H27 V36 H33 V24" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="35.5" cy="14" r="2.6" fill="#fbbf24"/>
+  <!-- Favicon: roofline house mark from the brand, navy tile + copper accent -->
+  <rect width="48" height="48" rx="11" fill="#23395d"/>
+  <path d="M10 27 L24 14 L38 27" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M20 24 V21 M24 25 V19 M28 24 V21" stroke="#e0a56a" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M15 26 V36 H33 V26" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M33 22 V16 H36 V25" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

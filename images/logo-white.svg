@@ -1,9 +1,11 @@
-<svg width="248" height="48" viewBox="0 0 248 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Raju Real Estate">
-  <rect x="2" y="2" width="44" height="44" rx="12" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
-  <path d="M11 25 L24 13 L37 25" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M15 24 V36 H21 V29 H27 V36 H33 V24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="35.5" cy="14" r="2.4" fill="#fbbf24"/>
-  <text x="58" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#ffffff" letter-spacing="-0.4">Raju</text>
-  <text x="106" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#fbbf24" letter-spacing="-0.4">Real Estate</text>
-  <text x="58" y="39" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="#c7cbdb" letter-spacing="2.4">HYD · CHE · BLR · VJA</text>
+<svg width="264" height="64" viewBox="0 0 264 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Raju Real Estate">
+  <!-- White-on-dark variant for footer. Same roofline+serif brand, copper accent retained. -->
+  <path d="M14 34 L54 12 L94 34" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M24 33 L54 17 L84 33" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+  <path d="M46 30 V22 M52 31 V20 M58 30 V22" stroke="#e0a56a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M74 22 V15 H79 V26" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="16" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="700" fill="#ffffff" letter-spacing="1">RAJU</text>
+  <path d="M17 57 H60" stroke="#ffffff" stroke-width="1.4"/>
+  <path d="M63 57 H72" stroke="#e0a56a" stroke-width="1.4"/>
+  <text x="100" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="600" fill="#e6e8f0" letter-spacing="3.5">REAL ESTATE</text>
 </svg>

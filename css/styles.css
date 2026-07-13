@@ -219,7 +219,9 @@ img { max-width: 100%; display: block; }
 .pd-aside { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
 .agent-card, .enquire-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-sm); }
 .agent-card .who { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.agent-card .avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo-600), var(--amber-500)); color: #fff; display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; }
+.agent-card .avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo-600), var(--amber-500)); color: #fff; display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; overflow: hidden; flex: none; }
+.agent-card .avatar img, img.avatar { width: 100%; height: 100%; object-fit: cover; }
+img.avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex: none; }
 .enquire-card h3 { margin-bottom: 12px; }
 
 /* ---------- Forms ---------- */
