@@ -57,7 +57,7 @@
     }).join("");
 
     var waMsg = "Hi, I'm interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ") in " + l.locality + ", " + l.city + ".";
-    var pageUrl = "https://rajurealestate.com/property.html?id=" + encodeURIComponent(l.id);
+    var pageUrl = "https://rajurealestate.com/property?id=" + encodeURIComponent(l.id);
     var waShare = "https://wa.me/?text=" + encodeURIComponent(l.title + " — " + formatPrice(l.price) + " in " + l.locality + ", " + l.city + " · Raju Real Estate\n" + pageUrl);
 
     root.innerHTML =
@@ -151,7 +151,7 @@
 
   /* ---- Per-listing SEO: canonical, OG/Twitter, RealEstateListing + Breadcrumb JSON-LD ---- */
   function setSEO(l) {
-    var url = "https://rajurealestate.com/property.html?id=" + encodeURIComponent(l.id);
+    var url = "https://rajurealestate.com/property?id=" + encodeURIComponent(l.id);
     var img = listingImages(l)[0];
     var absImg = img.indexOf("http") === 0 ? img : "https://rajurealestate.com/" + img;
     var desc = l.title + " in " + l.locality + ", " + l.city + ". " + formatPrice(l.price) +
@@ -181,8 +181,8 @@
     var crumb = {
       "@context": "https://schema.org", "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Listings", "item": "https://rajurealestate.com/listings.html" },
-        { "@type": "ListItem", "position": 2, "name": l.city, "item": "https://rajurealestate.com/listings.html?city=" + encodeURIComponent(l.city) },
+        { "@type": "ListItem", "position": 1, "name": "Listings", "item": "https://rajurealestate.com/listings" },
+        { "@type": "ListItem", "position": 2, "name": l.city, "item": "https://rajurealestate.com/listings?city=" + encodeURIComponent(l.city) },
         { "@type": "ListItem", "position": 3, "name": l.title, "item": url }
       ]
     };

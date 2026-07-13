@@ -11,12 +11,14 @@
 */
 const ORIGIN = "https://rajurealestate.com";
 
+// Clean URLs — Cloudflare Pages 308-redirects /foo.html to /foo, so the
+// canonical/sitemap URLs must use the clean form Google will settle on.
 const STATIC = [
   { path: "/", priority: "1.0", freq: "daily" },
-  { path: "/listings.html", priority: "0.9", freq: "daily" },
-  { path: "/about.html", priority: "0.6", freq: "monthly" },
-  { path: "/contact.html", priority: "0.6", freq: "monthly" },
-  { path: "/sitemap.html", priority: "0.3", freq: "monthly" }
+  { path: "/listings", priority: "0.9", freq: "daily" },
+  { path: "/about", priority: "0.6", freq: "monthly" },
+  { path: "/contact", priority: "0.6", freq: "monthly" },
+  { path: "/sitemap", priority: "0.3", freq: "monthly" }
 ];
 
 export async function onRequest(context) {
@@ -33,7 +35,7 @@ export async function onRequest(context) {
         .filter((l) => l.status !== "sold")
         .forEach((l) => {
           const lastmod = (l.listedOn || today).slice(0, 10);
-          urls.push(urlEntry(ORIGIN + "/property.html?id=" + encodeURIComponent(l.id), lastmod, "weekly", "0.8"));
+          urls.push(urlEntry(ORIGIN + "/property?id=" + encodeURIComponent(l.id), lastmod, "weekly", "0.8"));
         });
     }
   } catch (_) {
