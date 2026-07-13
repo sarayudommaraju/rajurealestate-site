@@ -8,18 +8,20 @@
 */
 
 :root {
-  /* Brand palette */
-  --indigo-900: #1e1b4b;
-  --indigo-800: #312e81;
-  --indigo-700: #3730a3;
-  --indigo-600: #4338ca;
-  --indigo-500: #4f46e5;
-  --indigo-100: #e0e7ff;
-  --indigo-50:  #eef2ff;
+  /* Brand palette — navy + copper, matched to the Raju Real Estate logo.
+     Scale names kept (indigo and amber) so every component that references
+     them re-skins from these values alone. */
+  --indigo-900: #0f2036;
+  --indigo-800: #17293f;
+  --indigo-700: #1e3453;
+  --indigo-600: #23395d;   /* brand navy */
+  --indigo-500: #2c476f;
+  --indigo-100: #dbe4ef;
+  --indigo-50:  #eef3f8;
 
-  --amber-500: #f59e0b;
-  --amber-400: #fbbf24;
-  --amber-100: #fef3c7;
+  --amber-500: #c17a3f;    /* brand copper */
+  --amber-400: #d59259;
+  --amber-100: #f3e3d3;
 
   --ink:      #0f1222;   /* near-black text */
   --ink-soft: #4b5168;   /* secondary text */
@@ -80,9 +82,9 @@ img { max-width: 100%; display: block; }
 /* ---------- Buttons ---------- */
 .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-head); font-weight: 600; font-size: .95rem; padding: 13px 22px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease, background .12s ease; white-space: nowrap; }
 .btn:active { transform: translateY(1px); }
-.btn--primary { background: var(--brand); color: #fff; box-shadow: 0 8px 20px rgba(79,70,229,.28); }
-.btn--primary:hover { background: var(--indigo-700); box-shadow: 0 10px 26px rgba(79,70,229,.36); }
-.btn--accent { background: var(--accent); color: #241a00; box-shadow: 0 8px 20px rgba(245,158,11,.32); }
+.btn--primary { background: var(--brand); color: #fff; box-shadow: 0 8px 20px rgba(35,57,93,.30); }
+.btn--primary:hover { background: var(--indigo-700); box-shadow: 0 10px 26px rgba(35,57,93,.40); }
+.btn--accent { background: var(--accent); color: #2a1a08; box-shadow: 0 8px 20px rgba(193,122,63,.34); }
 .btn--accent:hover { background: var(--amber-400); }
 .btn--ghost { background: #fff; color: var(--brand); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--brand); background: var(--indigo-50); }
@@ -114,8 +116,8 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; color: #fff; background:
-    radial-gradient(1200px 500px at 85% -10%, rgba(245,158,11,.35), transparent 60%),
-    linear-gradient(135deg, var(--indigo-800), var(--indigo-600) 55%, var(--indigo-500)); overflow: hidden; }
+    radial-gradient(1200px 500px at 85% -10%, rgba(193,122,63,.38), transparent 60%),
+    linear-gradient(135deg, var(--indigo-900), var(--indigo-700) 55%, var(--indigo-600)); overflow: hidden; }
 .hero::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px); background-size: 22px 22px; opacity: .5; pointer-events: none; }
 .hero-inner { position: relative; z-index: 2; padding: 84px 0 96px; max-width: 760px; }
 .hero h1 { color: #fff; }
