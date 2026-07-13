@@ -11,7 +11,7 @@ window.RRE_CONFIG = {
 
   /* === FILL THESE BEFORE DEPLOY === */
   phoneDisplay: "+91 89196 24297",     // shown on the site
-  phoneDial: "+9189196 24297",          // used in tel: links, no spaces
+  phoneDial: "+918919624297",          // used in tel: links, no spaces
   email: "noreply@rajurealestate.com",   // shown + used in mailto:
   whatsapp: "918919624297",            // country code + number, no +, no spaces
   addressLine: "Kukatpally, Hyderabad",
