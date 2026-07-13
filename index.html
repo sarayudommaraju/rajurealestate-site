@@ -31,14 +31,15 @@
       <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="listings.html">Listings</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+        <li><a href="emi.html" data-i18n="nav.emi">EMI</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#">Call</a>
-        <a class="btn btn--primary" href="listings.html">Browse Properties</a>
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#" data-i18n="cta.call">Call</a>
+        <a class="btn btn--primary" href="listings.html" data-i18n="cta.browse">Browse Properties</a>
       </div>
     </div>
   </header>
@@ -46,17 +47,17 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="container hero-inner">
-      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">South India · Since inception</span>
-      <h1>Find your next <span class="hl">address</span> across South India</h1>
-      <p class="lead">Verified homes, villas, apartments and HMDA/RERA-clear plots in Hyderabad, Chennai, Bengaluru and Vijayawada. One trusted advisor, end to end.</p>
+      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff" data-i18n="hero.eyebrow">South India · Since inception</span>
+      <h1 data-i18n-html="hero.title">Find your next <span class="hl">address</span> across South India</h1>
+      <p class="lead" data-i18n="hero.lead">Verified homes, villas, apartments and HMDA/RERA-clear plots in Hyderabad, Chennai, Bengaluru and Vijayawada. One trusted advisor, end to end.</p>
       <div class="hero-cta">
-        <a class="btn btn--accent" href="listings.html">Explore listings</a>
-        <a class="btn btn--light" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">Chat on WhatsApp</a>
+        <a class="btn btn--accent" href="listings.html" data-i18n="cta.exploreListings">Explore listings</a>
+        <a class="btn btn--light" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="cta.whatsapp">Chat on WhatsApp</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><b>4</b><span>Cities covered</span></div>
-        <div class="hero-stat"><b id="stat-count">—</b><span>Live listings</span></div>
-        <div class="hero-stat"><b>100%</b><span>Title-verified</span></div>
+        <div class="hero-stat"><b>4</b><span data-i18n="hero.stat.cities">Cities covered</span></div>
+        <div class="hero-stat"><b id="stat-count">—</b><span data-i18n="hero.stat.live">Live listings</span></div>
+        <div class="hero-stat"><b>100%</b><span data-i18n="hero.stat.verified">Title-verified</span></div>
       </div>
     </div>
   </section>
@@ -65,39 +66,39 @@
   <div class="container">
     <form class="quick-search" id="quick-search" action="listings.html" method="get">
       <div class="field">
-        <label for="qs-city">City</label>
-        <select id="qs-city" name="city"><option value="">All cities</option></select>
+        <label for="qs-city" data-i18n="qs.city">City</label>
+        <select id="qs-city" name="city"><option value="" data-i18n="qs.allCities">All cities</option></select>
       </div>
       <div class="field">
-        <label for="qs-type">Type</label>
+        <label for="qs-type" data-i18n="qs.type">Type</label>
         <select id="qs-type" name="type">
-          <option value="">Any type</option>
-          <option value="apartment">Apartment</option>
-          <option value="villa">Villa</option>
-          <option value="house">House</option>
-          <option value="plot">Plot</option>
-          <option value="commercial">Commercial</option>
+          <option value="" data-i18n="qs.anyType">Any type</option>
+          <option value="apartment" data-i18n="type.apartment">Apartment</option>
+          <option value="villa" data-i18n="type.villa">Villa</option>
+          <option value="house" data-i18n="type.house">House</option>
+          <option value="plot" data-i18n="type.plot">Plot</option>
+          <option value="commercial" data-i18n="type.commercial">Commercial</option>
         </select>
       </div>
       <div class="field">
-        <label for="qs-status">For</label>
+        <label for="qs-status" data-i18n="qs.for">For</label>
         <select id="qs-status" name="status">
-          <option value="">Buy or Rent</option>
-          <option value="sale">Buy</option>
-          <option value="rent">Rent</option>
+          <option value="" data-i18n="qs.buyOrRent">Buy or Rent</option>
+          <option value="sale" data-i18n="qs.buy">Buy</option>
+          <option value="rent" data-i18n="qs.rent">Rent</option>
         </select>
       </div>
       <div class="field">
-        <label for="qs-budget">Max budget</label>
+        <label for="qs-budget" data-i18n="qs.budget">Max budget</label>
         <select id="qs-budget" name="maxPrice">
-          <option value="">No limit</option>
+          <option value="" data-i18n="qs.noLimit">No limit</option>
           <option value="7500000">Up to ₹75 L</option>
           <option value="12500000">Up to ₹1.25 Cr</option>
           <option value="20000000">Up to ₹2 Cr</option>
           <option value="50000000">Up to ₹5 Cr</option>
         </select>
       </div>
-      <button class="btn btn--primary" type="submit">Search</button>
+      <button class="btn btn--primary" type="submit" data-i18n="qs.search">Search</button>
     </form>
   </div>
 
@@ -105,12 +106,12 @@
   <section class="section">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Handpicked</span>
-        <h2>Featured properties</h2>
-        <p class="muted">A curated slice of current inventory. New listings added weekly.</p>
+        <span class="eyebrow" data-i18n="sec.handpicked">Handpicked</span>
+        <h2 data-i18n="sec.featured">Featured properties</h2>
+        <p class="muted" data-i18n="sec.featuredSub">A curated slice of current inventory. New listings added weekly.</p>
       </div>
       <div class="grid-cards" id="featured-grid"><p class="muted">Loading listings…</p></div>
-      <div class="center" style="margin-top:36px"><a class="btn btn--ghost" href="listings.html">View all listings →</a></div>
+      <div class="center" style="margin-top:36px"><a class="btn btn--ghost" href="listings.html" data-i18n="cta.viewAll">View all listings →</a></div>
     </div>
   </section>
 
@@ -118,8 +119,8 @@
   <section class="section section--soft">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Where we operate</span>
-        <h2>Four cities, one advisor</h2>
+        <span class="eyebrow" data-i18n="sec.whereWeOperate">Where we operate</span>
+        <h2 data-i18n="sec.fourCities">Four cities, one advisor</h2>
       </div>
       <div class="city-strip">
         <a class="city-tile" href="listings.html?city=Hyderabad"><span>Telangana</span><b>Hyderabad</b></a>
@@ -134,13 +135,13 @@
   <section class="section">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Why Raju Real Estate</span>
-        <h2>Buy and sell with confidence</h2>
+        <span class="eyebrow" data-i18n="sec.whyUs">Why Raju Real Estate</span>
+        <h2 data-i18n="sec.buySell">Buy and sell with confidence</h2>
       </div>
       <div class="grid-cards">
-        <div class="card reveal" style="padding:26px"><h3>Title-verified only</h3><p class="muted">Every plot is HMDA/DTCP/BMRDA-approved with a clear title. No surprises at registration.</p></div>
-        <div class="card reveal" style="padding:26px"><h3>On-ground in 4 cities</h3><p class="muted">Local presence in Hyderabad, Chennai, Bengaluru and Vijayawada. Site visits arranged fast.</p></div>
-        <div class="card reveal" style="padding:26px"><h3>End-to-end support</h3><p class="muted">From shortlist to home loan to registration, one point of contact through the whole deal.</p></div>
+        <div class="card reveal" style="padding:26px"><h3 data-i18n="why.title1">Title-verified only</h3><p class="muted" data-i18n="why.body1">Every plot is HMDA/DTCP/BMRDA-approved with a clear title. No surprises at registration.</p></div>
+        <div class="card reveal" style="padding:26px"><h3 data-i18n="why.title2">On-ground in 4 cities</h3><p class="muted" data-i18n="why.body2">Local presence in Hyderabad, Chennai, Bengaluru and Vijayawada. Site visits arranged fast.</p></div>
+        <div class="card reveal" style="padding:26px"><h3 data-i18n="why.title3">End-to-end support</h3><p class="muted" data-i18n="why.body3">From shortlist to home loan to registration, one point of contact through the whole deal.</p></div>
       </div>
     </div>
   </section>
@@ -149,11 +150,11 @@
   <section class="section">
     <div class="container">
       <div class="cta-band">
-        <h2>Looking to buy, sell or lease?</h2>
-        <p>Tell us what you need. We'll shortlist verified options and arrange visits within days.</p>
+        <h2 data-i18n="cta.band.title">Looking to buy, sell or lease?</h2>
+        <p data-i18n="cta.band.body">Tell us what you need. We'll shortlist verified options and arrange visits within days.</p>
         <div class="hero-cta" style="justify-content:center">
-          <a class="btn btn--accent" href="contact.html">Get in touch</a>
-          <a class="btn btn--light" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp us</a>
+          <a class="btn btn--accent" href="contact.html" data-i18n="cta.getInTouch">Get in touch</a>
+          <a class="btn btn--light" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="cta.whatsapp">WhatsApp us</a>
         </div>
       </div>
     </div>
@@ -165,27 +166,27 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
-          <p style="margin-top:14px;max-width:320px">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+          <p style="margin-top:14px;max-width:320px" data-i18n="footer.tagline">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
         </div>
         <div>
-          <h4>Explore</h4>
-          <a href="index.html">Home</a>
-          <a href="listings.html">Listings</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="listings.html" data-i18n="nav.listings">Listings</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
         </div>
         <div>
-          <h4>Cities</h4>
+          <h4 data-i18n="footer.cities">Cities</h4>
           <a href="listings.html?city=Hyderabad">Hyderabad</a>
           <a href="listings.html?city=Chennai">Chennai</a>
           <a href="listings.html?city=Bengaluru">Bengaluru</a>
           <a href="listings.html?city=Vijayawada">Vijayawada</a>
         </div>
         <div>
-          <h4>Contact</h4>
-          <a data-contact="phone" data-keep-text href="#">Call us</a>
-          <a data-contact="email" data-keep-text href="#">Email us</a>
-          <a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp</a>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <a data-contact="phone" data-keep-text href="#" data-i18n="footer.callUs">Call us</a>
+          <a data-contact="email" data-keep-text href="#" data-i18n="footer.emailUs">Email us</a>
+          <a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="footer.whatsapp">WhatsApp</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -196,6 +197,7 @@
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/site.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/home.js"></script>

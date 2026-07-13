@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Loan EMI Calculator — Raju Real Estate</title>
+  <meta name="description" content="Free home-loan EMI calculator for property in Hyderabad, Chennai, Bengaluru and Vijayawada. Estimate your monthly instalment, total interest and total payable.">
+  <link rel="canonical" href="https://rajurealestate.com/emi">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta property="og:title" content="Home Loan EMI Calculator — Raju Real Estate">
+  <meta property="og:description" content="Estimate your monthly home-loan instalment, total interest and total payable.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rajurealestate.com/emi">
+  <meta property="og:site_name" content="Raju Real Estate">
+  <meta property="og:image" content="https://rajurealestate.com/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rajurealestate.com/images/og-cover.jpg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+        <li><a href="emi.html" class="active" data-i18n="nav.emi">EMI</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#" data-i18n="cta.call">Call</a>
+        <a class="btn btn--primary" href="listings.html" data-i18n="cta.browseShort">Browse</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head left" style="margin-bottom:28px">
+        <span class="eyebrow" data-i18n="emi.eyebrow">Home loan</span>
+        <h1 style="font-size:2.2rem;margin:0" data-i18n="emi.title">EMI Calculator</h1>
+        <p class="muted" style="margin:6px 0 0" data-i18n="emi.sub">Estimate your monthly home-loan instalment. Indicative only.</p>
+      </div>
+
+      <div class="pd-layout">
+        <div class="enquire-card">
+          <div class="form-field"><label data-i18n="emi.price">Property price (₹)</label><input type="number" id="e-price" value="10000000" min="100000" step="100000"></div>
+          <div class="form-field"><label data-i18n="emi.down">Down payment (%)</label><input type="number" id="e-down" value="20" min="0" max="90"></div>
+          <div class="form-field"><label data-i18n="emi.rate">Interest rate (% p.a.)</label><input type="number" id="e-rate" value="8.5" step="0.1" min="1"></div>
+          <div class="form-field"><label data-i18n="emi.tenure">Tenure (years)</label><input type="number" id="e-years" value="20" min="1" max="30"></div>
+          <p class="form-note" data-i18n="emi.note">Indicative only. Excludes processing fees, insurance and taxes. Confirm actual rates with your lender.</p>
+        </div>
+
+        <aside class="pd-aside">
+          <div class="agent-card">
+            <div class="emi-line" style="font-size:1rem"><span data-i18n="emi.loanAmount">Loan amount</span><b id="e-loan">—</b></div>
+            <div class="emi-line" style="font-size:1.35rem;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:6px 0"><span data-i18n="emi.monthly">Monthly EMI</span><b id="e-emi" style="color:var(--brand)">—</b></div>
+            <div class="emi-line"><span data-i18n="emi.totalInterest">Total interest</span><b id="e-interest">—</b></div>
+            <div class="emi-line"><span data-i18n="emi.totalPayable">Total payable</span><b id="e-total">—</b></div>
+            <div id="e-bar" style="height:14px;border-radius:8px;overflow:hidden;display:flex;margin-top:14px;background:var(--indigo-50)">
+              <div id="e-bar-p" style="background:var(--brand);height:100%"></div>
+              <div id="e-bar-i" style="background:var(--accent);height:100%"></div>
+            </div>
+            <div class="emi-line" style="font-size:.8rem;color:var(--ink-soft);margin-top:8px">
+              <span><span style="color:var(--brand)">■</span> <span data-i18n="emi.loanAmount">Loan amount</span></span>
+              <span><span style="color:var(--accent)">■</span> <span data-i18n="emi.totalInterest">Total interest</span></span>
+            </div>
+            <a class="btn btn--wa btn--block" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" style="margin-top:16px" data-i18n="cta.whatsapp">Chat on WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
+          <p style="margin-top:14px;max-width:320px" data-i18n="footer.tagline">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+        </div>
+        <div><h4 data-i18n="footer.explore">Explore</h4><a href="index.html" data-i18n="nav.home">Home</a><a href="listings.html" data-i18n="nav.listings">Listings</a><a href="emi.html" data-i18n="nav.emi">EMI</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
+        <div><h4 data-i18n="footer.cities">Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
+        <div><h4 data-i18n="footer.contact">Contact</h4><a data-contact="phone" data-keep-text href="#" data-i18n="footer.callUs">Call us</a><a data-contact="email" data-keep-text href="#" data-i18n="footer.emailUs">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="footer.whatsapp">WhatsApp</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Raju Real Estate. <span data-i18n="footer.rights">All rights reserved.</span></span>
+        <span>rajurealestate.com · <span data-contact="hours" data-keep-text>Office hours</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/emi.js"></script>
+</body>
+</html>

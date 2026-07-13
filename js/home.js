@@ -21,6 +21,8 @@
     grid.innerHTML = featured.map(cardHTML).join("");
     // Re-run reveal for freshly injected cards
     grid.querySelectorAll(".reveal").forEach(function (e) { e.classList.add("in"); });
+    // Translate freshly injected card buttons to the active language
+    if (window.rreApplyLang) window.rreApplyLang(window.rreLang());
   }).catch(function (e) {
     document.getElementById("featured-grid").innerHTML =
       '<p class="muted">Could not load listings. If you opened this file directly, run it through a local server (see README).</p>';

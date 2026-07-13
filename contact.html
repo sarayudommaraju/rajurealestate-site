@@ -28,14 +28,15 @@
       <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="listings.html">Listings</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+        <li><a href="emi.html" data-i18n="nav.emi">EMI</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#">Call</a>
-        <a class="btn btn--primary" href="listings.html">Browse</a>
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#" data-i18n="cta.call">Call</a>
+        <a class="btn btn--primary" href="listings.html" data-i18n="cta.browseShort">Browse</a>
       </div>
     </div>
   </header>
@@ -43,9 +44,9 @@
   <section class="section">
     <div class="container">
       <div class="section-head left" style="margin-bottom:36px">
-        <span class="eyebrow">Get in touch</span>
-        <h1 style="font-size:2.2rem;margin:0">Let's find your property</h1>
-        <p class="muted" style="margin:6px 0 0">Tell us what you need. We reply within one business day.</p>
+        <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+        <h1 style="font-size:2.2rem;margin:0" data-i18n="contact.title">Let's find your property</h1>
+        <p class="muted" style="margin:6px 0 0" data-i18n="contact.sub">Tell us what you need. We reply within one business day.</p>
       </div>
 
       <div class="contact-grid">
@@ -53,40 +54,40 @@
         <div class="contact-info">
           <div class="info-item">
             <div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.94.36 1.86.68 2.75a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0122 16.92z"/></svg></div>
-            <div><b>Phone</b><a class="muted" data-contact="phone" href="#">Call</a></div>
+            <div><b data-i18n="contact.phone">Phone</b><a class="muted" data-contact="phone" href="#">Call</a></div>
           </div>
           <div class="info-item">
             <div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-            <div><b>Email</b><a class="muted" data-contact="email" href="#">Email</a></div>
+            <div><b data-i18n="contact.email">Email</b><a class="muted" data-contact="email" href="#">Email</a></div>
           </div>
           <div class="info-item">
             <div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><b>Office</b><span class="muted" data-contact="address">Address</span></div>
+            <div><b data-i18n="contact.office">Office</b><span class="muted" data-contact="address">Address</span></div>
           </div>
           <div class="info-item">
             <div class="ic"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <div><b>Hours</b><span class="muted" data-contact="hours">Hours</span></div>
+            <div><b data-i18n="contact.hours">Hours</b><span class="muted" data-contact="hours">Hours</span></div>
           </div>
           <div style="margin-top:24px">
-            <a class="btn btn--wa" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">Chat on WhatsApp</a>
+            <a class="btn btn--wa" data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="cta.whatsapp">Chat on WhatsApp</a>
           </div>
         </div>
 
         <!-- Form -->
         <div class="enquire-card">
-          <h3>Send an enquiry</h3>
+          <h3 data-i18n="contact.sendEnquiry">Send an enquiry</h3>
           <form id="contact-form">
             <input type="text" name="_hp" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="form-field"><label>Name *</label><input type="text" name="name" required></div>
-            <div class="form-field"><label>Phone *</label><input type="tel" name="phone" required></div>
-            <div class="form-field"><label>Email</label><input type="email" name="email"></div>
-            <div class="form-field"><label>City of interest</label>
-              <select name="city"><option value="">Any</option><option>Hyderabad</option><option>Chennai</option><option>Bengaluru</option><option>Vijayawada</option></select>
+            <div class="form-field"><label data-i18n="form.name">Name *</label><input type="text" name="name" required></div>
+            <div class="form-field"><label data-i18n="form.phone">Phone *</label><input type="tel" name="phone" required></div>
+            <div class="form-field"><label data-i18n="form.email">Email</label><input type="email" name="email"></div>
+            <div class="form-field"><label data-i18n="form.city">City of interest</label>
+              <select name="city"><option value="" data-i18n="form.any">Any</option><option>Hyderabad</option><option>Chennai</option><option>Bengaluru</option><option>Vijayawada</option></select>
             </div>
-            <div class="form-field"><label>Message</label><textarea name="message" placeholder="Budget, property type, timeline…"></textarea></div>
-            <button class="btn btn--primary btn--block" type="submit">Send enquiry</button>
+            <div class="form-field"><label data-i18n="form.message">Message</label><textarea name="message" data-i18n-ph="form.msgPh" placeholder="Budget, property type, timeline…"></textarea></div>
+            <button class="btn btn--primary btn--block" type="submit" data-i18n="form.send">Send enquiry</button>
             <div class="form-status" id="contact-status"></div>
-            <p class="form-note" style="margin-top:10px">By submitting you agree to be contacted about your enquiry.</p>
+            <p class="form-note" style="margin-top:10px" data-i18n="contact.consent">By submitting you agree to be contacted about your enquiry.</p>
           </form>
         </div>
       </div>
@@ -98,11 +99,11 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
-          <p style="margin-top:14px;max-width:320px">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+          <p style="margin-top:14px;max-width:320px" data-i18n="footer.tagline">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
         </div>
-        <div><h4>Explore</h4><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-        <div><h4>Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
-        <div><h4>Contact</h4><a data-contact="phone" data-keep-text href="#">Call us</a><a data-contact="email" data-keep-text href="#">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp</a></div>
+        <div><h4 data-i18n="footer.explore">Explore</h4><a href="index.html" data-i18n="nav.home">Home</a><a href="listings.html" data-i18n="nav.listings">Listings</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
+        <div><h4 data-i18n="footer.cities">Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
+        <div><h4 data-i18n="footer.contact">Contact</h4><a data-contact="phone" data-keep-text href="#" data-i18n="footer.callUs">Call us</a><a data-contact="email" data-keep-text href="#" data-i18n="footer.emailUs">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="footer.whatsapp">WhatsApp</a></div>
       </div>
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> Raju Real Estate. All rights reserved.</span>
@@ -112,6 +113,7 @@
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/site.js"></script>
   <script src="js/contact.js"></script>
 </body>

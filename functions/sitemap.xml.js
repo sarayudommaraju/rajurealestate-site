@@ -16,6 +16,7 @@ const ORIGIN = "https://rajurealestate.com";
 const STATIC = [
   { path: "/", priority: "1.0", freq: "daily" },
   { path: "/listings", priority: "0.9", freq: "daily" },
+  { path: "/emi", priority: "0.5", freq: "monthly" },
   { path: "/about", priority: "0.6", freq: "monthly" },
   { path: "/contact", priority: "0.6", freq: "monthly" },
   { path: "/sitemap", priority: "0.3", freq: "monthly" }

@@ -109,6 +109,7 @@
     el.noResults.style.display = "none";
     el.results.innerHTML = list.map(cardHTML).join("");
     el.results.querySelectorAll(".reveal").forEach(function (e) { e.classList.add("in"); });
+    if (window.rreApplyLang) window.rreApplyLang(window.rreLang());
   }
 
   function updateURL() {

@@ -36,7 +36,7 @@ window.cardHTML = function (l) {
       '<div class="card-loc">' + pinIcon() + esc(l.locality) + ', ' + esc(l.city) + '</div>' +
       '<div class="card-specs">' + specs.join('') + '</div>' +
       '<div class="card-foot">' +
-        '<a class="btn btn--primary" href="property.html?id=' + l.id + '">View details</a>' +
+        '<a class="btn btn--primary" href="property.html?id=' + l.id + '" data-i18n="cta.viewDetails">View details</a>' +
         '<a class="btn btn--wa" target="_blank" rel="noopener" href="' + waLink("Hi, I am interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ").") + '" aria-label="Enquire on WhatsApp">' + waMini() + '</a>' +
       '</div>' +
     '</div>' +

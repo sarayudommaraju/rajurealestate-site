@@ -30,14 +30,15 @@
       <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="listings.html" class="active">Listings</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="listings.html" class="active" data-i18n="nav.listings">Listings</a></li>
+        <li><a href="emi.html" data-i18n="nav.emi">EMI</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#">Call</a>
-        <a class="btn btn--primary" href="contact.html">Enquire</a>
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#" data-i18n="cta.call">Call</a>
+        <a class="btn btn--primary" href="contact.html" data-i18n="cta.enquire">Enquire</a>
       </div>
     </div>
   </header>
@@ -46,54 +47,54 @@
     <div class="container">
       <div class="section-head left" style="margin-bottom:24px">
         <span class="eyebrow">Inventory</span>
-        <h1 style="font-size:2.2rem;margin:0">Property listings</h1>
-        <p class="muted" style="margin:6px 0 0">Filter across all four cities. Prices in Indian ₹ (lakh/crore).</p>
+        <h1 style="font-size:2.2rem;margin:0" data-i18n="listings.title">Property listings</h1>
+        <p class="muted" style="margin:6px 0 0" data-i18n="listings.sub">Filter across all four cities. Prices in Indian ₹ (lakh/crore).</p>
       </div>
 
-      <button class="btn btn--ghost filter-toggle" id="filter-toggle" style="margin-bottom:16px">☰ Filters</button>
+      <button class="btn btn--ghost filter-toggle" id="filter-toggle" style="margin-bottom:16px" data-i18n="listings.mobileFilters">☰ Filters</button>
 
       <div class="listings-layout">
         <!-- Filter rail -->
         <aside class="filters" id="filters">
-          <h3>Filters <button id="reset-filters" class="chip" type="button">Reset</button></h3>
+          <h3><span data-i18n="filters.title">Filters</span> <button id="reset-filters" class="chip" type="button" data-i18n="filters.reset">Reset</button></h3>
 
           <div class="filter-group">
-            <label for="f-keyword">Keyword</label>
-            <input type="search" id="f-keyword" placeholder="Locality, ref, title…">
+            <label for="f-keyword" data-i18n="filters.keyword">Keyword</label>
+            <input type="search" id="f-keyword" data-i18n-ph="filters.keywordPh" placeholder="Locality, ref, title…">
           </div>
 
           <div class="filter-group">
-            <label for="f-city">City</label>
-            <select id="f-city"><option value="">All cities</option></select>
+            <label for="f-city" data-i18n="filters.city">City</label>
+            <select id="f-city"><option value="" data-i18n="qs.allCities">All cities</option></select>
           </div>
 
           <div class="filter-group">
-            <label for="f-locality">Locality</label>
-            <select id="f-locality"><option value="">All localities</option></select>
+            <label for="f-locality" data-i18n="filters.locality">Locality</label>
+            <select id="f-locality"><option value="" data-i18n="filters.allLocalities">All localities</option></select>
           </div>
 
           <div class="filter-group">
-            <label>Property type</label>
+            <label data-i18n="filters.type">Property type</label>
             <div class="chip-row" id="f-type">
-              <button class="chip" data-val="apartment" type="button">Apartment</button>
-              <button class="chip" data-val="villa" type="button">Villa</button>
-              <button class="chip" data-val="house" type="button">House</button>
-              <button class="chip" data-val="plot" type="button">Plot</button>
-              <button class="chip" data-val="commercial" type="button">Commercial</button>
+              <button class="chip" data-val="apartment" type="button" data-i18n="type.apartment">Apartment</button>
+              <button class="chip" data-val="villa" type="button" data-i18n="type.villa">Villa</button>
+              <button class="chip" data-val="house" type="button" data-i18n="type.house">House</button>
+              <button class="chip" data-val="plot" type="button" data-i18n="type.plot">Plot</button>
+              <button class="chip" data-val="commercial" type="button" data-i18n="type.commercial">Commercial</button>
             </div>
           </div>
 
           <div class="filter-group">
-            <label>Status</label>
+            <label data-i18n="filters.status">Status</label>
             <div class="chip-row" id="f-status">
-              <button class="chip" data-val="sale" type="button">For sale</button>
-              <button class="chip" data-val="rent" type="button">For rent</button>
-              <button class="chip" data-val="sold" type="button">Sold</button>
+              <button class="chip" data-val="sale" type="button" data-i18n="status.sale">For sale</button>
+              <button class="chip" data-val="rent" type="button" data-i18n="status.rent">For rent</button>
+              <button class="chip" data-val="sold" type="button" data-i18n="status.sold">Sold</button>
             </div>
           </div>
 
           <div class="filter-group">
-            <label>Budget (₹)</label>
+            <label data-i18n="filters.budget">Budget (₹)</label>
             <div class="range-row">
               <select id="f-minprice">
                 <option value="">Min</option>
@@ -113,7 +114,7 @@
           </div>
 
           <div class="filter-group">
-            <label>Min area</label>
+            <label data-i18n="filters.minArea">Min area</label>
             <div class="range-row">
               <input type="number" id="f-minarea" placeholder="Value" min="0">
               <select id="f-areaunit">
@@ -127,14 +128,14 @@
         <!-- Results -->
         <div>
           <div class="listings-bar">
-            <div class="count"><b id="result-count">0</b> properties found</div>
+            <div class="count"><b id="result-count">0</b> <span data-i18n="listings.found">properties found</span></div>
             <div>
-              <label for="f-sort" class="muted" style="font-size:.85rem;margin-right:6px">Sort</label>
+              <label for="f-sort" class="muted" style="font-size:.85rem;margin-right:6px" data-i18n="listings.sort">Sort</label>
               <select id="f-sort" class="sort-select">
-                <option value="newest">Newest first</option>
-                <option value="price-asc">Price: low to high</option>
-                <option value="price-desc">Price: high to low</option>
-                <option value="area-desc">Area: large to small</option>
+                <option value="newest" data-i18n="sort.newest">Newest first</option>
+                <option value="price-asc" data-i18n="sort.priceAsc">Price: low to high</option>
+                <option value="price-desc" data-i18n="sort.priceDesc">Price: high to low</option>
+                <option value="area-desc" data-i18n="sort.areaDesc">Area: large to small</option>
               </select>
             </div>
           </div>
@@ -153,11 +154,11 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
-          <p style="margin-top:14px;max-width:320px">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+          <p style="margin-top:14px;max-width:320px" data-i18n="footer.tagline">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
         </div>
-        <div><h4>Explore</h4><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-        <div><h4>Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
-        <div><h4>Contact</h4><a data-contact="phone" data-keep-text href="#">Call us</a><a data-contact="email" data-keep-text href="#">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp</a></div>
+        <div><h4 data-i18n="footer.explore">Explore</h4><a href="index.html" data-i18n="nav.home">Home</a><a href="listings.html" data-i18n="nav.listings">Listings</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
+        <div><h4 data-i18n="footer.cities">Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
+        <div><h4 data-i18n="footer.contact">Contact</h4><a data-contact="phone" data-keep-text href="#" data-i18n="footer.callUs">Call us</a><a data-contact="email" data-keep-text href="#" data-i18n="footer.emailUs">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="footer.whatsapp">WhatsApp</a></div>
       </div>
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> Raju Real Estate. All rights reserved.</span>
@@ -167,6 +168,7 @@
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/site.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/listings.js"></script>
