@@ -1,26 +1,32 @@
 {
-  "_readme": "Client testimonials shown on the Home page. Edit/replace these with real quotes. rating is 1-5. Keep 3-9 entries for a balanced grid.",
+  "_readme": "NOTE: these are marketing sample testimonials generated on request, not verified real clients. Replace with genuine quotes as you collect them (misleading endorsements can breach consumer-protection/ASCI rules). rating is 1-5. Home shows up to 9 at random-ish order; edit freely.",
   "testimonials": [
-    {
-      "name": "Sample — replace me",
-      "city": "Hyderabad",
-      "deal": "3 BHK, Kokapet",
-      "rating": 5,
-      "quote": "PLACEHOLDER. Add a real client quote here. Kept the whole process transparent, from shortlisting to registration. Highly recommend."
-    },
-    {
-      "name": "Sample — replace me",
-      "city": "Bengaluru",
-      "deal": "Villa plot, Sarjapur Road",
-      "rating": 5,
-      "quote": "PLACEHOLDER. Add a real client quote here. Found me a clear-title plot within my budget and handled all the paperwork."
-    },
-    {
-      "name": "Sample — replace me",
-      "city": "Vijayawada",
-      "deal": "2 BHK, Benz Circle",
-      "rating": 5,
-      "quote": "PLACEHOLDER. Add a real client quote here. Honest advice and quick site visits. No pushy sales tactics at all."
-    }
+    { "name": "Sandeep Reddy", "city": "Hyderabad", "deal": "4 BHK Villa, Kokapet", "rating": 5, "quote": "From the first site visit to registration, everything was transparent. No hidden charges, no pressure. They found me exactly the villa I wanted, within budget." },
+    { "name": "Priya Nair", "city": "Chennai", "deal": "3 BHK Apartment, Adyar", "rating": 5, "quote": "As a first-time buyer I was nervous, but Raju sir guided me through every single step. Honest advice and quick responses. Highly recommended." },
+    { "name": "Karthik Iyer", "city": "Bengaluru", "deal": "3 BHK Apartment, Whitefield", "rating": 5, "quote": "They verified the title and RERA details thoroughly before I paid a rupee. That peace of mind is worth everything. Smooth, professional service." },
+    { "name": "Lakshmi Prasad", "city": "Vijayawada", "deal": "2 BHK Apartment, Benz Circle", "rating": 5, "quote": "Very responsive team. Arranged multiple site visits on short notice and never once pushed me. Registration was completely hassle-free." },
+    { "name": "Venkatesh Rao", "city": "Hyderabad", "deal": "HMDA Plot, Tellapur", "rating": 5, "quote": "The clear-title check they did on my plot caught an issue I would never have spotted. Genuinely saved me from a bad deal. Trustworthy people." },
+    { "name": "Anitha Menon", "city": "Chennai", "deal": "3 BHK Apartment, OMR", "rating": 4, "quote": "Good experience overall. They knew the OMR corridor inside out and helped me shortlist quickly. Loan coordination could have been a touch faster." },
+    { "name": "Suresh Kumar", "city": "Bengaluru", "deal": "Villa Plot, Sarjapur Road", "rating": 5, "quote": "Clear communication at every stage. They handled all the paperwork and kept me updated. Booking my next plot through them too." },
+    { "name": "Divya Krishnan", "city": "Secunderabad", "deal": "3 BHK Apartment", "rating": 5, "quote": "Professional, patient and genuinely helpful. They listened to what I actually needed instead of pushing whatever was available. Rare these days." },
+    { "name": "Ramesh Babu", "city": "Guntur", "deal": "Independent House", "rating": 5, "quote": "Bought my retirement home through Raju Real Estate. Fair pricing, clean documentation, and they were with me right up to the sub-registrar office." },
+    { "name": "Sowmya Reddy", "city": "Hyderabad", "deal": "3 BHK Apartment, Gachibowli", "rating": 5, "quote": "I was buying remotely from abroad and they made it effortless, video walkthroughs, honest updates, and a smooth handover. Completely reliable." },
+    { "name": "Arjun Pillai", "city": "Bengaluru", "deal": "2 BHK Apartment, HSR Layout", "rating": 4, "quote": "Solid local knowledge and no-nonsense advice. Helped me negotiate a fair price. Would happily recommend to friends and family." },
+    { "name": "Kavya Sarma", "city": "Warangal", "deal": "Open Plot", "rating": 5, "quote": "Everything they promised, they delivered. Title was spotless and registration went through without a single hitch. Thank you for the honesty." },
+    { "name": "Naveen Chandra", "city": "Hyderabad", "deal": "3 BHK Apartment, Kondapur", "rating": 5, "quote": "What stood out was the transparency. They pointed out the downsides of properties too, not just the good parts. That earned my complete trust." },
+    { "name": "Deepika Rao", "city": "Vijayawada", "deal": "Residential Plot, Poranki", "rating": 5, "quote": "Excellent service from start to finish. They treated my modest budget with the same seriousness as any big client. Truly grateful." },
+    { "name": "Manoj Menon", "city": "Chennai", "deal": "2 BHK Apartment, Velachery", "rating": 5, "quote": "Quick, honest and well organised. The site visits were arranged perfectly and every document was in order. Made a stressful process easy." },
+    { "name": "Harish Gowda", "city": "Bengaluru", "deal": "2 BHK Apartment, Electronic City", "rating": 4, "quote": "Reliable team with good follow-through. Kept me informed throughout and answered every question patiently. Happy with my new home." },
+    { "name": "Sneha Reddy", "city": "Hyderabad", "deal": "2 BHK Apartment, Miyapur", "rating": 5, "quote": "They understood exactly what a young couple like us needed and found it fast. No pushy sales tactics at all. Refreshingly honest." },
+    { "name": "Vijay Anand", "city": "Chennai", "deal": "Independent House, Anna Nagar", "rating": 5, "quote": "Impeccable service. The due diligence on the title was thorough and gave me total confidence. I recommend them without hesitation." },
+    { "name": "Meghana Rao", "city": "Visakhapatnam", "deal": "3 BHK Apartment", "rating": 5, "quote": "Professional and prompt at every step. They made buying my first apartment a genuinely pleasant experience. Cannot thank them enough." },
+    { "name": "Prakash Nair", "city": "Bengaluru", "deal": "Villa, Sarjapur Road", "rating": 5, "quote": "Top-class advisory. They knew the market, negotiated hard on my behalf, and handled the registration end to end. Worth every bit." },
+    { "name": "Swathi Reddy", "city": "Hyderabad", "deal": "2 BHK Apartment, Kukatpally", "rating": 4, "quote": "Genuine and dependable. They never rushed me into a decision and gave balanced advice. Smooth closing overall." },
+    { "name": "Rahul Varma", "city": "Vijayawada", "deal": "HMDA Plot, Gollapudi", "rating": 5, "quote": "The whole process was transparent and stress-free. Clear title, fair price, and constant updates. Exactly how property buying should be." },
+    { "name": "Bhavana Iyer", "city": "Chennai", "deal": "3 BHK Apartment, Perungudi", "rating": 5, "quote": "Outstanding support throughout. They coordinated my home loan and paperwork seamlessly. I felt looked after the entire time." },
+    { "name": "Kiran Kumar", "city": "Nellore", "deal": "Independent House", "rating": 5, "quote": "Honest, knowledgeable and always reachable. They found me a clear-title house in a great locality within my budget. Fully satisfied." },
+    { "name": "Nithya Balaji", "city": "Coimbatore", "deal": "2 BHK Apartment", "rating": 5, "quote": "A team you can actually trust. Every commitment was honoured and every doubt patiently cleared. My family is very happy with our new home." },
+    { "name": "Srinivas Rao", "city": "Hyderabad", "deal": "4 BHK Villa, Financial District", "rating": 5, "quote": "Premium service without the premium attitude. They were meticulous with the documentation and delivered exactly what was promised." },
+    { "name": "Aparna Menon", "city": "Mysuru", "deal": "Residential Plot", "rating": 5, "quote": "Wonderful experience. Their local insight and honest guidance made all the difference. I have already referred two friends to them." }
   ]
 }
