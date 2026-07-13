@@ -24,6 +24,7 @@
           status.className = "form-status ok";
           status.textContent = "Thank you. Your enquiry has reached us, we'll be in touch shortly.";
           form.reset();
+          if (window.rreTrack) window.rreTrack("generate_lead", { source: "contact", city: data.city || "" });
         } else {
           status.className = "form-status err";
           status.textContent = (res.j && res.j.error) || "Something went wrong. Please call or WhatsApp us.";

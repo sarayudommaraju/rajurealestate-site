@@ -111,6 +111,48 @@
     document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
   }
 
+  /* ---------- Structured data: RealEstateAgent + WebSite (Google-facing) ---------- */
+  function injectSchema() {
+    if (document.getElementById("rre-schema-org")) return;
+    var org = {
+      "@context": "https://schema.org", "@type": "RealEstateAgent",
+      "name": C.brandName || "Raju Real Estate",
+      "url": "https://rajurealestate.com/",
+      "logo": "https://rajurealestate.com/images/og-cover.jpg",
+      "image": "https://rajurealestate.com/images/og-cover.jpg",
+      "telephone": C.phoneDial || "", "email": C.email || "",
+      "areaServed": (C.cities || []).map(function (c) { return { "@type": "City", "name": c }; }),
+      "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" }
+    };
+    var site = {
+      "@context": "https://schema.org", "@type": "WebSite",
+      "name": C.brandName || "Raju Real Estate", "url": "https://rajurealestate.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rajurealestate.com/listings.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    };
+    var s = document.createElement("script");
+    s.type = "application/ld+json"; s.id = "rre-schema-org";
+    s.textContent = JSON.stringify([org, site]);
+    document.head.appendChild(s);
+  }
+
+  /* ---------- Analytics event helper + auto WhatsApp/phone tracking ---------- */
+  window.rreTrack = function (name, params) {
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+  };
+  function setupTracking() {
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest) return;
+      var a = e.target.closest('a[href*="wa.me"]');
+      if (a) { window.rreTrack("whatsapp_click", { link_url: a.href }); return; }
+      var tel = e.target.closest('a[href^="tel:"]');
+      if (tel) window.rreTrack("phone_click", { link_url: tel.href });
+    });
+  }
+
   /* ---------- GA4 (only if id present) ---------- */
   function loadGA() {
     if (!C.ga4Id) return;
@@ -135,6 +177,8 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     injectShared();
+    injectSchema();
+    setupTracking();
     loadGA();
     reveal();
   });

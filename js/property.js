@@ -16,6 +16,7 @@
     if (!l) { notFound(); return; }
     document.title = l.title + " — Raju Real Estate";
     setMeta("description", l.title + " in " + l.locality + ", " + l.city + ". " + formatPrice(l.price) + ".");
+    setSEO(l);
     render(l, all);
   }).catch(function (e) {
     root.innerHTML = '<p class="muted" style="padding:60px 0">Could not load this property. Serve over http (see README).</p>';
@@ -56,6 +57,8 @@
     }).join("");
 
     var waMsg = "Hi, I'm interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ") in " + l.locality + ", " + l.city + ".";
+    var pageUrl = "https://rajurealestate.com/property.html?id=" + encodeURIComponent(l.id);
+    var waShare = "https://wa.me/?text=" + encodeURIComponent(l.title + " — " + formatPrice(l.price) + " in " + l.locality + ", " + l.city + " · Raju Real Estate\n" + pageUrl);
 
     root.innerHTML =
     '<div class="pd-head">' +
@@ -103,7 +106,8 @@
         '<div class="agent-card">' +
           '<div class="who"><img class="avatar" src="images/team/agent-raju.png" alt="' + esc((l.agent && l.agent.name) || "Raju") + '" onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;avatar&quot;>R</div>\'"><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
           '<a class="btn btn--primary btn--block" data-contact="phone" data-keep-text href="#" style="margin-bottom:8px">Call now</a>' +
-          '<a class="btn btn--wa btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '">Enquire on WhatsApp</a>' +
+          '<a class="btn btn--wa btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '" style="margin-bottom:8px">Enquire on WhatsApp</a>' +
+          '<a class="btn btn--ghost btn--block" target="_blank" rel="noopener" href="' + waShare + '">Share this property</a>' +
         '</div>' +
 
         '<div class="enquire-card">' +
@@ -144,6 +148,56 @@
   function check() { return '<svg class="icon" viewBox="0 0 24 24" style="color:var(--ok)"><path d="M20 6L9 17l-5-5"/></svg>'; }
   function pin() { return '<svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'; }
   function setMeta(name, val) { var m = document.querySelector('meta[name="' + name + '"]'); if (m) m.setAttribute("content", val); }
+
+  /* ---- Per-listing SEO: canonical, OG/Twitter, RealEstateListing + Breadcrumb JSON-LD ---- */
+  function setSEO(l) {
+    var url = "https://rajurealestate.com/property.html?id=" + encodeURIComponent(l.id);
+    var img = listingImages(l)[0];
+    var absImg = img.indexOf("http") === 0 ? img : "https://rajurealestate.com/" + img;
+    var desc = l.title + " in " + l.locality + ", " + l.city + ". " + formatPrice(l.price) +
+      (l.beds ? " · " + l.beds + " BHK" : "") + " · " + formatArea(l.areaValue, l.areaUnit) + ".";
+    setAttr("#pd-canonical", "href", url);
+    setProp("og-title", l.title + " — " + formatPrice(l.price));
+    setProp("og-desc", desc);
+    setProp("og-url", url);
+    setProp("og-image", absImg);
+    setById("tw-image", "content", absImg);
+
+    var offerAvail = l.status === "sold" ? "https://schema.org/SoldOut"
+      : (l.status === "rent" ? "https://schema.org/InStock" : "https://schema.org/InStock");
+    var ld = {
+      "@context": "https://schema.org",
+      "@type": "SingleFamilyResidence",
+      "name": l.title,
+      "description": l.description,
+      "url": url,
+      "image": listingImages(l).map(function (p) { return p.indexOf("http") === 0 ? p : "https://rajurealestate.com/" + p; }),
+      "numberOfRooms": l.beds || undefined,
+      "floorSize": { "@type": "QuantitativeValue", "value": l.areaValue, "unitText": l.areaUnit },
+      "address": { "@type": "PostalAddress", "streetAddress": l.address, "addressLocality": l.city, "addressRegion": regionFor(l.city), "addressCountry": "IN" },
+      "geo": (l.lat && l.lng) ? { "@type": "GeoCoordinates", "latitude": l.lat, "longitude": l.lng } : undefined,
+      "offers": { "@type": "Offer", "price": l.price, "priceCurrency": "INR", "availability": offerAvail, "url": url }
+    };
+    var crumb = {
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Listings", "item": "https://rajurealestate.com/listings.html" },
+        { "@type": "ListItem", "position": 2, "name": l.city, "item": "https://rajurealestate.com/listings.html?city=" + encodeURIComponent(l.city) },
+        { "@type": "ListItem", "position": 3, "name": l.title, "item": url }
+      ]
+    };
+    injectLD("pd-ld", [ld, crumb]);
+  }
+  function regionFor(city) { return { Hyderabad: "Telangana", Chennai: "Tamil Nadu", Bengaluru: "Karnataka", Vijayawada: "Andhra Pradesh" }[city] || ""; }
+  function setAttr(sel, attr, val) { var e = document.querySelector(sel); if (e) e.setAttribute(attr, val); }
+  function setById(id, attr, val) { var e = document.getElementById(id); if (e) e.setAttribute(attr, val); }
+  function setProp(id, val) { var e = document.getElementById(id); if (e) e.setAttribute("content", val); }
+  function injectLD(id, obj) {
+    var old = document.getElementById(id); if (old) old.remove();
+    var s = document.createElement("script"); s.type = "application/ld+json"; s.id = id;
+    s.textContent = JSON.stringify(obj, function (k, v) { return v === undefined ? undefined : v; });
+    document.head.appendChild(s);
+  }
 
   /* ---- Leaflet map (OpenStreetMap tiles, free) ---- */
   function initMap(l) {
@@ -202,7 +256,7 @@
       fetch("/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok) { status.className = "form-status ok"; status.textContent = "Thanks. We'll call you shortly about " + l.ref + "."; form.reset(); }
+          if (res.ok) { status.className = "form-status ok"; status.textContent = "Thanks. We'll call you shortly about " + l.ref + "."; form.reset(); if (window.rreTrack) window.rreTrack("generate_lead", { source: "property", ref: l.ref, city: l.city }); }
           else { status.className = "form-status err"; status.textContent = (res.j && res.j.error) || "Could not send. Please WhatsApp us instead."; }
         })
         .catch(function () { status.className = "form-status err"; status.textContent = "Network error. Please WhatsApp or call us."; })
