@@ -144,9 +144,12 @@ img { max-width: 100%; display: block; }
 .trust-row { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 30px; }
 .trust-item { display: inline-flex; align-items: center; gap: 9px; color: rgba(255,255,255,.92); font-size: .92rem; font-weight: 500; }
 .trust-item svg { color: #e0a56a; flex: none; }
+.hero-art--photo img { border-radius: 18px; border: 1px solid rgba(255,255,255,.16); box-shadow: 0 28px 60px rgba(0,0,0,.42); filter: none; aspect-ratio: 16 / 10; object-fit: cover; }
+.hero-art--photo { position: relative; }
+.hero-art--photo .hero-photo-cap { position: absolute; left: 14px; bottom: 12px; z-index: 2; color: #fff; font-size: .8rem; font-weight: 600; background: rgba(15,18,34,.5); backdrop-filter: blur(4px); padding: 5px 11px; border-radius: 999px; }
 @media (max-width: 940px) {
   .hero-grid { grid-template-columns: 1fr; gap: 20px; padding: 56px 0 64px; }
-  .hero-art { max-width: 440px; margin: 4px auto 0; opacity: .95; }
+  .hero-art { max-width: 480px; margin: 4px auto 0; opacity: .98; }
 }
 
 /* Full-bleed stats band under the hero */
@@ -160,6 +163,8 @@ img { max-width: 100%; display: block; }
 /* Premium page-header band (Listings/Contact/EMI/Blog) */
 .page-hero { background: linear-gradient(135deg, var(--indigo-900), var(--indigo-700) 60%, var(--indigo-600)); color: #fff; position: relative; overflow: hidden; }
 .page-hero::after { content: ""; position: absolute; right: -30px; bottom: 0; width: 46%; max-width: 560px; height: 100%; background: url("../images/art/skyline-light.svg") right bottom / contain no-repeat; opacity: .16; pointer-events: none; }
+.page-hero--photo { background: linear-gradient(115deg, rgba(15,32,54,.92) 34%, rgba(23,41,63,.66)), var(--phero-img) center / cover no-repeat; }
+.page-hero--photo::after { opacity: 0; }
 .page-hero .container { position: relative; z-index: 2; padding: 54px 0 58px; }
 .page-hero .section-head { margin-bottom: 0; }
 .page-hero h1 { color: #fff; }
@@ -306,9 +311,11 @@ img.avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; fl
 .city-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 @media (max-width: 720px) { .city-strip { grid-template-columns: 1fr 1fr; } }
 .city-tile { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; color: #fff; display: flex; align-items: flex-end; padding: 18px; background: linear-gradient(180deg, transparent 40%, rgba(15,18,34,.8)), linear-gradient(135deg, var(--indigo-700), var(--amber-500)); transition: transform .16s ease; }
-.city-tile:hover { transform: translateY(-4px); }
-.city-tile::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background: url("../images/art/skyline-light.svg") center bottom / 160% auto no-repeat; opacity: .18; z-index: 1; pointer-events: none; }
-.city-tile b { font-family: var(--font-head); font-size: 1.2rem; position: relative; z-index: 2; }
+.city-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.city-tile { background-size: cover; background-position: center; }
+.city-tile img.city-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.city-tile .city-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,18,34,.15) 25%, rgba(15,18,34,.88)); }
+.city-tile b { font-family: var(--font-head); font-size: 1.25rem; position: relative; z-index: 2; }
 .city-tile span { position: absolute; left: 18px; bottom: 44px; font-size: .82rem; color: rgba(255,255,255,.85); z-index: 2; }
 
 /* ---------- Footer ---------- */
@@ -338,6 +345,11 @@ img.avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; fl
 .lang-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .lang-toggle button { border: 0; background: #fff; padding: 7px 12px; font-family: var(--font-head); font-weight: 600; font-size: .82rem; cursor: pointer; color: var(--ink-soft); }
 .lang-toggle button.active { background: var(--brand); color: #fff; }
+
+/* ---------- Why-us feature icons ---------- */
+.why-icon { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 18px; background: linear-gradient(135deg, var(--indigo-600), var(--indigo-500)); color: #fff; box-shadow: 0 8px 18px rgba(35,57,93,.22); position: relative; }
+.why-icon::after { content: ""; position: absolute; right: -5px; bottom: -5px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; }
+.why-icon svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- Blog article body ---------- */
 .post-body { font-size: 1.06rem; line-height: 1.75; color: var(--ink); }
