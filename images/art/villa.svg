@@ -1,0 +1,38 @@
+<svg width="520" height="420" viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Villa illustration">
+  <!-- Self-made line-art villa. Navy strokes, copper accents. License-safe. -->
+  <circle cx="410" cy="86" r="40" fill="#c17a3f" fill-opacity="0.10"/>
+  <circle cx="410" cy="86" r="40" stroke="#c17a3f" stroke-width="2" stroke-opacity="0.45"/>
+  <g stroke="#23395d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <!-- Ground -->
+    <line x1="30" y1="360" x2="490" y2="360"/>
+    <!-- Two-storey villa body -->
+    <path d="M120 360 V190 h200 V360"/>
+    <!-- Roof -->
+    <path d="M104 190 L220 120 L336 190"/>
+    <!-- Upper floor line -->
+    <line x1="120" y1="262" x2="320" y2="262"/>
+    <!-- Windows upper -->
+    <rect x="150" y="210" width="40" height="38"/>
+    <rect x="250" y="210" width="40" height="38"/>
+    <line x1="170" y1="210" x2="170" y2="248"/><line x1="270" y1="210" x2="270" y2="248"/>
+    <!-- Ground floor: door + windows -->
+    <path d="M206 360 V296 h28 V360"/>
+    <rect x="150" y="292" width="40" height="46"/>
+    <rect x="250" y="292" width="40" height="46"/>
+    <line x1="170" y1="292" x2="170" y2="338"/><line x1="270" y1="292" x2="270" y2="338"/>
+    <!-- Side extension / garage -->
+    <path d="M320 360 V286 h96 V360"/>
+    <path d="M320 286 h96"/>
+    <line x1="352" y1="286" x2="352" y2="360"/><line x1="384" y1="286" x2="384" y2="360"/>
+    <!-- Boundary + gate -->
+    <path d="M40 360 V320 M40 340 h44"/>
+    <!-- Small tree -->
+    <path d="M470 360 V318"/>
+    <circle cx="470" cy="300" r="22"/>
+  </g>
+  <!-- Copper roof accent + door knob -->
+  <g stroke="#c17a3f" stroke-width="3.2" stroke-linecap="round">
+    <path d="M104 190 L220 120 L336 190" fill="none" stroke-opacity="0.85"/>
+  </g>
+  <circle cx="228" cy="326" r="2.6" fill="#c17a3f"/>
+</svg>
