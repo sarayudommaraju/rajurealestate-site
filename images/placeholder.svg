@@ -1,0 +1,16 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Property photo coming soon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <path d="M280 330 L400 230 L520 330" stroke="#4338ca" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M300 322 V420 H360 V362 H440 V420 H500 V322" stroke="#4338ca" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="505" cy="240" r="9" fill="#f59e0b"/>
+  </g>
+  <text x="400" y="470" font-family="Poppins, sans-serif" font-size="26" font-weight="700" fill="#4338ca" text-anchor="middle">Photo coming soon</text>
+  <text x="400" y="502" font-family="Inter, sans-serif" font-size="16" fill="#6b70a0" text-anchor="middle">Raju Real Estate</text>
+</svg>

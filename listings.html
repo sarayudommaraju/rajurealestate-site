@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property Listings — Raju Real Estate</title>
+  <meta name="description" content="Browse verified apartments, villas, houses, plots and commercial property across Hyderabad, Chennai, Bengaluru and Vijayawada. Filter by city, budget, area and type.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta property="og:title" content="Property Listings — Raju Real Estate">
+  <meta property="og:description" content="Verified property across South India. Filter by city, budget, area and type.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html" class="active">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#">Call</a>
+        <a class="btn btn--primary" href="contact.html">Enquire</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:36px">
+    <div class="container">
+      <div class="section-head left" style="margin-bottom:24px">
+        <span class="eyebrow">Inventory</span>
+        <h1 style="font-size:2.2rem;margin:0">Property listings</h1>
+        <p class="muted" style="margin:6px 0 0">Filter across all four cities. Prices in Indian ₹ (lakh/crore).</p>
+      </div>
+
+      <button class="btn btn--ghost filter-toggle" id="filter-toggle" style="margin-bottom:16px">☰ Filters</button>
+
+      <div class="listings-layout">
+        <!-- Filter rail -->
+        <aside class="filters" id="filters">
+          <h3>Filters <button id="reset-filters" class="chip" type="button">Reset</button></h3>
+
+          <div class="filter-group">
+            <label for="f-keyword">Keyword</label>
+            <input type="search" id="f-keyword" placeholder="Locality, ref, title…">
+          </div>
+
+          <div class="filter-group">
+            <label for="f-city">City</label>
+            <select id="f-city"><option value="">All cities</option></select>
+          </div>
+
+          <div class="filter-group">
+            <label for="f-locality">Locality</label>
+            <select id="f-locality"><option value="">All localities</option></select>
+          </div>
+
+          <div class="filter-group">
+            <label>Property type</label>
+            <div class="chip-row" id="f-type">
+              <button class="chip" data-val="apartment" type="button">Apartment</button>
+              <button class="chip" data-val="villa" type="button">Villa</button>
+              <button class="chip" data-val="house" type="button">House</button>
+              <button class="chip" data-val="plot" type="button">Plot</button>
+              <button class="chip" data-val="commercial" type="button">Commercial</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Status</label>
+            <div class="chip-row" id="f-status">
+              <button class="chip" data-val="sale" type="button">For sale</button>
+              <button class="chip" data-val="rent" type="button">For rent</button>
+              <button class="chip" data-val="sold" type="button">Sold</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Budget (₹)</label>
+            <div class="range-row">
+              <select id="f-minprice">
+                <option value="">Min</option>
+                <option value="5000000">₹50 L</option>
+                <option value="10000000">₹1 Cr</option>
+                <option value="20000000">₹2 Cr</option>
+                <option value="30000000">₹3 Cr</option>
+              </select>
+              <select id="f-maxprice">
+                <option value="">Max</option>
+                <option value="7500000">₹75 L</option>
+                <option value="12500000">₹1.25 Cr</option>
+                <option value="20000000">₹2 Cr</option>
+                <option value="50000000">₹5 Cr</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Min area</label>
+            <div class="range-row">
+              <input type="number" id="f-minarea" placeholder="Value" min="0">
+              <select id="f-areaunit">
+                <option value="sqft">sq.ft</option>
+                <option value="sqyd">sq.yd</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Results -->
+        <div>
+          <div class="listings-bar">
+            <div class="count"><b id="result-count">0</b> properties found</div>
+            <div>
+              <label for="f-sort" class="muted" style="font-size:.85rem;margin-right:6px">Sort</label>
+              <select id="f-sort" class="sort-select">
+                <option value="newest">Newest first</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="area-desc">Area: large to small</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-cards" id="results"></div>
+          <div class="no-results" id="no-results" style="display:none">
+            <h3>No matches</h3>
+            <p>Try widening your filters or <a href="contact.html">tell us what you're after</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
+          <p style="margin-top:14px;max-width:320px">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+        </div>
+        <div><h4>Explore</h4><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div><h4>Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
+        <div><h4>Contact</h4><a data-contact="phone" data-keep-text href="#">Call us</a><a data-contact="email" data-keep-text href="#">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Raju Real Estate. All rights reserved.</span>
+        <span>rajurealestate.com · <span data-contact="hours" data-keep-text>Office hours</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/listings.js"></script>
+</body>
+</html>

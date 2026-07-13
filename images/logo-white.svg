@@ -1,0 +1,9 @@
+<svg width="248" height="48" viewBox="0 0 248 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Raju Real Estate">
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+  <path d="M11 25 L24 13 L37 25" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M15 24 V36 H21 V29 H27 V36 H33 V24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="35.5" cy="14" r="2.4" fill="#fbbf24"/>
+  <text x="58" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#ffffff" letter-spacing="-0.4">Raju</text>
+  <text x="106" y="24" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#fbbf24" letter-spacing="-0.4">Real Estate</text>
+  <text x="58" y="39" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="#c7cbdb" letter-spacing="2.4">HYD · CHE · BLR · VJA</text>
+</svg>

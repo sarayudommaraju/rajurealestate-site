@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property — Raju Real Estate</title>
+  <meta name="description" content="Property details, photos, location map and enquiry — Raju Real Estate.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Leaflet: free OpenStreetMap map, no API key -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Raju Real Estate"></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#">Call</a>
+        <a class="btn btn--primary" href="listings.html">All listings</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="pd-root">
+    <p class="muted" style="padding:60px 0">Loading property…</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
+          <p style="margin-top:14px;max-width:320px">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
+        </div>
+        <div><h4>Explore</h4><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div><h4>Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
+        <div><h4>Contact</h4><a data-contact="phone" data-keep-text href="#">Call us</a><a data-contact="email" data-keep-text href="#">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#">WhatsApp</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Raju Real Estate. All rights reserved.</span>
+        <span>rajurealestate.com · <span data-contact="hours" data-keep-text>Office hours</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img src="" alt="Property photo" id="lb-img">
+    <button class="lb-next" aria-label="Next">›</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/property.js"></script>
+</body>
+</html>
