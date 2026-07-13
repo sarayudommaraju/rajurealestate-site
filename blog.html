@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Property — Raju Real Estate</title>
-  <meta name="description" content="Property details, photos, location map and enquiry — Raju Real Estate.">
+  <title>Blog & Market Updates — Raju Real Estate</title>
+  <meta name="description" content="Locality guides, buying checklists and market updates for property in Hyderabad, Chennai, Bengaluru and Vijayawada.">
+  <link rel="canonical" href="https://rajurealestate.com/blog">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Leaflet: free OpenStreetMap map, no API key -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Generic fallback; property.js specializes title/canonical/OG per listing for crawlers that render JS -->
-  <link rel="canonical" href="https://rajurealestate.com/listings" id="pd-canonical">
+  <meta property="og:title" content="Blog & Market Updates — Raju Real Estate">
+  <meta property="og:description" content="Locality guides, checklists and market updates across South India.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rajurealestate.com/blog">
   <meta property="og:site_name" content="Raju Real Estate">
-  <meta property="og:title" content="Property — Raju Real Estate" id="og-title">
-  <meta property="og:description" content="View property details, photos and location — Raju Real Estate." id="og-desc">
-  <meta property="og:url" content="https://rajurealestate.com/listings" id="og-url">
-  <meta property="og:image" content="https://rajurealestate.com/images/og-cover.jpg" id="og-image">
+  <meta property="og:image" content="https://rajurealestate.com/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://rajurealestate.com/images/og-cover.jpg" id="tw-image">
+  <meta name="twitter:image" content="https://rajurealestate.com/images/og-cover.jpg">
 </head>
 <body>
   <header class="site-header">
@@ -32,20 +31,27 @@
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
         <li><a href="emi.html" data-i18n="nav.emi">EMI</a></li>
-        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
         <a class="btn btn--ghost" data-contact="phone" data-keep-text href="#" data-i18n="cta.call">Call</a>
-        <a class="btn btn--primary" href="listings.html" data-i18n="cta.allListings">All listings</a>
+        <a class="btn btn--primary" href="listings.html" data-i18n="cta.browseShort">Browse</a>
       </div>
     </div>
   </header>
 
-  <main class="container" id="pd-root">
-    <p class="muted" style="padding:60px 0">Loading property…</p>
-  </main>
+  <section class="section">
+    <div class="container">
+      <div class="section-head left" style="margin-bottom:28px">
+        <span class="eyebrow" data-i18n="blog.eyebrow">Insights</span>
+        <h1 style="font-size:2.2rem;margin:0" data-i18n="blog.title">Blog & market updates</h1>
+        <p class="muted" style="margin:6px 0 0" data-i18n="blog.sub">Locality guides, buying checklists and honest market reads.</p>
+      </div>
+      <div class="grid-cards" id="blog-grid"><p class="muted">Loading…</p></div>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
@@ -54,29 +60,20 @@
           <div class="footer-brand"><img src="images/logo-white.svg" alt="Raju Real Estate"></div>
           <p style="margin-top:14px;max-width:320px" data-i18n="footer.tagline">Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.</p>
         </div>
-        <div><h4 data-i18n="footer.explore">Explore</h4><a href="index.html" data-i18n="nav.home">Home</a><a href="listings.html" data-i18n="nav.listings">Listings</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
+        <div><h4 data-i18n="footer.explore">Explore</h4><a href="index.html" data-i18n="nav.home">Home</a><a href="listings.html" data-i18n="nav.listings">Listings</a><a href="emi.html" data-i18n="nav.emi">EMI</a><a href="blog.html" data-i18n="nav.blog">Blog</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
         <div><h4 data-i18n="footer.cities">Cities</h4><a href="listings.html?city=Hyderabad">Hyderabad</a><a href="listings.html?city=Chennai">Chennai</a><a href="listings.html?city=Bengaluru">Bengaluru</a><a href="listings.html?city=Vijayawada">Vijayawada</a></div>
         <div><h4 data-i18n="footer.contact">Contact</h4><a data-contact="phone" data-keep-text href="#" data-i18n="footer.callUs">Call us</a><a data-contact="email" data-keep-text href="#" data-i18n="footer.emailUs">Email us</a><a data-contact="whatsapp" data-keep-text target="_blank" rel="noopener" href="#" data-i18n="footer.whatsapp">WhatsApp</a></div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Raju Real Estate. All rights reserved.</span>
+        <span>© <span data-year>2026</span> Raju Real Estate. <span data-i18n="footer.rights">All rights reserved.</span></span>
         <span>rajurealestate.com · <span data-contact="hours" data-keep-text>Office hours</span></span>
       </div>
     </div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <button class="lb-close" aria-label="Close">×</button>
-    <button class="lb-prev" aria-label="Previous">‹</button>
-    <img src="" alt="Property photo" id="lb-img">
-    <button class="lb-next" aria-label="Next">›</button>
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="js/config.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/site.js"></script>
-  <script src="js/property.js"></script>
+  <script src="js/blog.js"></script>
 </body>
 </html>

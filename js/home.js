@@ -28,4 +28,28 @@
       '<p class="muted">Could not load listings. If you opened this file directly, run it through a local server (see README).</p>';
     console.error(e);
   });
+
+  /* ---- Testimonials (hidden until at least one loads) ---- */
+  fetch("data/testimonials.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      var items = (j && j.testimonials) || [];
+      if (!items.length) return;
+      var grid = document.getElementById("testimonials-grid");
+      grid.innerHTML = items.slice(0, 9).map(function (t) {
+        var r = Math.max(0, Math.min(5, t.rating == null ? 5 : t.rating));
+        var stars = "★".repeat(r) + "☆".repeat(5 - r);
+        var initial = (t.name || "?").trim().charAt(0).toUpperCase();
+        return '<div class="testi-card reveal in">' +
+          '<div class="testi-stars">' + stars + '</div>' +
+          '<p class="testi-quote">' + esc(t.quote || "") + '</p>' +
+          '<div class="testi-who"><div class="ava">' + esc(initial) + '</div><div><b>' + esc(t.name || "") + '</b>' +
+          '<span>' + esc([t.deal, t.city].filter(Boolean).join(" · ")) + '</span></div></div>' +
+        '</div>';
+      }).join("");
+      document.getElementById("testimonials-section").style.display = "";
+    })
+    .catch(function () { /* no testimonials: leave section hidden */ });
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
 })();

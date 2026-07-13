@@ -17,6 +17,7 @@ const STATIC = [
   { path: "/", priority: "1.0", freq: "daily" },
   { path: "/listings", priority: "0.9", freq: "daily" },
   { path: "/emi", priority: "0.5", freq: "monthly" },
+  { path: "/blog", priority: "0.6", freq: "weekly" },
   { path: "/about", priority: "0.6", freq: "monthly" },
   { path: "/contact", priority: "0.6", freq: "monthly" },
   { path: "/sitemap", priority: "0.3", freq: "monthly" }
@@ -42,6 +43,17 @@ export async function onRequest(context) {
   } catch (_) {
     // fall through with static pages only
   }
+
+  try {
+    const res = await env.ASSETS.fetch(new URL("/data/posts.json", request.url));
+    if (res.ok) {
+      const data = await res.json();
+      (data.posts || []).forEach((p) => {
+        const lastmod = (p.date || today).slice(0, 10);
+        urls.push(urlEntry(ORIGIN + "/post?slug=" + encodeURIComponent(p.slug), lastmod, "monthly", "0.6"));
+      });
+    }
+  } catch (_) { /* blog posts optional */ }
 
   const xml =
     '<?xml version="1.0" encoding="UTF-8"?>\n' +

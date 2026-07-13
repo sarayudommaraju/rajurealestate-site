@@ -1,0 +1,23 @@
+{
+  "_readme": "Blog posts. To add one: copy an entry, give it a unique slug (used in the URL /post?slug=...), set date as YYYY-MM-DD, and write body as an HTML string (use <h2>, <p>, <ul><li>). Newest first is by date automatically. cover is optional (path under images/). Replace these SAMPLE posts with real content.",
+  "posts": [
+    {
+      "slug": "kokapet-vs-tellapur-2026",
+      "title": "Kokapet vs Tellapur: where to buy in West Hyderabad in 2026",
+      "date": "2026-07-08",
+      "author": "Radhakrishnama Raju",
+      "excerpt": "Two of Hyderabad's fastest-appreciating corridors, compared on price, connectivity, and rental demand. A practical buyer's view.",
+      "tags": ["Hyderabad", "Market update"],
+      "body": "<p><strong>SAMPLE POST — replace with your own content.</strong></p><h2>Why West Hyderabad</h2><p>The Financial District pull has turned Kokapet and Tellapur into two of the city's most-watched pockets. Both sit minutes from the ORR, both have HMDA-approved gated ventures, and both have seen sharp appreciation since 2023.</p><h2>Price and appreciation</h2><p>Kokapet commands a premium for its Neopolis layout and proximity to premium high-rises. Tellapur offers a lower entry point with strong upside as infrastructure catches up.</p><h2>Who should buy where</h2><ul><li>End-user wanting a ready high-rise: Kokapet.</li><li>Investor seeking a plot with runway: Tellapur.</li><li>Rental yield near the IT corridor: both perform well.</li></ul><p>Want a shortlist tailored to your budget? <a href=\"contact.html\">Get in touch</a>.</p>"
+    },
+    {
+      "slug": "hmda-plot-checklist",
+      "title": "Buying an open plot? A 7-point clear-title checklist",
+      "date": "2026-06-20",
+      "author": "Radhakrishnama Raju",
+      "excerpt": "Before you register an open plot in Telangana or Andhra Pradesh, run through these seven checks to avoid title trouble later.",
+      "tags": ["Plots", "Guide"],
+      "body": "<p><strong>SAMPLE POST — replace with your own content.</strong></p><h2>The 7 checks</h2><ul><li><strong>Approval:</strong> HMDA / DTCP / BMRDA layout number, verified online.</li><li><strong>Title chain:</strong> 30-year link documents, no breaks.</li><li><strong>Encumbrance certificate:</strong> clean EC for the last 15+ years.</li><li><strong>Survey number:</strong> matches the pahani / adangal record.</li><li><strong>Prohibited-property list:</strong> plot is not in 22-A / prohibited land.</li><li><strong>Physical survey:</strong> boundaries and extent match the FMB sketch.</li><li><strong>Registration value:</strong> aligns with the sub-registrar's guidance value.</li></ul><p>We run every one of these before we put a plot in front of you. <a href=\"listings.html?type=plot\">Browse verified plots</a>.</p>"
+    }
+  ]
+}

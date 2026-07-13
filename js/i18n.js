@@ -78,7 +78,9 @@
       "footer.sitemap": "Sitemap", "footer.tagline": "Verified homes, villas and plots across Hyderabad, Chennai, Bengaluru and Vijayawada.",
       "footer.rights": "All rights reserved.",
 
-      "testi.eyebrow": "Client stories", "testi.title": "What buyers say"
+      "testi.eyebrow": "Client stories", "testi.title": "What buyers say",
+      "blog.eyebrow": "Insights", "blog.title": "Blog & market updates",
+      "blog.sub": "Locality guides, buying checklists and honest market reads."
     },
     te: {
       "nav.home": "హోమ్", "nav.listings": "ప్రాపర్టీలు", "nav.about": "మా గురించి",
@@ -146,7 +148,9 @@
       "footer.sitemap": "సైట్‌మ్యాప్", "footer.tagline": "హైదరాబాద్, చెన్నై, బెంగళూరు మరియు విజయవాడలో ధృవీకరించిన ఇళ్లు, విల్లాలు మరియు ప్లాట్లు.",
       "footer.rights": "అన్ని హక్కులు సురక్షితం.",
 
-      "testi.eyebrow": "క్లయింట్ కథనాలు", "testi.title": "కొనుగోలుదారులు ఏమంటున్నారు"
+      "testi.eyebrow": "క్లయింట్ కథనాలు", "testi.title": "కొనుగోలుదారులు ఏమంటున్నారు",
+      "blog.eyebrow": "సమాచారం", "blog.title": "బ్లాగ్ & మార్కెట్ అప్‌డేట్‌లు",
+      "blog.sub": "ప్రాంత గైడ్‌లు, కొనుగోలు చెక్‌లిస్ట్‌లు మరియు నిజాయితీ మార్కెట్ విశ్లేషణ."
     }
   };
 

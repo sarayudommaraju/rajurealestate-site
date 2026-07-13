@@ -1,0 +1,26 @@
+{
+  "_readme": "Client testimonials shown on the Home page. Edit/replace these with real quotes. rating is 1-5. Keep 3-9 entries for a balanced grid.",
+  "testimonials": [
+    {
+      "name": "Sample — replace me",
+      "city": "Hyderabad",
+      "deal": "3 BHK, Kokapet",
+      "rating": 5,
+      "quote": "PLACEHOLDER. Add a real client quote here. Kept the whole process transparent, from shortlisting to registration. Highly recommend."
+    },
+    {
+      "name": "Sample — replace me",
+      "city": "Bengaluru",
+      "deal": "Villa plot, Sarjapur Road",
+      "rating": 5,
+      "quote": "PLACEHOLDER. Add a real client quote here. Found me a clear-title plot within my budget and handled all the paperwork."
+    },
+    {
+      "name": "Sample — replace me",
+      "city": "Vijayawada",
+      "deal": "2 BHK, Benz Circle",
+      "rating": 5,
+      "quote": "PLACEHOLDER. Add a real client quote here. Honest advice and quick site visits. No pushy sales tactics at all."
+    }
+  ]
+}
