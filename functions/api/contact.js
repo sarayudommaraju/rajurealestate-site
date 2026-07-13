@@ -1,9 +1,9 @@
 /*
   File: functions/contact.js
   Purpose: Cloudflare Pages Function. Receives the site's contact/enquiry form
-           (POST /contact) and emails the lead to you via the Resend API.
+           (POST /api/contact) and emails the lead to you via the Resend API.
   Engine: Cloudflare Pages Functions (Workers runtime, V8). No npm build.
-  Platform: Deploys automatically with the site; route = /contact.
+  Platform: Deploys automatically with the site; route = /api/contact.
   Env vars (set in Cloudflare dashboard → Pages project → Settings → Variables):
     RESEND_API_KEY  (required)  Resend API key, e.g. re_xxx
     LEAD_TO_EMAIL   (required)  where leads are delivered, e.g. you@gmail.com

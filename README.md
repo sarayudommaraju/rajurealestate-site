@@ -1,7 +1,7 @@
 # Raju Real Estate — rajurealestate.com
 
 Static listings site. Plain HTML/CSS/JS, no build step. Listings live in `data/listings.json`.
-Contact form is handled by a Cloudflare Pages Function (`functions/contact.js`) that emails leads via Resend.
+Contact form is handled by a Cloudflare Pages Function (`functions/api/contact.js`) that emails leads via Resend.
 
 ## Project layout
 
@@ -23,7 +23,7 @@ rajurealestate/
 │   ├── property.js     Detail page + map + EMI + enquiry
 │   └── contact.js      Contact form submit
 ├── data/listings.json  ← EDIT: all properties (source of truth)
-├── functions/contact.js  Cloudflare Pages Function (POST /contact → Resend)
+├── functions/api/contact.js  Cloudflare Pages Function (POST /api/contact → Resend)
 ├── images/
 │   ├── logo.svg, logo-white.svg, favicon.svg, placeholder.svg
 │   └── listings/<id>/  ← drop real photos here (1.jpg, 2.jpg …)
@@ -41,7 +41,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-The contact form's `/contact` endpoint only runs on Cloudflare (or `npx wrangler pages dev .`), not the plain Python server. Everything else works locally.
+The contact form's `/api/contact` endpoint only runs on Cloudflare (or `npx wrangler pages dev .`), not the plain Python server. Everything else works locally.
 
 ## Before go-live — fill these in
 

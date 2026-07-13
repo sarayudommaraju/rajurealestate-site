@@ -253,7 +253,7 @@
       btn.disabled = true; btn.textContent = "Sending…";
       var data = Object.fromEntries(new FormData(form).entries());
       data.source = "Property page: " + l.ref;
-      fetch("/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+      fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
           if (res.ok) { status.className = "form-status ok"; status.textContent = "Thanks. We'll call you shortly about " + l.ref + "."; form.reset(); if (window.rreTrack) window.rreTrack("generate_lead", { source: "property", ref: l.ref, city: l.city }); }
