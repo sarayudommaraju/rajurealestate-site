@@ -298,6 +298,7 @@ img.avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; fl
 .post-body a { color: var(--brand); text-decoration: underline; }
 
 /* ---------- Testimonials ---------- */
+#testimonials-section { scroll-margin-top: 84px; } /* clear the sticky header on anchor jump */
 .testi-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
 .testi-stars { color: var(--accent); font-size: 1rem; letter-spacing: 2px; margin-bottom: 12px; }
 .testi-quote { font-size: 1.02rem; color: var(--ink); line-height: 1.6; flex: 1; }

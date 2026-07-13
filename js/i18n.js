@@ -14,7 +14,7 @@
   var DICT = {
     en: {
       "nav.home": "Home", "nav.listings": "Listings", "nav.about": "About",
-      "nav.contact": "Contact", "nav.emi": "EMI", "nav.blog": "Blog",
+      "nav.contact": "Contact", "nav.emi": "EMI", "nav.blog": "Blog", "nav.testimonials": "Testimonials",
       "cta.call": "Call", "cta.browse": "Browse Properties", "cta.enquire": "Enquire",
       "cta.browseShort": "Browse", "cta.allListings": "All listings",
       "cta.exploreListings": "Explore listings", "cta.whatsapp": "Chat on WhatsApp",
@@ -84,7 +84,7 @@
     },
     te: {
       "nav.home": "హోమ్", "nav.listings": "ప్రాపర్టీలు", "nav.about": "మా గురించి",
-      "nav.contact": "సంప్రదించండి", "nav.emi": "EMI", "nav.blog": "బ్లాగ్",
+      "nav.contact": "సంప్రదించండి", "nav.emi": "EMI", "nav.blog": "బ్లాగ్", "nav.testimonials": "సమీక్షలు",
       "cta.call": "కాల్", "cta.browse": "ప్రాపర్టీలు చూడండి", "cta.enquire": "విచారించండి",
       "cta.browseShort": "చూడండి", "cta.allListings": "అన్ని ప్రాపర్టీలు",
       "cta.exploreListings": "ప్రాపర్టీలు చూడండి", "cta.whatsapp": "వాట్సాప్‌లో చాట్ చేయండి",
