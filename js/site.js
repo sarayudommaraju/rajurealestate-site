@@ -238,6 +238,28 @@
     window.fbq("track", "PageView");
   }
 
+  /* ---------- Count-up on numeric stats when scrolled into view ---------- */
+  function countUp() {
+    var els = document.querySelectorAll("[data-count]");
+    if (!els.length) return;
+    if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.textContent = e.getAttribute("data-count"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        var el = en.target, target = parseFloat(el.getAttribute("data-count")) || 0, start = null, dur = 900;
+        function tick(t) {
+          if (!start) start = t;
+          var p = Math.min((t - start) / dur, 1);
+          el.textContent = p < 1 ? Math.round(target * p) : target;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
   /* ---------- Scroll reveal ---------- */
   function reveal() {
     var els = document.querySelectorAll(".reveal");
@@ -246,6 +268,9 @@
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
     }, { threshold: 0.12 });
     els.forEach(function (e) { io.observe(e); });
+    // Safety net: never let a missed IntersectionObserver callback leave content
+    // permanently invisible. Force-reveal anything still hidden after 2.5s.
+    setTimeout(function () { els.forEach(function (e) { e.classList.add("in"); }); }, 2500);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -255,6 +280,7 @@
     setupAnchorScroll();
     loadGA();
     loadMetaPixel();
+    countUp();
     reveal();
   });
 })();

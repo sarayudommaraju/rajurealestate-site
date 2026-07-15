@@ -178,6 +178,43 @@ img { max-width: 100%; display: block; }
 .vstep h3 { font-family: var(--font-head); font-size: 1.06rem; margin: 8px 0 6px; color: var(--ink); }
 .vstep p { color: var(--ink-soft); font-size: .9rem; line-height: 1.5; margin: 0; }
 
+/* ---------- Full-bleed photo hero (Home) ---------- */
+.hero--full { position: relative; min-height: min(86vh, 640px); display: flex; align-items: center;
+  background: linear-gradient(100deg, rgba(9,18,30,.90) 0%, rgba(9,18,30,.62) 42%, rgba(9,18,30,.20) 82%, rgba(9,18,30,.10) 100%), var(--hero-img) center 30% / cover no-repeat; }
+.hero--full::after { display: none; }
+.hero-full-inner { position: relative; z-index: 2; max-width: 680px; padding: 72px 0; }
+.hero--full h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1.08; margin: 0 0 .45em; }
+.hero--full .lead { font-size: 1.16rem; max-width: 600px; }
+.hero-full-cap { position: absolute; right: 16px; bottom: 12px; z-index: 2; color: rgba(255,255,255,.85); font-size: .78rem; font-weight: 600; background: rgba(9,18,30,.45); backdrop-filter: blur(4px); padding: 5px 11px; border-radius: 999px; }
+@media (max-width: 700px) { .hero--full { min-height: 0; } .hero-full-inner { padding: 52px 0 60px; } }
+
+.container--narrow { max-width: 820px; }
+
+/* ---------- Full-bleed photo CTA strip ---------- */
+.photo-cta { position: relative; color: #fff; background: linear-gradient(90deg, rgba(9,18,30,.90), rgba(9,18,30,.55)), var(--cta-img) center / cover no-repeat; }
+.photo-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 56px 0; flex-wrap: wrap; }
+.photo-cta h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 8px; max-width: 620px; }
+.photo-cta p { color: rgba(255,255,255,.9); margin: 0; max-width: 620px; }
+.photo-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Process (how buying works) ---------- */
+.proc-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: proc; }
+@media (max-width: 900px) { .proc-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .proc-steps { grid-template-columns: 1fr; } }
+.proc-step { position: relative; padding: 8px 6px; }
+.proc-num { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--brand); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; margin-bottom: 14px; box-shadow: 0 8px 18px rgba(35,57,93,.28); }
+.proc-step h3 { font-family: var(--font-head); font-size: 1.06rem; margin: 0 0 6px; }
+.proc-step p { color: var(--ink-soft); font-size: .92rem; line-height: 1.55; margin: 0; }
+
+/* ---------- FAQ accordion ---------- */
+.faq { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 2px 20px; box-shadow: var(--shadow-sm); }
+.faq-item summary { list-style: none; cursor: pointer; font-family: var(--font-head); font-weight: 600; font-size: 1.02rem; padding: 16px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--gold); font-weight: 400; line-height: 1; transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { color: var(--ink-soft); line-height: 1.6; margin: 0 0 18px; }
+
 /* Premium page-header band (Listings/Contact/EMI/Blog) */
 .page-hero { background: linear-gradient(135deg, var(--indigo-900), var(--indigo-700) 60%, var(--indigo-600)); color: #fff; position: relative; overflow: hidden; }
 .page-hero::after { content: ""; position: absolute; right: -30px; bottom: 0; width: 46%; max-width: 560px; height: 100%; background: url("../images/art/skyline-light.svg") right bottom / contain no-repeat; opacity: .16; pointer-events: none; }
