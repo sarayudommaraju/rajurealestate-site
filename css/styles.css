@@ -308,6 +308,11 @@ img { max-width: 100%; display: block; }
 .pd-trust-note { display: flex; gap: 12px; align-items: flex-start; margin: 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.55; }
 .pd-trust-note svg { color: var(--gold); flex: none; margin-top: 2px; }
 .pd-trust-note a { color: var(--brand); font-weight: 600; }
+
+/* Contact: prominent WhatsApp-first box (timezone-friendly primary channel) */
+.wa-cta-box { margin-top: 24px; background: #fff; border: 1px solid var(--line); border-left: 3px solid #25d366; border-radius: var(--radius); padding: 18px 20px; }
+.wa-cta-box b { font-family: var(--font-head); display: block; margin-bottom: 4px; }
+.wa-cta-box p { font-size: .88rem; line-height: 1.5; margin: 0 0 14px; }
 .amenities { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .amenities li { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); }
 .amenities li svg { color: var(--ok); }
