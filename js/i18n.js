@@ -85,7 +85,7 @@
       "contact.sendEnquiry": "Send an enquiry", "contact.consent": "By submitting you agree to be contacted about your enquiry.",
 
       "about.eyebrow": "About us", "about.title": "One advisor. <span class=\"hl\">Four cities.</span> Zero surprises.",
-      "about.lead": "Raju Real Estate helps NRIs and out-of-state investors buy property back home across Hyderabad, Bengaluru, Chennai and Vijayawada. Title-clean inventory, video site visits, and one accountable advisor who handles the whole deal while you stay abroad.",
+      "about.lead": "Raju Real Estate helps families, first-time buyers, renters, NRIs and investors find the right property across Hyderabad, Bengaluru, Chennai and Vijayawada. Title-clean inventory, video site visits, and one accountable advisor who handles the whole deal, whether you're across town or across the world.",
       "about.who": "Who we are",
       "about.whoP1": "Raju Real Estate is a boutique advisory built on a simple promise: every property we put in front of you is verified, and every step from shortlist to registration has one accountable point of contact.",
       "about.whoP2": "We operate on the ground in four South Indian markets. For a buyer sitting in Dubai, New Jersey or Singapore, that local presence is everything: verified site visits on video, sharper pricing, and deals that close without last-minute surprises at the sub-registrar office.",
@@ -195,7 +195,7 @@
       "contact.sendEnquiry": "విచారణ పంపండి", "contact.consent": "సమర్పించడం ద్వారా మీ విచారణ గురించి సంప్రదించడానికి మీరు అంగీకరిస్తున్నారు.",
 
       "about.eyebrow": "మా గురించి", "about.title": "ఒకే సలహాదారు. <span class=\"hl\">నాలుగు నగరాలు.</span> ఎలాంటి ఆశ్చర్యాలు లేవు.",
-      "about.lead": "రాజు రియల్ ఎస్టేట్ విదేశాల్లోని భారతీయులు మరియు ఇతర రాష్ట్రాల పెట్టుబడిదారులకు హైదరాబాద్, బెంగళూరు, చెన్నై మరియు విజయవాడలో ఇంటి వద్ద ప్రాపర్టీ కొనుగోలులో సహాయపడుతుంది. టైటిల్ స్పష్టమైన ప్రాపర్టీలు, వీడియో సైట్ సందర్శనలు, మీరు విదేశాల్లో ఉన్నా మొత్తం డీల్‌ను చూసుకునే ఒకే జవాబుదారీ సలహాదారు.",
+      "about.lead": "రాజు రియల్ ఎస్టేట్ కుటుంబాలు, మొదటిసారి కొనేవారు, అద్దెదారులు, NRIలు మరియు పెట్టుబడిదారులకు హైదరాబాద్, బెంగళూరు, చెన్నై మరియు విజయవాడలో సరైన ప్రాపర్టీని కనుగొనడంలో సహాయపడుతుంది. టైటిల్ స్పష్టమైన ప్రాపర్టీలు, వీడియో సైట్ సందర్శనలు, మరియు మీరు నగరంలో ఉన్నా లేదా ప్రపంచంలో ఎక్కడైనా ఉన్నా మొత్తం డీల్‌ను చూసుకునే ఒకే జవాబుదారీ సలహాదారు.",
       "about.who": "మేము ఎవరం",
       "about.whoP1": "రాజు రియల్ ఎస్టేట్ ఒక సాధారణ వాగ్దానంపై నిర్మించబడింది: మేము మీ ముందు ఉంచే ప్రతి ప్రాపర్టీ ధృవీకరించబడుతుంది, మరియు షార్ట్‌లిస్ట్ నుండి రిజిస్ట్రేషన్ వరకు ప్రతి దశకు ఒకే జవాబుదారీ సంప్రదింపు వ్యక్తి ఉంటారు.",
       "about.whoP2": "మేము నాలుగు దక్షిణ భారత మార్కెట్లలో స్థానికంగా పనిచేస్తాం. దుబాయ్, న్యూజెర్సీ లేదా సింగపూర్‌లో ఉన్న కొనుగోలుదారుకు ఆ స్థానిక ఉనికే అంతా: వీడియోలో ధృవీకరించిన సైట్ సందర్శనలు, మెరుగైన ధరలు, సబ్-రిజిస్ట్రార్ కార్యాలయంలో చివరి నిమిషం ఆశ్చర్యాలు లేకుండా ముగిసే డీల్‌లు.",
@@ -305,7 +305,7 @@
       "contact.sendEnquiry": "पूछताछ भेजें", "contact.consent": "सबमिट करके आप अपनी पूछताछ के बारे में संपर्क किए जाने पर सहमत होते हैं।",
 
       "about.eyebrow": "हमारे बारे में", "about.title": "एक सलाहकार। <span class=\"hl\">चार शहर।</span> कोई आश्चर्य नहीं।",
-      "about.lead": "राजू रियल एस्टेट विदेश में बसे भारतीयों और दूसरे राज्यों के निवेशकों को हैदराबाद, बेंगलुरु, चेन्नई और विजयवाड़ा में घर पर प्रॉपर्टी खरीदने में मदद करता है। साफ़-टाइटल प्रॉपर्टी, वीडियो साइट विज़िट, और एक जवाबदेह सलाहकार जो आपके विदेश में रहते हुए पूरा सौदा संभालता है।",
+      "about.lead": "राजू रियल एस्टेट परिवारों, पहली बार खरीदने वालों, किराएदारों, NRI और निवेशकों को हैदराबाद, बेंगलुरु, चेन्नई और विजयवाड़ा में सही प्रॉपर्टी ढूँढने में मदद करता है। साफ़-टाइटल प्रॉपर्टी, वीडियो साइट विज़िट, और एक जवाबदेह सलाहकार जो पूरा सौदा संभालता है, चाहे आप शहर में हों या दुनिया में कहीं भी।",
       "about.who": "हम कौन हैं",
       "about.whoP1": "राजू रियल एस्टेट एक सरल वादे पर बना है: हम आपके सामने जो भी प्रॉपर्टी रखते हैं वह सत्यापित होती है, और शॉर्टलिस्ट से रजिस्ट्रेशन तक हर कदम पर एक जवाबदेह संपर्क होता है।",
       "about.whoP2": "हम चार दक्षिण भारतीय बाज़ारों में ज़मीन पर काम करते हैं। दुबई, न्यू जर्सी या सिंगापुर में बैठे खरीदार के लिए यह स्थानीय मौजूदगी ही सब कुछ है: वीडियो पर सत्यापित साइट विज़िट, बेहतर कीमत, और सब-रजिस्ट्रार कार्यालय में अंतिम समय के आश्चर्य के बिना पूरे होने वाले सौदे।",
