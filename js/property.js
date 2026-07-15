@@ -56,6 +56,21 @@
       return '<li>' + check() + '<span>' + esc(a) + '</span></li>';
     }).join("");
 
+    // Trust block: the NRI's #1 fear is title fraud. Show real proof where the
+    // listing has it (approvalNo/reraNo/ec/titleVerified); always show the
+    // due-diligence reassurance. Rows render ONLY for fields actually present.
+    var trustItems = [];
+    if (l.titleVerified) trustItems.push(trustRow("Title verified", "EC and legal opinion on file", true));
+    if (l.approvalNo) trustItems.push(trustRow("Layout / building approval", l.approvalNo));
+    if (l.reraNo) trustItems.push(trustRow("RERA registration", l.reraNo));
+    if (l.ecAvailable) trustItems.push(trustRow("Encumbrance certificate", "Available on request"));
+    var trustBlock =
+      '<div class="pd-block pd-trust">' +
+        '<h2>Title &amp; approvals</h2>' +
+        (trustItems.length ? '<div class="trust-grid">' + trustItems.join("") + '</div>' : "") +
+        '<p class="pd-trust-note">' + shieldIcon() + '<span>Every listing clears our 7-point title check before we show it. The encumbrance certificate and a lawyer\'s title opinion are available to you on request. <a href="post.html?slug=clear-title-plot-checklist">See our title checklist &rarr;</a></span></p>' +
+      '</div>';
+
     var waMsg = "Hi, I'm interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ") in " + l.locality + ", " + l.city + ".";
     var pageUrl = "https://rajurealestate.com/property?id=" + encodeURIComponent(l.id);
     var waShare = "https://wa.me/?text=" + encodeURIComponent(l.title + " — " + formatPrice(l.price) + " in " + l.locality + ", " + l.city + " · Raju Real Estate\n" + pageUrl);
@@ -65,9 +80,10 @@
       '<div class="pd-crumb"><a href="listings.html">Listings</a> › <a href="listings.html?city=' + encodeURIComponent(l.city) + '">' + esc(l.city) + '</a> › ' + esc(l.locality) + '</div>' +
       '<div class="pd-title-row">' +
         '<div>' +
-          '<div class="card-badges" style="position:static;margin-bottom:10px">' +
+          '<div class="pd-chips">' +
             '<span class="badge ' + sm.cls + '">' + sm.label + '</span>' +
-            '<span class="badge badge--type">' + typeLabel(l.type) + '</span>' +
+            '<span class="chip-type">' + typeLabel(l.type) + '</span>' +
+            (l.titleVerified ? '<span class="chip-verified">' + checkGold() + 'Title Verified</span>' : '') +
             (l.featured ? '<span class="badge badge--featured" style="position:static">★ Featured</span>' : '') +
           '</div>' +
           '<h1 style="font-size:2rem;margin:0">' + esc(l.title) + '</h1>' +
@@ -81,6 +97,7 @@
     '</div>' +
 
     '<div class="pd-gallery">' + gallery + '</div>' +
+    (l.representative ? '<p class="pd-repnote">' + infoIcon() + 'Representative image. Actual photos of this property are available on request.</p>' : '') +
 
     '<div class="pd-layout">' +
       '<div>' +
@@ -91,6 +108,8 @@
           '<p>' + esc(l.description) + '</p>' +
           (l.vastu ? '<p class="muted"><strong>Vastu:</strong> ' + esc(l.vastu) + (l.furnishing && l.furnishing !== "NA" ? ' · <strong>Furnishing:</strong> ' + esc(l.furnishing) : '') + '</p>' : '') +
         '</div>' +
+
+        trustBlock +
 
         (amenities ? '<div class="pd-block"><h2>Amenities</h2><ul class="amenities">' + amenities + '</ul></div>' : '') +
 
@@ -105,8 +124,8 @@
       '<aside class="pd-aside">' +
         '<div class="agent-card">' +
           '<div class="who"><img class="avatar" src="images/team/agent-raju.png" alt="' + esc((l.agent && l.agent.name) || "Raju") + '" onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;avatar&quot;>R</div>\'"><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
-          '<a class="btn btn--primary btn--block" data-contact="phone" data-keep-text href="#" style="margin-bottom:8px">Call now</a>' +
-          '<a class="btn btn--wa btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '" style="margin-bottom:8px">Enquire on WhatsApp</a>' +
+          '<a class="btn btn--whatsapp btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '" style="margin-bottom:8px">' + waIcon() + '<span>Enquire on WhatsApp</span></a>' +
+          '<a class="btn btn--primary btn--block" data-contact="phone" data-keep-text href="#" style="margin-bottom:8px">' + phoneIcon() + '<span>Call now</span></a>' +
           '<a class="btn btn--ghost btn--block" target="_blank" rel="noopener" href="' + waShare + '">Share this property</a>' +
         '</div>' +
 
@@ -144,6 +163,12 @@
   }
 
   function fact(v, label) { return '<div class="fact"><b>' + v + '</b><span>' + label + '</span></div>'; }
+  function trustRow(k, v, gold) { return '<div class="trow' + (gold ? ' trow--gold' : '') + '"><span class="trow-k">' + esc(k) + '</span><span class="trow-v">' + esc(v) + '</span></div>'; }
+  function checkGold() { return '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'; }
+  function shieldIcon() { return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'; }
+  function infoIcon() { return '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>'; }
+  function waIcon() { return '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.955z"/></svg>'; }
+  function phoneIcon() { return '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>'; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
   function check() { return '<svg class="icon" viewBox="0 0 24 24" style="color:var(--ok)"><path d="M20 6L9 17l-5-5"/></svg>'; }
   function pin() { return '<svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'; }
