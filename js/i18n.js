@@ -102,7 +102,10 @@
 
       "testi.eyebrow": "Client stories", "testi.title": "What buyers say",
       "blog.eyebrow": "Insights", "blog.title": "Blog & market updates",
-      "blog.sub": "Locality guides, buying checklists and honest market reads."
+      "blog.sub": "Locality guides, buying checklists and honest market reads.",
+      "nav.games": "Games",
+      "games.eyebrow": "Take a break", "games.title": "Quick games for kids & adults",
+      "games.sub": "A little fun while you browse. No downloads, no sign-up. Pick a game and play right here."
     },
     te: {
       "nav.home": "హోమ్", "nav.listings": "ప్రాపర్టీలు", "nav.about": "మా గురించి",
@@ -194,13 +197,110 @@
 
       "testi.eyebrow": "క్లయింట్ కథనాలు", "testi.title": "కొనుగోలుదారులు ఏమంటున్నారు",
       "blog.eyebrow": "సమాచారం", "blog.title": "బ్లాగ్ & మార్కెట్ అప్‌డేట్‌లు",
-      "blog.sub": "ప్రాంత గైడ్‌లు, కొనుగోలు చెక్‌లిస్ట్‌లు మరియు నిజాయితీ మార్కెట్ విశ్లేషణ."
+      "blog.sub": "ప్రాంత గైడ్‌లు, కొనుగోలు చెక్‌లిస్ట్‌లు మరియు నిజాయితీ మార్కెట్ విశ్లేషణ.",
+      "nav.games": "గేమ్స్",
+      "games.eyebrow": "కాసేపు విश్రాంతి", "games.title": "పిల్లలు & పెద్దల కోసం చిన్న గేమ్స్",
+      "games.sub": "బ్రౌజ్ చేస్తూ కాస్త వినోదం. డౌన్‌లోడ్‌లు లేవు, సైన్-అప్ లేదు. ఒక గేమ్ ఎంచుకుని ఇక్కడే ఆడండి."
+    },
+    hi: {
+      "nav.home": "होम", "nav.listings": "प्रॉपर्टी", "nav.about": "हमारे बारे में",
+      "nav.contact": "संपर्क", "nav.emi": "EMI", "nav.blog": "ब्लॉग", "nav.testimonials": "समीक्षाएँ", "nav.games": "गेम्स",
+      "cta.call": "कॉल", "cta.browse": "प्रॉपर्टी देखें", "cta.enquire": "पूछताछ करें",
+      "cta.browseShort": "देखें", "cta.allListings": "सभी प्रॉपर्टी",
+      "cta.exploreListings": "प्रॉपर्टी देखें", "cta.whatsapp": "व्हाट्सएप पर चैट करें", "cta.callNow": "अभी कॉल करें",
+      "cta.getInTouch": "संपर्क करें", "cta.contactUs": "हमसे संपर्क करें", "cta.seeListings": "प्रॉपर्टी देखें",
+      "cta.viewAll": "सभी प्रॉपर्टी देखें →", "cta.viewDetails": "विवरण देखें",
+
+      "hero.eyebrow": "विदेश में बसे भारतीयों और निवेशकों के लिए",
+      "hero.title": "आपकी आँखें, हाथ, और ज़मीन पर <span class=\"hl\">भरोसेमंद नाम</span>",
+      "hero.lead": "विदेश से हैदराबाद, बेंगलुरु, चेन्नई या विजयवाड़ा में खरीद रहे हैं? हम टाइटल जाँचते हैं, आपकी ओर से साइट देखते हैं, और पूरा सौदा संभालते हैं। केवल साफ़-टाइटल प्रॉपर्टी। एक सलाहकार जो फ़ोन उठाता है।",
+      "hero.stat.cities": "शहर", "hero.stat.live": "उपलब्ध प्रॉपर्टी", "hero.stat.verified": "हर लिस्टिंग पर टाइटल जाँच",
+      "trust.verified": "RERA / HMDA सत्यापित", "trust.title": "केवल साफ़-टाइटल प्रॉपर्टी", "trust.support": "पूरी सहायता",
+      "trust.remote": "दूर से, शुरू से अंत तक संभाला जाता है", "trust.honest": "ईमानदार सलाह, एक संपर्क",
+
+      "verify.eyebrow": "आपका पैसा सुरक्षित है",
+      "verify.title": "हम आपको टाइटल धोखाधड़ी से कैसे बचाते हैं",
+      "verify.sub": "भारतीय प्रॉपर्टी में सबसे बड़ा जोखिम खराब टाइटल है। कोई भी लिस्टिंग आप तक पहुँचने से पहले एक दस्तावेज़ी ड्यू-डिलिजेंस जाँच पास करती है। सिर्फ़ हमारी बात नहीं, कागज़ात भी आपको मिलते हैं।",
+      "verify.s1t": "लेआउट और स्वीकृतियाँ", "verify.s1b": "HMDA, DTCP, BMRDA या RERA स्वीकृति नंबरों को स्वीकृत नक्शे से मिलाया जाता है।",
+      "verify.s2t": "साफ़ टाइटल चेन", "verify.s2b": "लिंक दस्तावेज़ों के ज़रिए स्वामित्व पीछे तक जाँचा जाता है, बिना किसी अनजान अंतराल के।",
+      "verify.s3t": "एनकम्ब्रेंस सर्टिफिकेट", "verify.s3b": "13 से 15 साल का मौजूदा EC, ताकि कोई छिपा गिरवी या लियन न बचे।",
+      "verify.s4t": "कानूनी राय", "verify.s4b": "वकील की टाइटल राय और सीमा सर्वे, आपके अनुरोध पर उपलब्ध।",
+      "verify.cta": "पूरी टाइटल चेकलिस्ट पढ़ें →",
+
+      "qs.city": "शहर", "qs.type": "प्रकार", "qs.for": "के लिए", "qs.budget": "अधिकतम बजट",
+      "qs.allCities": "सभी शहर", "qs.anyType": "कोई भी प्रकार", "qs.buyOrRent": "खरीद या किराया",
+      "qs.noLimit": "कोई सीमा नहीं", "qs.search": "खोजें", "qs.buy": "खरीद", "qs.rent": "किराया",
+
+      "sec.handpicked": "चुनिंदा", "sec.featured": "विशेष प्रॉपर्टी",
+      "sec.featuredSub": "मौजूदा इन्वेंटरी में से कुछ चुनिंदा। हर हफ़्ते नई प्रॉपर्टी जोड़ी जाती हैं।",
+      "sec.whereWeOperate": "हम कहाँ काम करते हैं", "sec.fourCities": "चार शहर, एक सलाहकार",
+      "sec.whyUs": "राजू रियल एस्टेट क्यों", "sec.buySell": "भरोसे के साथ खरीदें और बेचें",
+      "why.title1": "केवल साफ़-टाइटल प्रॉपर्टी", "why.body1": "हम विवादित प्रॉपर्टी लिस्ट नहीं करते। हर लिस्टिंग आपके देखने से पहले स्वीकृतियाँ, EC और टाइटल जाँच पास करती है।",
+      "why.title2": "कहीं से भी संभाला जाता है", "why.body2": "वीडियो साइट विज़िट, रजिस्ट्रेशन, पावर ऑफ़ अटॉर्नी, होम लोन और बिक्री के बाद देखभाल। आपको आने की ज़रूरत नहीं।",
+      "why.title3": "ईमानदार सलाह", "why.body3": "एक जवाबदेह संपर्क जो आपको खराब सौदे से रोकेगा। कोई कॉल सेंटर नहीं, कोई कमीशन की दौड़ नहीं।",
+      "cta.band.title": "खरीदना, बेचना या लीज़ पर देना चाहते हैं?",
+      "cta.band.body": "हमें बताएं आपको क्या चाहिए। हम सत्यापित विकल्प शॉर्टलिस्ट करके कुछ दिनों में विज़िट तय करेंगे।",
+
+      "filters.title": "फ़िल्टर", "filters.reset": "रीसेट", "filters.keyword": "कीवर्ड",
+      "filters.keywordPh": "इलाका, रेफ़, नाम…", "filters.city": "शहर", "filters.locality": "इलाका",
+      "filters.type": "प्रॉपर्टी प्रकार", "filters.status": "स्थिति", "filters.budget": "बजट (₹)",
+      "filters.minArea": "न्यूनतम क्षेत्रफल", "filters.allLocalities": "सभी इलाके",
+      "type.apartment": "अपार्टमेंट", "type.villa": "विला", "type.house": "मकान", "type.plot": "प्लॉट", "type.commercial": "व्यावसायिक",
+      "status.sale": "बिक्री के लिए", "status.rent": "किराए के लिए", "status.sold": "बिक गया",
+      "listings.title": "प्रॉपर्टी लिस्टिंग", "listings.sub": "चारों शहरों में फ़िल्टर करें। कीमतें भारतीय ₹ (लाख/करोड़) में।",
+      "listings.found": "प्रॉपर्टी मिलीं", "listings.sort": "क्रम", "listings.mobileFilters": "☰ फ़िल्टर",
+      "sort.newest": "नई पहले", "sort.priceAsc": "कीमत: कम से ज़्यादा", "sort.priceDesc": "कीमत: ज़्यादा से कम", "sort.areaDesc": "क्षेत्रफल: बड़े से छोटा",
+
+      "form.name": "नाम", "form.phone": "फ़ोन", "form.email": "ईमेल", "form.city": "पसंद का शहर",
+      "form.message": "संदेश", "form.send": "पूछताछ भेजें", "form.any": "कोई भी",
+      "form.namePh": "आपका नाम", "form.msgPh": "बजट, प्रॉपर्टी प्रकार, समय…",
+      "contact.eyebrow": "संपर्क करें", "contact.title": "आइए आपकी प्रॉपर्टी ढूँढें",
+      "contact.sub": "आप दुनिया में कहीं भी हों, हमें बताएं आपको क्या चाहिए। व्हाट्सएप सबसे तेज़ है और हर टाइम ज़ोन में काम करता है। हम एक कार्यदिवस (IST) में जवाब देते हैं।",
+      "contact.phone": "फ़ोन", "contact.email": "ईमेल", "contact.office": "कार्यालय", "contact.hours": "समय (IST)",
+      "contact.waLead": "हम तक पहुँचने का सबसे तेज़ तरीका", "contact.waNote": "व्हाट्सएप हर टाइम ज़ोन में काम करता है। कभी भी संदेश भेजें, हम एक कार्यदिवस (IST) में जवाब देते हैं।",
+      "contact.sendEnquiry": "पूछताछ भेजें", "contact.consent": "सबमिट करके आप अपनी पूछताछ के बारे में संपर्क किए जाने पर सहमत होते हैं।",
+
+      "about.eyebrow": "हमारे बारे में", "about.title": "एक सलाहकार। <span class=\"hl\">चार शहर।</span> कोई आश्चर्य नहीं।",
+      "about.lead": "राजू रियल एस्टेट विदेश में बसे भारतीयों और दूसरे राज्यों के निवेशकों को हैदराबाद, बेंगलुरु, चेन्नई और विजयवाड़ा में घर पर प्रॉपर्टी खरीदने में मदद करता है। साफ़-टाइटल प्रॉपर्टी, वीडियो साइट विज़िट, और एक जवाबदेह सलाहकार जो आपके विदेश में रहते हुए पूरा सौदा संभालता है।",
+      "about.who": "हम कौन हैं",
+      "about.whoP1": "राजू रियल एस्टेट एक सरल वादे पर बना है: हम आपके सामने जो भी प्रॉपर्टी रखते हैं वह सत्यापित होती है, और शॉर्टलिस्ट से रजिस्ट्रेशन तक हर कदम पर एक जवाबदेह संपर्क होता है।",
+      "about.whoP2": "हम चार दक्षिण भारतीय बाज़ारों में ज़मीन पर काम करते हैं। दुबई, न्यू जर्सी या सिंगापुर में बैठे खरीदार के लिए यह स्थानीय मौजूदगी ही सब कुछ है: वीडियो पर सत्यापित साइट विज़िट, बेहतर कीमत, और सब-रजिस्ट्रार कार्यालय में अंतिम समय के आश्चर्य के बिना पूरे होने वाले सौदे।",
+      "about.handle": "हम क्या संभालते हैं",
+      "about.directLine": "चारों शहरों में NRI खरीदारों, विक्रेताओं और निवेशकों के लिए सीधी लाइन। व्हाट्सएप हर टाइम ज़ोन में काम करता है।",
+      "about.stat.cities": "शहर", "about.stat.check": "प्रति लिस्टिंग टाइटल जाँच", "about.stat.contact": "एक संपर्क बिंदु", "about.stat.always": "हमेशा",
+      "about.ctaTitle": "जब आप तैयार हों", "about.ctaBody": "खरीदना, बेचना या लीज़, एक बातचीत से शुरू करें।",
+
+      "nri.eyebrow": "विदेश से खरीदना",
+      "nri.title": "जब आप आ नहीं सकते तो यह ऐसे काम करता है",
+      "nri.sub": "सुरक्षित खरीदने के लिए आपको देश में होने की ज़रूरत नहीं। हम ज़मीन पर आपकी आँखें और हाथ हैं, और हर कदम दस्तावेज़ी होता है।",
+      "nri.s1t": "बात करें और शॉर्टलिस्ट करें", "nri.s1b": "आपका बजट, शहर और लक्ष्य समझने के लिए व्हाट्सएप या वीडियो कॉल। हम केवल साफ़-टाइटल विकल्प शॉर्टलिस्ट करते हैं।",
+      "nri.s2t": "वीडियो साइट विज़िट", "nri.s2b": "प्रॉपर्टी, इलाके और पड़ोसियों पर ईमानदार टिप्पणी के साथ लाइव वीडियो वॉकथ्रू।",
+      "nri.s3t": "टाइटल और कागज़ात", "nri.s3b": "स्वीकृतियाँ, EC और कानूनी राय सत्यापित। पावर ऑफ़ अटॉर्नी की व्यवस्था ताकि आप जहाँ हैं वहीं से हस्ताक्षर कर सकें।",
+      "nri.s4t": "रजिस्ट्रेशन और हैंडओवर", "nri.s4b": "हम रजिस्ट्रेशन, होम लोन समन्वय और हैंडओवर संभालते हैं, और ज़रूरत हो तो बिक्री के बाद देखभाल भी।",
+
+      "emi.nav": "EMI कैलकुलेटर", "emi.eyebrow": "होम लोन", "emi.title": "EMI कैलकुलेटर",
+      "emi.sub": "अपनी मासिक होम-लोन किस्त का अनुमान लगाएं। केवल संकेतात्मक।",
+      "emi.price": "प्रॉपर्टी कीमत (₹)", "emi.down": "डाउन पेमेंट (%)", "emi.rate": "ब्याज दर (% प्रति वर्ष)",
+      "emi.tenure": "अवधि (वर्ष)", "emi.loanAmount": "लोन राशि", "emi.monthly": "मासिक EMI",
+      "emi.totalInterest": "कुल ब्याज", "emi.totalPayable": "कुल देय",
+      "emi.note": "केवल संकेतात्मक। प्रोसेसिंग फ़ीस, बीमा और कर शामिल नहीं। असली दरें अपने ऋणदाता से पुष्टि करें।",
+
+      "footer.explore": "एक्सप्लोर करें", "footer.cities": "शहर", "footer.contact": "संपर्क",
+      "footer.callUs": "हमें कॉल करें", "footer.emailUs": "हमें ईमेल करें", "footer.whatsapp": "व्हाट्सएप",
+      "footer.sitemap": "साइटमैप", "footer.tagline": "हैदराबाद, चेन्नई, बेंगलुरु और विजयवाड़ा में सत्यापित घर, विला और प्लॉट।",
+      "footer.rights": "सर्वाधिकार सुरक्षित।",
+
+      "testi.eyebrow": "ग्राहक कहानियाँ", "testi.title": "खरीदार क्या कहते हैं",
+      "blog.eyebrow": "जानकारी", "blog.title": "ब्लॉग और मार्केट अपडेट",
+      "blog.sub": "इलाका गाइड, खरीद चेकलिस्ट और ईमानदार मार्केट विश्लेषण.",
+      "games.eyebrow": "थोड़ा ब्रेक लें", "games.title": "बच्चों और बड़ों के लिए छोटे गेम्स",
+      "games.sub": "ब्राउज़ करते हुए थोड़ी मस्ती। कोई डाउनलोड नहीं, कोई साइन-अप नहीं। एक गेम चुनें और यहीं खेलें।"
     }
   };
 
   function getLang() {
     var l = localStorage.getItem("rre_lang");
-    return l === "te" ? "te" : "en";
+    return (l === "te" || l === "hi") ? l : "en";
   }
 
   function t(key, lang) {
@@ -210,7 +310,7 @@
 
   function applyLang(lang) {
     localStorage.setItem("rre_lang", lang);
-    document.documentElement.setAttribute("lang", lang === "te" ? "te" : "en");
+    document.documentElement.setAttribute("lang", (lang === "te" || lang === "hi") ? lang : "en");
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var v = t(el.getAttribute("data-i18n"), lang);
@@ -241,7 +341,8 @@
     wrap.className = "lang-toggle";
     wrap.innerHTML =
       '<button type="button" data-lang="en" aria-label="English">EN</button>' +
-      '<button type="button" data-lang="te" aria-label="తెలుగు">తె</button>';
+      '<button type="button" data-lang="te" aria-label="తెలుగు">తె</button>' +
+      '<button type="button" data-lang="hi" aria-label="हिन्दी">हि</button>';
     cta.insertBefore(wrap, cta.firstChild);
     wrap.addEventListener("click", function (e) {
       var b = e.target.closest("button[data-lang]"); if (!b) return;
