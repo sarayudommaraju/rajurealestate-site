@@ -20,17 +20,27 @@ window.cardHTML = function (l) {
     specs.push(specHTML("area", "Area", formatArea(l.areaValue, l.areaUnit)));
   }
 
+  // Trust chip renders ONLY when a listing is explicitly flagged verified in data.
+  // Never blanket-enable: an unearned "Title Verified" mark is the exact fraud
+  // an NRI buyer fears. Owner sets titleVerified:true + approvalNo per listing.
+  var verified = l.titleVerified === true;
+  // Representative label: shown when the photo is free-license stock, not the
+  // actual asset. Honesty guard so a stock image is never read as the property.
+  var isRep = l.representative === true;
+
   return '' +
   '<article class="card reveal">' +
     '<a class="card-media" href="property.html?id=' + l.id + '" aria-label="' + esc(l.title) + '">' +
       '<img src="' + thumb + '" alt="' + esc(l.title) + '" loading="lazy" onerror="' + imgFallback + '">' +
-      '<div class="card-badges">' +
-        '<span class="badge ' + sm.cls + '">' + sm.label + '</span>' +
-        '<span class="badge badge--type">' + typeLabel(l.type) + '</span>' +
-      '</div>' +
+      '<span class="card-status badge ' + sm.cls + '">' + sm.label + '</span>' +
       (l.featured ? '<span class="badge badge--featured">★ Featured</span>' : '') +
+      (isRep ? '<span class="card-repflag" title="Free-license stock, not the actual property">Representative image</span>' : '') +
     '</a>' +
     '<div class="card-body">' +
+      '<div class="card-chips">' +
+        '<span class="chip-type">' + typeLabel(l.type) + '</span>' +
+        (verified ? '<span class="chip-verified">' + checkIcon() + 'Title Verified</span>' : '') +
+      '</div>' +
       '<div class="card-price">' + formatPrice(l.price) + (l.negotiable ? ' <small>Negotiable</small>' : '') + '</div>' +
       '<a href="property.html?id=' + l.id + '"><h3 class="card-title">' + esc(l.title) + '</h3></a>' +
       '<div class="card-loc">' + pinIcon() + esc(l.locality) + ', ' + esc(l.city) + '</div>' +
@@ -49,6 +59,7 @@ function specHTML(icon, label, val) {
 }
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
 function pinIcon() { return '<svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'; }
+function checkIcon() { return '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'; }
 function waMini() { return '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>'; }
 function iconSvg(name) {
   var paths = {

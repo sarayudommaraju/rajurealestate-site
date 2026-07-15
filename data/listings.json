@@ -1,5 +1,5 @@
 {
-  "_readme": "SOURCE OF TRUTH for all listings. Edit this file, commit, push. Cloudflare rebuilds in ~1 min. price is in whole Indian Rupees (no commas). areaUnit: sqft | sqyd | acre. status: sale | sold | rent. type: plot | house | villa | apartment | commercial. Put photos in images/listings/<id>/ and list filenames in images[]; missing files auto-fall back to the placeholder.",
+  "_readme": "SOURCE OF TRUTH for all listings. Edit this file, commit, push. Cloudflare rebuilds in ~1 min. price is in whole Indian Rupees (no commas). areaUnit: sqft | sqyd | acre. status: sale | sold | rent. type: plot | house | villa | apartment | commercial. Put photos in images/listings/<id>/ and list filenames in images[]; missing files auto-fall back to the placeholder. | TRUST FIELDS (optional, per listing): titleVerified (true only when you hold EC/legal opinion — renders the gold 'Title Verified' chip; never set without real proof), approvalNo (e.g. 'HMDA/2451/2023'), reraNo, ecAvailable (true/false). | representative:true marks a free-license stock photo (not the actual asset) and shows a 'Representative image' label — remove it once real photos are added.",
   "listings": [
     {
       "id": "hyd-001",
@@ -14,7 +14,11 @@
       "address": "Neopolis Layout, Kokapet, Hyderabad, Telangana 500075",
       "lat": 17.4021,
       "lng": 78.3389,
-      "landmarks": ["5 min to ORR Exit 18", "Near DLF Cyber City", "10 min to Financial District"],
+      "landmarks": [
+        "5 min to ORR Exit 18",
+        "Near DLF Cyber City",
+        "10 min to Financial District"
+      ],
       "beds": 4,
       "baths": 5,
       "areaValue": 3850,
@@ -30,9 +34,25 @@
       "featured": true,
       "listedOn": "2026-06-18",
       "description": "A corner sky villa in Kokapet's Neopolis corridor, Hyderabad's fastest-appreciating pocket. Double-height living, private deck, and uninterrupted west skyline. Clubhouse, infinity pool, and concierge on site. Walking distance to upcoming metro and premium schools.",
-      "amenities": ["Infinity pool", "Clubhouse", "Gym", "24x7 security", "Power backup", "Kids play area", "EV charging", "Landscaped gardens"],
-      "images": ["1.jpg", "2.jpg", "3.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Infinity pool",
+        "Clubhouse",
+        "Gym",
+        "24x7 security",
+        "Power backup",
+        "Kids play area",
+        "EV charging",
+        "Landscaped gardens"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      }
     },
     {
       "id": "hyd-002",
@@ -47,7 +67,11 @@
       "address": "Survey 44, Gated Community, Tellapur, Hyderabad, Telangana 502032",
       "lat": 17.4835,
       "lng": 78.2934,
-      "landmarks": ["Near Sanjeevaiah Park", "8 min to Gopanpally", "Close to ISB & IIIT"],
+      "landmarks": [
+        "Near Sanjeevaiah Park",
+        "8 min to Gopanpally",
+        "Close to ISB & IIIT"
+      ],
       "beds": 0,
       "baths": 0,
       "areaValue": 267,
@@ -60,9 +84,24 @@
       "featured": true,
       "listedOn": "2026-06-30",
       "description": "HMDA-approved open plot in a fully developed gated venture at Tellapur. Blacktop roads, avenue plantation, underground drainage, and overhead water. Clear title, ready for immediate registration and construction. Strong rental catchment from the IT corridor.",
-      "amenities": ["Gated community", "Blacktop roads", "Underground drainage", "Avenue plantation", "Overhead water tank", "Compound wall", "Street lighting"],
-      "images": ["1.jpg", "2.jpg", "3.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Gated community",
+        "Blacktop roads",
+        "Underground drainage",
+        "Avenue plantation",
+        "Overhead water tank",
+        "Compound wall",
+        "Street lighting"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      }
     },
     {
       "id": "hyd-003",
@@ -77,7 +116,11 @@
       "address": "Whitefields, Kondapur, Hyderabad, Telangana 500084",
       "lat": 17.4657,
       "lng": 78.3691,
-      "landmarks": ["Near Botanical Garden Metro", "5 min to HITEC City", "Walk to Whitefields"],
+      "landmarks": [
+        "Near Botanical Garden Metro",
+        "5 min to HITEC City",
+        "Walk to Whitefields"
+      ],
       "beds": 3,
       "baths": 3,
       "areaValue": 1780,
@@ -91,9 +134,24 @@
       "featured": false,
       "listedOn": "2026-04-10",
       "description": "Sold in 2026. A furnished 3 BHK in the heart of Kondapur, minutes from HITEC City. Reference listing showing the calibre of inventory Raju Real Estate closes.",
-      "amenities": ["Gym", "Swimming pool", "Clubhouse", "Power backup", "Covered parking", "24x7 security"],
-      "images": ["1.jpg", "2.jpg", "3.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Gym",
+        "Swimming pool",
+        "Clubhouse",
+        "Power backup",
+        "Covered parking",
+        "24x7 security"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      },
+      "representative": true
     },
     {
       "id": "che-001",
@@ -108,7 +166,11 @@
       "address": "Rajiv Gandhi Salai (OMR), Perungudi, Chennai, Tamil Nadu 600096",
       "lat": 12.9611,
       "lng": 80.2453,
-      "landmarks": ["On OMR IT corridor", "5 min to Perungudi Metro (upcoming)", "Near Thoraipakkam"],
+      "landmarks": [
+        "On OMR IT corridor",
+        "5 min to Perungudi Metro (upcoming)",
+        "Near Thoraipakkam"
+      ],
       "beds": 3,
       "baths": 3,
       "areaValue": 1560,
@@ -122,9 +184,25 @@
       "featured": true,
       "listedOn": "2026-06-25",
       "description": "Bright east-facing 3 BHK on OMR, Chennai's IT spine. Cross-ventilated, sea breeze through the day, and a rooftop deck. Zero-commute to Perungudi and Thoraipakkam tech parks. RERA registered project.",
-      "amenities": ["Rooftop deck", "Gym", "Children's play area", "Power backup", "Rainwater harvesting", "Covered parking", "Security"],
-      "images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Rooftop deck",
+        "Gym",
+        "Children's play area",
+        "Power backup",
+        "Rainwater harvesting",
+        "Covered parking",
+        "Security"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      }
     },
     {
       "id": "che-002",
@@ -139,7 +217,11 @@
       "address": "Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020",
       "lat": 13.0012,
       "lng": 80.2565,
-      "landmarks": ["Near Adyar signal", "Walk to Marina & beach road", "Close to IIT Madras"],
+      "landmarks": [
+        "Near Adyar signal",
+        "Walk to Marina & beach road",
+        "Close to IIT Madras"
+      ],
       "beds": 4,
       "baths": 4,
       "areaValue": 2400,
@@ -154,9 +236,24 @@
       "featured": false,
       "listedOn": "2026-05-20",
       "description": "A rare independent house on a 2000 sqft plot in prime Adyar. Ground plus one, private car porch, and a terrace garden. Blue-chip location with schools, hospitals, and the beach within reach.",
-      "amenities": ["Private garden", "Car porch", "Borewell + metro water", "Terrace access", "Modular kitchen", "Solar water heater"],
-      "images": ["1.jpg", "2.jpg", "3.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Private garden",
+        "Car porch",
+        "Borewell + metro water",
+        "Terrace access",
+        "Modular kitchen",
+        "Solar water heater"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      },
+      "representative": true
     },
     {
       "id": "blr-001",
@@ -170,8 +267,12 @@
       "locality": "Whitefield",
       "address": "Whitefield Main Road, Bengaluru, Karnataka 560066",
       "lat": 12.9698,
-      "lng": 77.7500,
-      "landmarks": ["Near Whitefield Metro (Purple Line)", "5 min to ITPL", "Walk to Phoenix Marketcity"],
+      "lng": 77.75,
+      "landmarks": [
+        "Near Whitefield Metro (Purple Line)",
+        "5 min to ITPL",
+        "Walk to Phoenix Marketcity"
+      ],
       "beds": 3,
       "baths": 3,
       "areaValue": 1685,
@@ -185,9 +286,26 @@
       "featured": true,
       "listedOn": "2026-07-01",
       "description": "Metro-connected 3 BHK in the Whitefield tech belt. Walk to the new Purple Line station and ITPL. Resort-style amenities, low-density towers, and a 2-acre central park. RERA approved.",
-      "amenities": ["Swimming pool", "Clubhouse", "Gym", "Amphitheatre", "Jogging track", "EV charging", "24x7 security", "Power backup"],
-      "images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Swimming pool",
+        "Clubhouse",
+        "Gym",
+        "Amphitheatre",
+        "Jogging track",
+        "EV charging",
+        "24x7 security",
+        "Power backup"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      }
     },
     {
       "id": "blr-002",
@@ -200,9 +318,13 @@
       "city": "Bengaluru",
       "locality": "Sarjapur Road",
       "address": "Off Sarjapur Main Road, Bengaluru, Karnataka 562125",
-      "lat": 12.8590,
+      "lat": 12.859,
       "lng": 77.7856,
-      "landmarks": ["Near Wipro Corporate Office", "10 min to RGA Tech Park", "Close to proposed STRR"],
+      "landmarks": [
+        "Near Wipro Corporate Office",
+        "10 min to RGA Tech Park",
+        "Close to proposed STRR"
+      ],
       "beds": 0,
       "baths": 0,
       "areaValue": 1500,
@@ -215,9 +337,23 @@
       "featured": false,
       "listedOn": "2026-06-12",
       "description": "BMRDA-approved villa plot in a gated layout off Sarjapur Road, one of Bengaluru's top appreciation corridors. Clear title, ready to build. Surrounded by tech parks and international schools.",
-      "amenities": ["Gated layout", "Tar roads", "Underground utilities", "Clubhouse (shared)", "Parks", "Security"],
-      "images": ["1.jpg", "2.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Gated layout",
+        "Tar roads",
+        "Underground utilities",
+        "Clubhouse (shared)",
+        "Parks",
+        "Security"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      },
+      "representative": true
     },
     {
       "id": "vja-001",
@@ -230,9 +366,13 @@
       "city": "Vijayawada",
       "locality": "Benz Circle",
       "address": "MG Road, Benz Circle, Vijayawada, Andhra Pradesh 520008",
-      "lat": 16.5010,
-      "lng": 80.6480,
-      "landmarks": ["At Benz Circle junction", "5 min to PVP Mall", "Near Vijayawada Railway Station"],
+      "lat": 16.501,
+      "lng": 80.648,
+      "landmarks": [
+        "At Benz Circle junction",
+        "5 min to PVP Mall",
+        "Near Vijayawada Railway Station"
+      ],
       "beds": 2,
       "baths": 2,
       "areaValue": 1180,
@@ -246,9 +386,23 @@
       "featured": true,
       "listedOn": "2026-06-28",
       "description": "Central 2 BHK at Benz Circle, the commercial heart of Vijayawada. Walk to malls, hospitals, and the arterial MG Road. Strong rental demand and easy resale. Lift, backup, covered parking.",
-      "amenities": ["Lift", "Power backup", "Covered parking", "CCTV security", "Water softener", "Terrace garden"],
-      "images": ["1.jpg", "2.jpg", "3.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Lift",
+        "Power backup",
+        "Covered parking",
+        "CCTV security",
+        "Water softener",
+        "Terrace garden"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      }
     },
     {
       "id": "vja-002",
@@ -261,9 +415,13 @@
       "city": "Vijayawada",
       "locality": "Auto Nagar",
       "address": "Auto Nagar, Vijayawada, Andhra Pradesh 520007",
-      "lat": 16.4890,
-      "lng": 80.6890,
-      "landmarks": ["On main Auto Nagar road", "High footfall zone", "Near NH-16 access"],
+      "lat": 16.489,
+      "lng": 80.689,
+      "landmarks": [
+        "On main Auto Nagar road",
+        "High footfall zone",
+        "Near NH-16 access"
+      ],
       "beds": 0,
       "baths": 2,
       "areaValue": 3200,
@@ -277,9 +435,23 @@
       "featured": false,
       "listedOn": "2026-05-30",
       "description": "Ground-floor showroom space on the high-traffic Auto Nagar road, available for lease. 3200 sqft frontage-heavy layout, ideal for retail, showroom, or branch office. Ample customer parking.",
-      "amenities": ["Wide frontage", "Customer parking", "Power backup", "Restrooms", "Loading access", "NH-16 connectivity"],
-      "images": ["1.jpg", "2.jpg"],
-      "agent": { "name": "Radhakrishnama Raju", "role": "Managing Director, Real Estate Advisory" }
+      "amenities": [
+        "Wide frontage",
+        "Customer parking",
+        "Power backup",
+        "Restrooms",
+        "Loading access",
+        "NH-16 connectivity"
+      ],
+      "images": [
+        "1.jpg",
+        "2.jpg"
+      ],
+      "agent": {
+        "name": "Radhakrishnama Raju",
+        "role": "Managing Director, Real Estate Advisory"
+      },
+      "representative": true
     }
   ]
 }

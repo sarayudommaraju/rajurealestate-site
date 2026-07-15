@@ -11,17 +11,18 @@
   /* Brand palette — navy + copper, matched to the Raju Real Estate logo.
      Scale names kept (indigo and amber) so every component that references
      them re-skins from these values alone. */
-  --indigo-900: #0f2036;
-  --indigo-800: #17293f;
+  --indigo-900: #0b1626;   /* near-black navy — dramatic hero surfaces (premium re-skin) */
+  --indigo-800: #12233a;
   --indigo-700: #1e3453;
   --indigo-600: #23395d;   /* brand navy */
   --indigo-500: #2c476f;
   --indigo-100: #dbe4ef;
   --indigo-50:  #eef3f8;
 
-  --amber-500: #c17a3f;    /* brand copper */
-  --amber-400: #d59259;
-  --amber-100: #f3e3d3;
+  --amber-500: #b07a35;    /* brushed gold — refined from copper for the premium re-skin */
+  --amber-400: #c99552;
+  --amber-100: #f1e4d0;
+  --gold: #b07a35;         /* semantic alias used by trust marks + CTAs */
 
   --ink:      #0f1222;   /* near-black text */
   --ink-soft: #4b5168;   /* secondary text */
@@ -197,13 +198,23 @@ img { max-width: 100%; display: block; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card-media { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-50)); overflow: hidden; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; }
-.card-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
-.badge { font-family: var(--font-head); font-weight: 700; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; color: #fff; }
+/* Card image overlays: exactly ONE pill per corner so nothing ever collides.
+   Root cause of the old bug: status + type + featured all fought for the top row
+   and the type label got clipped on narrow cards. Type now lives in the body. */
+.badge { font-family: var(--font-head); font-weight: 700; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; color: #fff; }
+.card-status { position: absolute; top: 12px; left: 12px; box-shadow: 0 2px 8px rgba(11,22,38,.28); }
 .badge--sale { background: var(--ok); }
 .badge--sold { background: var(--sold); }
 .badge--rent { background: var(--rent); }
-.badge--type { background: rgba(15,18,34,.72); }
-.badge--featured { position: absolute; top: 12px; right: 12px; background: var(--accent); color: #241a00; }
+.badge--featured { position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, var(--amber-400), var(--gold)); color: #241a00; box-shadow: 0 2px 8px rgba(11,22,38,.28); }
+/* Honesty label for free-license stock photos on the 4 photo-less listings. */
+.card-repflag { position: absolute; left: 12px; bottom: 12px; font-family: var(--font-head); font-size: .64rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: #fff; background: rgba(11,22,38,.72); backdrop-filter: blur(2px); padding: 4px 9px; border-radius: 999px; }
+
+/* Type + trust chips: in the card body, clear of the photo. */
+.card-chips { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.chip-type { font-family: var(--font-head); font-weight: 700; font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; color: var(--brand); background: var(--indigo-50); border: 1px solid var(--indigo-100); padding: 4px 10px; border-radius: 999px; }
+.chip-verified { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-head); font-weight: 700; font-size: .68rem; letter-spacing: .03em; text-transform: uppercase; color: #6a4a12; background: var(--amber-100); border: 1px solid #e2c48f; padding: 4px 10px; border-radius: 999px; }
+.chip-verified svg { color: var(--gold); }
 .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
 .card-price { font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--brand-dark); }
 .card-price small { font-weight: 600; font-size: .8rem; color: var(--ink-soft); }
