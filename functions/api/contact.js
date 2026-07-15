@@ -19,12 +19,24 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  // Basic CORS/JSON guard. Same-origin form, so keep it simple.
+  // JSON responses carry hardening headers and are never cached (they hold PII).
   const json = (obj, status = 200) =>
     new Response(JSON.stringify(obj), {
       status,
-      headers: { "Content-Type": "application/json" }
+      headers: {
+        "Content-Type": "application/json",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer"
+      }
     });
+
+  // Reject anything that isn't a same-origin JSON POST of a sane size.
+  if ((request.headers.get("Content-Type") || "").indexOf("application/json") === -1) {
+    return json({ ok: false, error: "Invalid request." }, 415);
+  }
+  const clen = +(request.headers.get("Content-Length") || 0);
+  if (clen > 20000) return json({ ok: false, error: "Payload too large." }, 413);
 
   let body;
   try {
@@ -35,6 +47,26 @@ export async function onRequestPost(context) {
 
   // Honeypot: bots fill _hp. Pretend success, send nothing.
   if (body._hp) return json({ ok: true });
+
+  // Cloudflare Turnstile: enforced only when the secret is configured, so the
+  // form keeps working until Turnstile is set up. Verifies the client token
+  // against Cloudflare and binds it to the caller's IP.
+  if (env.TURNSTILE_SECRET_KEY) {
+    const token = (body.token || "").toString();
+    if (!token) return json({ ok: false, error: "Verification required." }, 403);
+    try {
+      const fd = new FormData();
+      fd.append("secret", env.TURNSTILE_SECRET_KEY);
+      fd.append("response", token);
+      const ip = request.headers.get("CF-Connecting-IP");
+      if (ip) fd.append("remoteip", ip);
+      const vr = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: fd });
+      const vj = await vr.json();
+      if (!vj.success) return json({ ok: false, error: "Verification failed. Please try again." }, 403);
+    } catch (_) {
+      return json({ ok: false, error: "Could not verify. Please try again." }, 502);
+    }
+  }
 
   const name = (body.name || "").toString().trim().slice(0, 120);
   const phone = (body.phone || "").toString().trim().slice(0, 40);

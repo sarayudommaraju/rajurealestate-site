@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=p19">
+  <link rel="stylesheet" href="css/styles.css?v=p20">
   <meta property="og:title" content="Contact — Raju Real Estate">
   <meta property="og:description" content="Call, WhatsApp or send an enquiry about property in Hyderabad, Chennai, Bengaluru or Vijayawada.">
   <meta property="og:type" content="website">
@@ -95,6 +95,7 @@
               <select name="city"><option value="" data-i18n="form.any">Any</option><option>Hyderabad</option><option>Chennai</option><option>Bengaluru</option><option>Vijayawada</option></select>
             </div>
             <div class="form-field"><label data-i18n="form.message">Message</label><textarea name="message" data-i18n-ph="form.msgPh" placeholder="Budget, property type, timeline…"></textarea></div>
+            <div id="turnstile-widget" class="ts-widget"></div>
             <button class="btn btn--primary btn--block" type="submit" data-i18n="form.send">Send enquiry</button>
             <div class="form-status" id="contact-status"></div>
             <p class="form-note" style="margin-top:10px" data-i18n="contact.consent">By submitting you agree to be contacted about your enquiry.</p>
@@ -122,9 +123,10 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=p19"></script>
-  <script src="js/i18n.js?v=p19"></script>
-  <script src="js/site.js?v=p19"></script>
-  <script src="js/contact.js?v=p19"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=rreTurnstileLoad" async defer></script>
+  <script src="js/config.js?v=p20"></script>
+  <script src="js/i18n.js?v=p20"></script>
+  <script src="js/site.js?v=p20"></script>
+  <script src="js/contact.js?v=p20"></script>
 </body>
 </html>

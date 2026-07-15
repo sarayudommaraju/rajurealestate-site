@@ -25,6 +25,12 @@ window.RRE_CONFIG = {
      Contact, form submits -> Lead, so ad sets can optimise for conversions. */
   metaPixelId: "",
 
+  /* Cloudflare Turnstile PUBLIC site key for contact-form spam protection,
+     e.g. 0x4AAAAAAA... Create a free widget at Cloudflare -> Turnstile.
+     Leave blank to disable (form still works). The matching SECRET key goes in
+     the Pages env var TURNSTILE_SECRET_KEY (never in this client file). */
+  turnstileSiteKey: "",
+
   /* Default map center (Hyderabad) when a listing has no coordinates. */
   mapDefault: { lat: 17.4239, lng: 78.4738, zoom: 11 },
 
