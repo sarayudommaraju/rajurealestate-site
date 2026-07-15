@@ -152,9 +152,18 @@
     document.head.appendChild(s);
   }
 
-  /* ---------- Analytics event helper + auto WhatsApp/phone tracking ---------- */
+  /* ---------- Analytics event helper + auto WhatsApp/phone tracking ----------
+     Fires to GA4 (gtag) and Meta Pixel (fbq) when either is configured. Key
+     conversions map to Meta standard events so ad campaigns can optimise:
+     whatsapp/phone clicks -> Contact, form submits -> Lead. Everything else
+     goes to a custom event. No-ops silently when neither tag is loaded. */
+  var META_STD = { whatsapp_click: "Contact", phone_click: "Contact", generate_lead: "Lead" };
   window.rreTrack = function (name, params) {
     if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+    if (typeof window.fbq === "function") {
+      if (META_STD[name]) window.fbq("track", META_STD[name], params || {});
+      else window.fbq("trackCustom", name, params || {});
+    }
   };
   function setupTracking() {
     document.addEventListener("click", function (e) {
@@ -213,6 +222,22 @@
     gtag("config", C.ga4Id);
   }
 
+  /* ---------- Meta (Facebook) Pixel — only if id present ----------
+     Standard base snippet. Fires PageView on load; rreTrack() fires Contact
+     and Lead conversions for ad optimisation. Leave metaPixelId blank to disable. */
+  function loadMetaPixel() {
+    if (!C.metaPixelId) return;
+    /* eslint-disable */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    /* eslint-enable */
+    window.fbq("init", C.metaPixelId);
+    window.fbq("track", "PageView");
+  }
+
   /* ---------- Scroll reveal ---------- */
   function reveal() {
     var els = document.querySelectorAll(".reveal");
@@ -229,6 +254,7 @@
     setupTracking();
     setupAnchorScroll();
     loadGA();
+    loadMetaPixel();
     reveal();
   });
 })();

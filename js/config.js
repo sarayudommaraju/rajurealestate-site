@@ -20,6 +20,11 @@ window.RRE_CONFIG = {
   /* Analytics: paste your GA4 Measurement ID, e.g. G-ABCD12345. Leave blank to disable. */
   ga4Id: "",
 
+  /* Meta (Facebook/Instagram) Pixel ID for ad campaigns, e.g. 123456789012345.
+     Leave blank to disable. Fires PageView on load; WhatsApp/phone clicks ->
+     Contact, form submits -> Lead, so ad sets can optimise for conversions. */
+  metaPixelId: "",
+
   /* Default map center (Hyderabad) when a listing has no coordinates. */
   mapDefault: { lat: 17.4239, lng: 78.4738, zoom: 11 },
 
