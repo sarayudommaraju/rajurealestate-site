@@ -109,6 +109,7 @@
       "emi.tenure": "Tenure (years)", "emi.loanAmount": "Loan amount", "emi.monthly": "Monthly EMI",
       "emi.totalInterest": "Total interest", "emi.totalPayable": "Total payable",
       "emi.note": "Indicative only. Excludes processing fees, insurance and taxes. Confirm actual rates with your lender.",
+      "calc.eyebrow": "Quick maths", "calc.title": "Pocket calculator", "calc.sub": "Crunch any numbers right here. Click the keys or use your keyboard.",
 
       "footer.explore": "Explore", "footer.cities": "Cities", "footer.contact": "Contact",
       "footer.callUs": "Call us", "footer.emailUs": "Email us", "footer.whatsapp": "WhatsApp",
@@ -219,6 +220,7 @@
       "emi.tenure": "కాలవ్యవధి (సంవత్సరాలు)", "emi.loanAmount": "లోన్ మొత్తం", "emi.monthly": "నెలవారీ EMI",
       "emi.totalInterest": "మొత్తం వడ్డీ", "emi.totalPayable": "మొత్తం చెల్లించవలసినది",
       "emi.note": "సూచన మాత్రమే. ప్రాసెసింగ్ ఫీజులు, బీమా మరియు పన్నులు మినహా. అసలు రేట్లను మీ రుణదాతతో నిర్ధారించుకోండి.",
+      "calc.eyebrow": "త్వరిత లెక్కలు", "calc.title": "పాకెట్ కాలిక్యులేటర్", "calc.sub": "ఏ సంఖ్యలనైనా ఇక్కడే లెక్కించండి. కీలను క్లిక్ చేయండి లేదా మీ కీబోర్డ్ వాడండి.",
 
       "footer.explore": "అన్వేషించండి", "footer.cities": "నగరాలు", "footer.contact": "సంప్రదించండి",
       "footer.callUs": "కాల్ చేయండి", "footer.emailUs": "ఇమెయిల్ చేయండి", "footer.whatsapp": "వాట్సాప్",
@@ -329,6 +331,7 @@
       "emi.tenure": "अवधि (वर्ष)", "emi.loanAmount": "लोन राशि", "emi.monthly": "मासिक EMI",
       "emi.totalInterest": "कुल ब्याज", "emi.totalPayable": "कुल देय",
       "emi.note": "केवल संकेतात्मक। प्रोसेसिंग फ़ीस, बीमा और कर शामिल नहीं। असली दरें अपने ऋणदाता से पुष्टि करें।",
+      "calc.eyebrow": "झटपट गणित", "calc.title": "पॉकेट कैलकुलेटर", "calc.sub": "कोई भी संख्या यहीं जोड़ें-घटाएं। बटन क्लिक करें या अपना कीबोर्ड इस्तेमाल करें।",
 
       "footer.explore": "एक्सप्लोर करें", "footer.cities": "शहर", "footer.contact": "संपर्क",
       "footer.callUs": "हमें कॉल करें", "footer.emailUs": "हमें ईमेल करें", "footer.whatsapp": "व्हाट्सएप",

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=p14">
+  <link rel="stylesheet" href="css/styles.css?v=p15">
   <meta property="og:title" content="Home Loan EMI Calculator — Raju Real Estate">
   <meta property="og:description" content="Estimate your monthly home-loan instalment, total interest and total payable.">
   <meta property="og:type" content="website">
@@ -87,6 +87,41 @@
     </div>
   </section>
 
+  <!-- ===== Pocket calculator (interactive) ===== -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="calc.eyebrow">Quick maths</span>
+        <h2 data-i18n="calc.title">Pocket calculator</h2>
+        <p class="muted" data-i18n="calc.sub">Crunch any numbers right here. Click the keys or use your keyboard.</p>
+      </div>
+      <div class="calc" id="calc">
+        <div class="calc-display" id="calc-display" aria-live="polite">0</div>
+        <div class="calc-keys">
+          <button type="button" class="calc-key calc-fn" data-k="clear">C</button>
+          <button type="button" class="calc-key calc-fn" data-k="back" aria-label="Backspace">&#9003;</button>
+          <button type="button" class="calc-key calc-fn" data-k="percent">%</button>
+          <button type="button" class="calc-key calc-op" data-k="/">&divide;</button>
+          <button type="button" class="calc-key" data-k="7">7</button>
+          <button type="button" class="calc-key" data-k="8">8</button>
+          <button type="button" class="calc-key" data-k="9">9</button>
+          <button type="button" class="calc-key calc-op" data-k="*">&times;</button>
+          <button type="button" class="calc-key" data-k="4">4</button>
+          <button type="button" class="calc-key" data-k="5">5</button>
+          <button type="button" class="calc-key" data-k="6">6</button>
+          <button type="button" class="calc-key calc-op" data-k="-">&minus;</button>
+          <button type="button" class="calc-key" data-k="1">1</button>
+          <button type="button" class="calc-key" data-k="2">2</button>
+          <button type="button" class="calc-key" data-k="3">3</button>
+          <button type="button" class="calc-key calc-op" data-k="+">+</button>
+          <button type="button" class="calc-key calc-zero" data-k="0">0</button>
+          <button type="button" class="calc-key" data-k=".">.</button>
+          <button type="button" class="calc-key calc-eq" data-k="=">=</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Full-bleed photo CTA strip (shared) ===== -->
   <section class="photo-cta" style="--cta-img:url('images/cta/cta-home.jpg')">
     <div class="container photo-cta-inner">
@@ -119,9 +154,10 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=p14"></script>
-  <script src="js/i18n.js?v=p14"></script>
-  <script src="js/site.js?v=p14"></script>
-  <script src="js/emi.js?v=p14"></script>
+  <script src="js/config.js?v=p15"></script>
+  <script src="js/i18n.js?v=p15"></script>
+  <script src="js/site.js?v=p15"></script>
+  <script src="js/emi.js?v=p15"></script>
+  <script src="js/calc.js?v=p15"></script>
 </body>
 </html>
