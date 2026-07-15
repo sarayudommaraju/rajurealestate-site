@@ -43,9 +43,9 @@
     if (l.yearBuilt) facts.push(fact(l.yearBuilt, "Built"));
 
     var gallery =
-      '<figure class="g-main"><img src="' + imgs[0] + '" alt="' + esc(l.title) + '" data-i="0" onerror="' + imgFallback + '"></figure>' +
+      '<figure class="g-main"><img src="' + imgs[0] + '" alt="' + esc(l.title) + '" data-i="0"></figure>' +
       imgs.slice(1, 5).map(function (src, i) {
-        return '<figure><img src="' + src + '" alt="' + esc(l.title) + ' photo ' + (i + 2) + '" data-i="' + (i + 1) + '" onerror="' + imgFallback + '"></figure>';
+        return '<figure><img src="' + src + '" alt="' + esc(l.title) + ' photo ' + (i + 2) + '" data-i="' + (i + 1) + '"></figure>';
       }).join("");
 
     var landmarks = (l.landmarks || []).map(function (t) {
@@ -123,7 +123,7 @@
 
       '<aside class="pd-aside">' +
         '<div class="agent-card">' +
-          '<div class="who"><img class="avatar" src="images/team/agent-raju.png" alt="' + esc((l.agent && l.agent.name) || "Raju") + '" onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;avatar&quot;>R</div>\'"><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
+          '<div class="who"><img class="avatar" src="images/team/agent-raju.png" alt="' + esc((l.agent && l.agent.name) || "Raju") + '"><div><b>' + esc((l.agent && l.agent.name) || "Raju") + '</b><div class="muted" style="font-size:.85rem">' + esc((l.agent && l.agent.role) || "Consultant") + '</div></div></div>' +
           '<a class="btn btn--whatsapp btn--block" target="_blank" rel="noopener" href="' + waLink(waMsg) + '" style="margin-bottom:8px">' + waIcon() + '<span>Enquire on WhatsApp</span></a>' +
           '<a class="btn btn--primary btn--block" data-contact="phone" data-keep-text href="#" style="margin-bottom:8px">' + phoneIcon() + '<span>Call now</span></a>' +
           '<a class="btn btn--ghost btn--block" target="_blank" rel="noopener" href="' + waShare + '">Share this property</a>' +

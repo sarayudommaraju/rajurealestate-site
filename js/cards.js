@@ -31,7 +31,7 @@ window.cardHTML = function (l) {
   return '' +
   '<article class="card reveal">' +
     '<a class="card-media" href="property.html?id=' + l.id + '" aria-label="' + esc(l.title) + '">' +
-      '<img src="' + thumb + '" alt="' + esc(l.title) + '" loading="lazy" onerror="' + imgFallback + '">' +
+      '<img src="' + thumb + '" alt="' + esc(l.title) + '" loading="lazy">' +
       '<span class="card-status badge ' + sm.cls + '">' + sm.label + '</span>' +
       (l.featured ? '<span class="badge badge--featured">★ Featured</span>' : '') +
       (isRep ? '<span class="card-repflag" title="Free-license stock, not the actual property">Representative image</span>' : '') +

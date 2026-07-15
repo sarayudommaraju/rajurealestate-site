@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=p17">
+  <link rel="stylesheet" href="css/styles.css?v=p19">
   <meta property="og:title" content="Sitemap — Raju Real Estate">
   <meta property="og:description" content="Pages, cities, and every property listing.">
   <meta property="og:type" content="website">
@@ -120,27 +120,9 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=p17"></script>
-  <script src="js/i18n.js?v=p17"></script>
-  <script src="js/site.js?v=p17"></script>
-  <script>
-    loadListings().then(function (all) {
-      var byCity = {};
-      all.forEach(function (l) { (byCity[l.city] = byCity[l.city] || []).push(l); });
-      var html = "";
-      Object.keys(byCity).sort().forEach(function (city) {
-        html += '<h3 style="font-size:1.05rem;margin:18px 0 8px">' + city + '</h3><ul class="amenities">';
-        byCity[city].forEach(function (l) {
-          var tag = l.status === "sold" ? ' <span class="muted">(sold)</span>' : '';
-          html += '<li><svg class="icon" viewBox="0 0 24 24" style="color:var(--brand)"><path d="M9 18l6-6-6-6"/></svg>' +
-            '<a href="property.html?id=' + l.id + '">' + l.title + ' — ' + l.locality + tag + '</a></li>';
-        });
-        html += '</ul>';
-      });
-      document.getElementById("sitemap-listings").innerHTML = html;
-    }).catch(function () {
-      document.getElementById("sitemap-listings").innerHTML = '<p class="muted">Could not load listings.</p>';
-    });
-  </script>
+  <script src="js/config.js?v=p19"></script>
+  <script src="js/i18n.js?v=p19"></script>
+  <script src="js/site.js?v=p19"></script>
+  <script src="js/sitemap-page.js?v=p19"></script>
 </body>
 </html>

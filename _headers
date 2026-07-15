@@ -1,0 +1,13 @@
+# Cloudflare Pages security headers. Applies to every response for static assets.
+# CSP: scripts limited to our own JS + named CDNs (Leaflet/unpkg, GA, Meta, Turnstile);
+# inline scripts are FORBIDDEN (no 'unsafe-inline' in script-src). Inline styles are
+# allowed because the markup uses them. Framing is blocked (anti-clickjacking).
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  X-XSS-Protection: 0
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; script-src 'self' https://unpkg.com https://www.googletagmanager.com https://connect.facebook.net https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com https://www.google-analytics.com https://*.facebook.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.facebook.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.google.com; form-action 'self'; manifest-src 'self'

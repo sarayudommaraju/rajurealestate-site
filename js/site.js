@@ -10,6 +10,21 @@
 (function () {
   var C = window.RRE_CONFIG || {};
 
+  /* ---------- CSP-safe image fallback (replaces inline onerror=) ----------
+     Registered in the capture phase so it catches load failures of any <img>,
+     including cards injected after fetch. Avatars fall back to an initial block;
+     everything else to the branded placeholder. This lets the CSP forbid inline
+     scripts entirely (no 'unsafe-inline' needed in script-src). */
+  window.addEventListener("error", function (e) {
+    var t = e.target;
+    if (!t || t.tagName !== "IMG" || t.getAttribute("data-fellback")) return;
+    t.setAttribute("data-fellback", "1");
+    var p = t.parentNode;
+    if (p && p.classList && p.classList.contains("header-agent")) { p.classList.add("is-fallback"); t.remove(); p.textContent = "R"; return; }
+    if (t.classList.contains("avatar")) { t.outerHTML = '<div class="avatar">R</div>'; return; }
+    if (t.getAttribute("src") !== "images/placeholder.svg") t.src = "images/placeholder.svg";
+  }, true);
+
   /* ---------- Money: Indian lakh/crore formatting ---------- */
   // Why: Indian buyers read prices in ₹ Cr / ₹ L, not millions.
   window.formatPrice = function (rupees) {
@@ -62,8 +77,8 @@
     if (!imgs.length) return ["images/placeholder.svg"];
     return imgs.map(function (f) { return "images/listings/" + l.id + "/" + f; });
   };
-  // Attach to any <img> so a missing real photo shows the placeholder.
-  window.imgFallback = "this.onerror=null;this.src='images/placeholder.svg';";
+  // Image load failures are handled by the global capture-phase error listener
+  // above (CSP-safe), so no inline onerror attributes are needed anywhere.
 
   /* ---------- WhatsApp link builder ---------- */
   window.waLink = function (message) {
@@ -108,8 +123,10 @@
       ag.href = "contact.html";
       ag.title = "Radhakrishnama Raju — Managing Director";
       ag.setAttribute("aria-label", "Contact Radhakrishnama Raju");
-      ag.innerHTML = '<img src="images/team/agent-raju.png" alt="Radhakrishnama Raju" ' +
-        "onerror=\"this.onerror=null;this.parentNode.classList.add('is-fallback');this.remove();this.parentNode.textContent='R';\">";
+      var agImg = document.createElement("img");
+      agImg.src = "images/team/agent-raju.png";
+      agImg.alt = "Radhakrishnama Raju";
+      ag.appendChild(agImg); // load failure -> global error listener swaps to "R"
       navCta.appendChild(ag); // last child => far right
     }
 
