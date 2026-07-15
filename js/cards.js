@@ -47,7 +47,7 @@ window.cardHTML = function (l) {
       '<div class="card-specs">' + specs.join('') + '</div>' +
       '<div class="card-foot">' +
         '<a class="btn btn--primary" href="property.html?id=' + l.id + '" data-i18n="cta.viewDetails">View details</a>' +
-        '<a class="btn btn--wa" target="_blank" rel="noopener" href="' + waLink("Hi, I am interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ").") + '" aria-label="Enquire on WhatsApp">' + waMini() + '</a>' +
+        '<a class="btn btn--whatsapp" target="_blank" rel="noopener" href="' + waLink("Hi, I am interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ").") + '" aria-label="Contact us on WhatsApp">' + waMini() + '<span data-i18n="cta.contactUs">Contact us</span></a>' +
       '</div>' +
     '</div>' +
   '</article>';

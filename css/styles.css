@@ -171,7 +171,10 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) { .verify-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .verify-steps { grid-template-columns: 1fr; } }
 .vstep { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 22px 20px; box-shadow: var(--shadow-sm); }
-.vstep-no { font-family: var(--font-head); font-weight: 700; font-size: .92rem; letter-spacing: .04em; color: var(--gold); }
+.vstep-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.vstep-ic { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--amber-100); color: var(--gold); }
+.vstep-ic svg { width: 26px; height: 26px; }
+.vstep-no { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; letter-spacing: .02em; color: var(--indigo-100); line-height: 1; }
 .vstep h3 { font-family: var(--font-head); font-size: 1.06rem; margin: 8px 0 6px; color: var(--ink); }
 .vstep p { color: var(--ink-soft); font-size: .9rem; line-height: 1.5; margin: 0; }
 
@@ -357,6 +360,31 @@ img { max-width: 100%; display: block; }
 .ttt-cell:hover { border-color: var(--brand); }
 .ttt-cell.x { color: var(--brand); } .ttt-cell.o { color: var(--gold); }
 .ttt-cell.win { background: var(--amber-100); border-color: var(--gold); }
+
+/* Canvas games (Snake, Brick Breaker, Jump Hero, Sky Hop) */
+.g-canvas { display: block; width: 100%; max-width: 460px; height: auto; margin: 0 auto; border: 1px solid var(--line); border-radius: var(--radius-sm); background: #eef3f8; touch-action: none; }
+
+/* Simon */
+.simon-pad { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 300px; margin: 0 auto; }
+.simon-btn { aspect-ratio: 1; border: 0; border-radius: 14px; cursor: pointer; opacity: .55; transition: opacity .1s, transform .1s; }
+.simon-btn.lit { opacity: 1; transform: scale(1.03); box-shadow: 0 0 0 3px rgba(255,255,255,.6) inset; }
+.simon-btn.s-g { background: #16a34a; } .simon-btn.s-r { background: #dc2626; }
+.simon-btn.s-y { background: #eab308; } .simon-btn.s-b { background: #2563eb; }
+
+/* Whack-a-Mole */
+.whack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 340px; margin: 0 auto; }
+.whack-hole { aspect-ratio: 1; border: 0; border-radius: 50%; background: radial-gradient(circle at 50% 120%, #b98a52, #7a5222); cursor: pointer; overflow: hidden; position: relative; box-shadow: inset 0 -6px 10px rgba(0,0,0,.28); }
+.whack-hole .mole { position: absolute; left: 0; right: 0; bottom: -100%; font-size: clamp(1.6rem, 8vw, 2.4rem); transition: bottom .12s ease; }
+.whack-hole.up .mole { bottom: 12%; }
+
+/* Minesweeper */
+.mines-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 3px; max-width: 360px; margin: 0 auto; }
+.mine-cell { aspect-ratio: 1; border: 1px solid var(--line); border-radius: 5px; background: var(--indigo-50); font-family: var(--font-head); font-weight: 700; font-size: clamp(.7rem, 3vw, .95rem); cursor: pointer; display: grid; place-items: center; padding: 0; color: var(--ink); user-select: none; }
+.mine-cell.open { background: #fff; cursor: default; }
+.mine-cell.mine { background: #fdecec; }
+.mine-cell[data-n="1"] { color: #2563eb; } .mine-cell[data-n="2"] { color: #16a34a; }
+.mine-cell[data-n="3"] { color: #dc2626; } .mine-cell[data-n="4"] { color: #7c3aed; }
+.mine-cell[data-n="5"] { color: #b45309; } .mine-cell[data-n="6"] { color: #0891b2; }
 .amenities { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .amenities li { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); }
 .amenities li svg { color: var(--ok); }
