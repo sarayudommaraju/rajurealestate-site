@@ -215,6 +215,12 @@ img { max-width: 100%; display: block; }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { color: var(--ink-soft); line-height: 1.6; margin: 0 0 18px; }
 
+/* About / Contact photography (replaces the old line-art SVGs) */
+.about-inline-img { width: 100%; border-radius: var(--radius); margin-top: 20px; box-shadow: var(--shadow-md); aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.contact-photo { margin: 26px 0 0; }
+.contact-photo img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-md); aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.contact-photo figcaption { text-align: center; color: var(--ink-soft); font-size: .85rem; margin-top: 10px; font-style: italic; }
+
 /* Premium page-header band (Listings/Contact/EMI/Blog) */
 .page-hero { background: linear-gradient(135deg, var(--indigo-900), var(--indigo-700) 60%, var(--indigo-600)); color: #fff; position: relative; overflow: hidden; }
 .page-hero::after { content: ""; position: absolute; right: -30px; bottom: 0; width: 46%; max-width: 560px; height: 100%; background: url("../images/art/skyline-light.svg") right bottom / contain no-repeat; opacity: .16; pointer-events: none; }

@@ -92,6 +92,7 @@
       "about.handle": "What we handle",
       "about.directLine": "Direct line for NRI buyers, sellers and investors across all four cities. WhatsApp works across time zones.",
       "about.stat.cities": "Cities covered", "about.stat.check": "Title check per listing", "about.stat.contact": "Single point of contact", "about.stat.always": "Always",
+      "about.imgcap": "The quality we deal in", "contact.imgcap": "Your keys are closer than you think",
       "about.ctaTitle": "Ready when you are", "about.ctaBody": "Buying, selling or leasing, start with a conversation.",
 
       "nri.eyebrow": "Buying from abroad",
@@ -201,6 +202,7 @@
       "about.handle": "మేము చూసుకునేవి",
       "about.directLine": "నాలుగు నగరాల్లో NRI కొనుగోలుదారులు, అమ్మకందారులు, పెట్టుబడిదారులకు నేరుగా సంప్రదింపు. వాట్సాప్ అన్ని టైమ్ జోన్లలో పనిచేస్తుంది.",
       "about.stat.cities": "నగరాలు", "about.stat.check": "ప్రతి లిస్టింగ్‌కు టైటిల్ తనిఖీ", "about.stat.contact": "ఒకే సంప్రదింపు వ్యక్తి", "about.stat.always": "ఎల్లప్పుడూ",
+      "about.imgcap": "మేము వ్యవహరించే నాణ్యత", "contact.imgcap": "మీ తాళాలు మీరు అనుకున్నదానికంటే దగ్గరలో ఉన్నాయి",
       "about.ctaTitle": "మీరు సిద్ధమైనప్పుడు", "about.ctaBody": "కొనుగోలు, అమ్మకం లేదా లీజు, ఒక సంభాషణతో ప్రారంభించండి.",
 
       "nri.eyebrow": "విదేశాల నుండి కొనుగోలు",
@@ -310,6 +312,7 @@
       "about.handle": "हम क्या संभालते हैं",
       "about.directLine": "चारों शहरों में NRI खरीदारों, विक्रेताओं और निवेशकों के लिए सीधी लाइन। व्हाट्सएप हर टाइम ज़ोन में काम करता है।",
       "about.stat.cities": "शहर", "about.stat.check": "प्रति लिस्टिंग टाइटल जाँच", "about.stat.contact": "एक संपर्क बिंदु", "about.stat.always": "हमेशा",
+      "about.imgcap": "जिस गुणवत्ता के साथ हम काम करते हैं", "contact.imgcap": "आपकी चाबियाँ आपके सोचने से ज़्यादा करीब हैं",
       "about.ctaTitle": "जब आप तैयार हों", "about.ctaBody": "खरीदना, बेचना या लीज़, एक बातचीत से शुरू करें।",
 
       "nri.eyebrow": "विदेश से खरीदना",
