@@ -101,6 +101,6 @@
   function injectLD(id, obj) {
     var old = document.getElementById(id); if (old) old.remove();
     var s = document.createElement("script"); s.type = "application/ld+json"; s.id = id;
-    s.textContent = JSON.stringify(obj); document.head.appendChild(s);
+    s.textContent = rreLdJson(obj); document.head.appendChild(s);
   }
 })();

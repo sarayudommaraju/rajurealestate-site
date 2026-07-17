@@ -28,25 +28,27 @@ window.cardHTML = function (l) {
   // actual asset. Honesty guard so a stock image is never read as the property.
   var isRep = l.representative === true;
 
+  var href = 'property.html?id=' + encodeURIComponent(l.id);
+
   return '' +
   '<article class="card reveal">' +
-    '<a class="card-media" href="property.html?id=' + l.id + '" aria-label="' + esc(l.title) + '">' +
-      '<img src="' + thumb + '" alt="' + esc(l.title) + '" loading="lazy">' +
-      '<span class="card-status badge ' + sm.cls + '">' + sm.label + '</span>' +
+    '<a class="card-media" href="' + href + '" aria-label="' + esc(l.title) + '">' +
+      '<img src="' + esc(thumb) + '" alt="' + esc(l.title) + '" loading="lazy">' +
+      '<span class="card-status badge ' + sm.cls + '">' + esc(sm.label) + '</span>' +
       (l.featured ? '<span class="badge badge--featured">★ Featured</span>' : '') +
       (isRep ? '<span class="card-repflag" title="Free-license stock, not the actual property">Representative image</span>' : '') +
     '</a>' +
     '<div class="card-body">' +
       '<div class="card-chips">' +
-        '<span class="chip-type">' + typeLabel(l.type) + '</span>' +
+        '<span class="chip-type">' + esc(typeLabel(l.type)) + '</span>' +
         (verified ? '<span class="chip-verified">' + checkIcon() + 'Title Verified</span>' : '') +
       '</div>' +
-      '<div class="card-price">' + formatPrice(l.price) + (l.negotiable ? ' <small>Negotiable</small>' : '') + '</div>' +
-      '<a href="property.html?id=' + l.id + '"><h3 class="card-title">' + esc(l.title) + '</h3></a>' +
+      '<div class="card-price">' + esc(formatPrice(l.price)) + (l.negotiable ? ' <small>Negotiable</small>' : '') + '</div>' +
+      '<a href="' + href + '"><h3 class="card-title">' + esc(l.title) + '</h3></a>' +
       '<div class="card-loc">' + pinIcon() + esc(l.locality) + ', ' + esc(l.city) + '</div>' +
       '<div class="card-specs">' + specs.join('') + '</div>' +
       '<div class="card-foot">' +
-        '<a class="btn btn--primary" href="property.html?id=' + l.id + '" data-i18n="cta.viewDetails">View details</a>' +
+        '<a class="btn btn--primary" href="' + href + '" data-i18n="cta.viewDetails">View details</a>' +
         '<a class="btn btn--whatsapp" target="_blank" rel="noopener" href="' + waLink("Hi, I am interested in " + l.ref + " — " + l.title + " (" + formatPrice(l.price) + ").") + '" aria-label="Contact us on WhatsApp">' + waMini() + '<span data-i18n="cta.contactUs">Contact us</span></a>' +
       '</div>' +
     '</div>' +
@@ -55,7 +57,8 @@ window.cardHTML = function (l) {
 
 function specHTML(icon, label, val) {
   if (val == null || val === "") return "";
-  return '<span class="spec">' + iconSvg(icon) + '<b>' + val + '</b> ' + label + '</span>';
+  // val is listing data (facing, parking, beds…) — escape it like every other field.
+  return '<span class="spec">' + iconSvg(icon) + '<b>' + esc(val) + '</b> ' + esc(label) + '</span>';
 }
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
 function pinIcon() { return '<svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'; }

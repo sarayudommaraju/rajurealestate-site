@@ -25,6 +25,17 @@
     if (t.getAttribute("src") !== "images/placeholder.svg") t.src = "images/placeholder.svg";
   }, true);
 
+  /* ---------- JSON-LD serialiser ----------
+     JSON.stringify output goes inside a <script> block, where the HTML parser
+     ends the element at the first literal "</script>" — even inside a JSON
+     string. A title or description containing one would break out of the block
+     and the rest would parse as markup. Escaping "<" to its unicode form is
+     still valid JSON (same parsed value), so the breakout cannot form. The CSP
+     also blocks inline scripts, so this is the second of two locks, not the only one. */
+  window.rreLdJson = function (obj) {
+    return JSON.stringify(obj).replace(/</g, "\\u003c");
+  };
+
   /* ---------- Money: Indian lakh/crore formatting ---------- */
   // Why: Indian buyers read prices in ₹ Cr / ₹ L, not millions.
   window.formatPrice = function (rupees) {
@@ -165,7 +176,7 @@
     };
     var s = document.createElement("script");
     s.type = "application/ld+json"; s.id = "rre-schema-org";
-    s.textContent = JSON.stringify([org, site]);
+    s.textContent = rreLdJson([org, site]);
     document.head.appendChild(s);
   }
 

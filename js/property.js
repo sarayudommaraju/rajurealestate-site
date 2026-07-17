@@ -43,9 +43,9 @@
     if (l.yearBuilt) facts.push(fact(l.yearBuilt, "Built"));
 
     var gallery =
-      '<figure class="g-main"><img src="' + imgs[0] + '" alt="' + esc(l.title) + '" data-i="0"></figure>' +
+      '<figure class="g-main"><img src="' + esc(imgs[0]) + '" alt="' + esc(l.title) + '" data-i="0"></figure>' +
       imgs.slice(1, 5).map(function (src, i) {
-        return '<figure><img src="' + src + '" alt="' + esc(l.title) + ' photo ' + (i + 2) + '" data-i="' + (i + 1) + '"></figure>';
+        return '<figure><img src="' + esc(src) + '" alt="' + esc(l.title) + ' photo ' + (i + 2) + '" data-i="' + (i + 1) + '"></figure>';
       }).join("");
 
     var landmarks = (l.landmarks || []).map(function (t) {
@@ -81,8 +81,8 @@
       '<div class="pd-title-row">' +
         '<div>' +
           '<div class="pd-chips">' +
-            '<span class="badge ' + sm.cls + '">' + sm.label + '</span>' +
-            '<span class="chip-type">' + typeLabel(l.type) + '</span>' +
+            '<span class="badge ' + sm.cls + '">' + esc(sm.label) + '</span>' +
+            '<span class="chip-type">' + esc(typeLabel(l.type)) + '</span>' +
             (l.titleVerified ? '<span class="chip-verified">' + checkGold() + 'Title Verified</span>' : '') +
             (l.featured ? '<span class="badge badge--featured" style="position:static">★ Featured</span>' : '') +
           '</div>' +
@@ -162,7 +162,8 @@
     document.querySelectorAll('[data-contact="phone"]').forEach(function (a) { if (a.tagName === "A") a.href = "tel:" + C.phoneDial; });
   }
 
-  function fact(v, label) { return '<div class="fact"><b>' + v + '</b><span>' + label + '</span></div>'; }
+  // v is listing data (facing, parking, floor, yearBuilt…) — escape like every other field.
+  function fact(v, label) { return '<div class="fact"><b>' + esc(v) + '</b><span>' + esc(label) + '</span></div>'; }
   function trustRow(k, v, gold) { return '<div class="trow' + (gold ? ' trow--gold' : '') + '"><span class="trow-k">' + esc(k) + '</span><span class="trow-v">' + esc(v) + '</span></div>'; }
   function checkGold() { return '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'; }
   function shieldIcon() { return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>'; }
@@ -220,7 +221,9 @@
   function injectLD(id, obj) {
     var old = document.getElementById(id); if (old) old.remove();
     var s = document.createElement("script"); s.type = "application/ld+json"; s.id = id;
-    s.textContent = JSON.stringify(obj, function (k, v) { return v === undefined ? undefined : v; });
+    // The old replacer dropped undefined values, which JSON.stringify already does
+    // by default — it was a no-op, so nothing is lost by routing through rreLdJson.
+    s.textContent = rreLdJson(obj);
     document.head.appendChild(s);
   }
 
