@@ -27,8 +27,15 @@ window.RRE_CONFIG = {
 
   /* Cloudflare Turnstile PUBLIC site key for contact-form spam protection,
      e.g. 0x4AAAAAAA... Create a free widget at Cloudflare -> Turnstile.
-     Leave blank to disable (form still works). The matching SECRET key goes in
-     the Pages env var TURNSTILE_SECRET_KEY (never in this client file). */
+     Leave blank to disable (both forms still work, unprotected).
+     The matching SECRET key goes in the Pages env var TURNSTILE_SECRET_KEY,
+     never in this client file — this file ships to every visitor.
+     ORDER MATTERS: set this site key and deploy BEFORE adding the env var.
+     The Function 403s any tokenless POST once the secret exists, so setting the
+     secret first would break both forms until the key ships.
+     Protects BOTH /api/contact callers: contact.html and the property-page
+     enquiry form. Test keys (never ship these): 1x00000000000000000000AA
+     always passes, 2x00000000000000000000AB always blocks. */
   turnstileSiteKey: "",
 
   /* Default map center (Hyderabad) when a listing has no coordinates. */

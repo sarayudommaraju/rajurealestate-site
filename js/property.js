@@ -137,6 +137,7 @@
             '<div class="form-field"><input type="text" name="name" placeholder="Your name" required></div>' +
             '<div class="form-field"><input type="tel" name="phone" placeholder="Phone" required></div>' +
             '<div class="form-field"><textarea name="message" placeholder="I would like a site visit / more details…" style="min-height:90px"></textarea></div>' +
+            '<div id="pd-turnstile" class="ts-widget"></div>' +
             '<button class="btn btn--primary btn--block" type="submit">Send enquiry</button>' +
             '<div class="form-status" id="pd-status"></div>' +
           '</form>' +
@@ -271,16 +272,53 @@
     });
   }
 
-  /* ---- Per-listing enquiry -> Cloudflare function ---- */
+  /* ---- Per-listing enquiry -> Cloudflare function ----
+     This form posts to the SAME /api/contact as the Contact page, so it needs a
+     Turnstile token for the identical reason: once TURNSTILE_SECRET_KEY is set,
+     the Function 403s any tokenless request. Without this the highest-intent
+     leads on the site would fail silently. Mirrors js/contact.js.
+     Unlike contact.html (static markup, api.js onload callback), this form is
+     injected after a fetch, so api.js may become ready before OR after it
+     exists. Polling for window.turnstile handles both orders; a fixed onload
+     callback would race. */
   function initEnquiry(l) {
     var form = document.getElementById("pd-enquiry"), status = document.getElementById("pd-status");
+    var tsToken = "", tsWidgetId = null;
+
+    function mountTurnstile() {
+      var key = (C && C.turnstileSiteKey) || "";
+      var el = document.getElementById("pd-turnstile");
+      if (!key || !el) return; // unconfigured: form keeps working, no widget
+      var tries = 0;
+      (function attempt() {
+        if (window.turnstile && window.turnstile.render) {
+          tsWidgetId = window.turnstile.render(el, {
+            sitekey: key,
+            callback: function (t) { tsToken = t; },
+            "expired-callback": function () { tsToken = ""; },
+            "error-callback": function () { tsToken = ""; }
+          });
+          return;
+        }
+        if (tries++ < 40) setTimeout(attempt, 150); // ~6s for the async CDN script
+      })();
+    }
+    mountTurnstile();
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (form._hp && form._hp.value) return; // honeypot
+      var needsToken = !!(C && C.turnstileSiteKey);
+      if (needsToken && !tsToken) {
+        status.className = "form-status err";
+        status.textContent = "Please complete the verification checkbox and try again.";
+        return;
+      }
       var btn = form.querySelector("button");
       btn.disabled = true; btn.textContent = "Sending…";
       var data = Object.fromEntries(new FormData(form).entries());
       data.source = "Property page: " + l.ref;
+      if (tsToken) data.token = tsToken;
       fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
@@ -288,7 +326,11 @@
           else { status.className = "form-status err"; status.textContent = (res.j && res.j.error) || "Could not send. Please WhatsApp us instead."; }
         })
         .catch(function () { status.className = "form-status err"; status.textContent = "Network error. Please WhatsApp or call us."; })
-        .finally(function () { btn.disabled = false; btn.textContent = "Send enquiry"; });
+        .finally(function () {
+          btn.disabled = false; btn.textContent = "Send enquiry";
+          // Turnstile tokens are single-use: reset so the next submit gets a fresh one.
+          if (tsWidgetId !== null && window.turnstile) { try { window.turnstile.reset(tsWidgetId); } catch (e) {} tsToken = ""; }
+        });
     });
   }
 })();
