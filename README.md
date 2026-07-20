@@ -21,15 +21,51 @@ rajurealestate/
 │   ├── home.js         Home logic
 │   ├── listings.js     Filter/sort engine (client-side)
 │   ├── property.js     Detail page + map + EMI + enquiry
-│   └── contact.js      Contact form submit
+│   ├── contact.js      Contact form submit
+│   ├── games.js        Games hub + the ten arcade/puzzle games
+│   └── games/          Board games, one file each (see below)
 ├── data/listings.json  ← EDIT: all properties (source of truth)
 ├── functions/api/contact.js  Cloudflare Pages Function (POST /api/contact → Resend)
 ├── images/
 │   ├── logo.svg, logo-white.svg, favicon.svg, placeholder.svg
 │   └── listings/<id>/  ← drop real photos here (1.jpg, 2.jpg …)
+├── tools/              Dev-only test harnesses (see note below)
 ├── robots.txt
 └── README.md
 ```
+
+### Games
+
+`js/games.js` holds the ten original arcade and puzzle games and builds the tab
+bar. The five board games are too large for one file and live in `js/games/`,
+registering themselves through `window.RREGames` (see `js/games/core.js`):
+Chess, Draughts, Connect Four, Sudoku and Word Guess.
+
+Everything is self-hosted vanilla JS. **No WASM.** A Stockfish build cannot
+instantiate under the CSP in `_headers` without adding `'wasm-unsafe-eval'`,
+which is deliberately excluded, so the chess opponent is a hand-written
+negamax. It is deliberately modest: expect roughly 4-6 ply on desktop and less
+on a phone. Draughts is international 10x10 (flying kings, compulsory maximum
+capture), not American checkers.
+
+Script order in `games.html` matters: `core.js`, then `search.js` and
+`words.js`, then each game, then `games.js` last.
+
+Tab labels are translated via `games.name.<id>` keys in `js/i18n.js`. In-game
+strings are still English in all locales.
+
+### tools/
+
+`tools/perft.js` and `tools/games-test.js` are Node test harnesses, run with
+`node tools/perft.js` and `node tools/games-test.js`. Perft proves the chess
+move generator against published node counts; games-test covers the draughts
+rules, Sudoku uniqueness and Connect Four.
+
+These are **deployed to the public root along with everything else**, so they
+are readable at `/tools/…` on the live site. That is a deliberate choice: they
+hold no secrets and no site logic, and the alternatives either drop the tests
+out of version control or mean restructuring the whole site. Cloudflare Pages
+`_redirects` cannot return a 404, so there is no cheap way to hide them.
 
 ## Run it locally (required — do not open via file://)
 
