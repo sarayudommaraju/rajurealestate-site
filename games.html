@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=p22">
+  <link rel="stylesheet" href="css/styles.css?v=p23">
   <meta property="og:title" content="Games — Raju Real Estate">
   <meta property="og:description" content="Take a break with a few quick browser games.">
   <meta property="og:type" content="website">
@@ -77,9 +77,20 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=p22"></script>
-  <script src="js/i18n.js?v=p22"></script>
-  <script src="js/site.js?v=p22"></script>
-  <script src="js/games.js?v=p22"></script>
+  <script src="js/config.js?v=p23"></script>
+  <script src="js/i18n.js?v=p23"></script>
+  <script src="js/site.js?v=p23"></script>
+  <!-- Board games. Order matters: core.js defines the registry, search.js and
+       words.js are data/utility dependencies, each game registers itself, and
+       games.js runs last to build the tab bar from the completed list. -->
+  <script src="js/games/core.js?v=p23"></script>
+  <script src="js/games/search.js?v=p23"></script>
+  <script src="js/games/words.js?v=p23"></script>
+  <script src="js/games/chess.js?v=p23"></script>
+  <script src="js/games/draughts.js?v=p23"></script>
+  <script src="js/games/connect4.js?v=p23"></script>
+  <script src="js/games/sudoku.js?v=p23"></script>
+  <script src="js/games/wordle.js?v=p23"></script>
+  <script src="js/games.js?v=p23"></script>
 </body>
 </html>

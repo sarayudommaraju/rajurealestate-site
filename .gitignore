@@ -8,3 +8,6 @@ Thumbs.db
 # Local tooling
 node_modules/
 .wrangler/
+
+# Local preview config (dev only)
+.claude/

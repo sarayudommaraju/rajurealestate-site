@@ -1,12 +1,17 @@
 /*
   File: js/games.js
-  Purpose: Games hub for the Games tab. Three original, self-contained browser
-           games: 2048, Memory Match, Tic-Tac-Toe. No third-party code, no
-           external requests, no ads, no trackers — safe on the business domain.
+  Purpose: Games hub for the Games tab, plus the ten original arcade and puzzle
+           games that were small enough to keep in one file: 2048, Memory Match,
+           Snake, Brick Breaker, Jump Hero, Sky Hop, Simon, Whack-a-Mole,
+           Minesweeper, Tic-Tac-Toe. No third-party code, no external requests,
+           no ads, no trackers — safe on the business domain.
   Engine: Vanilla JS. Depends only on the page's #game-tabs / #game-stage nodes.
   How it works: a tab bar switches games; each mount(stage) fn builds its own UI
            into the stage and returns a cleanup() that removes global listeners
            so switching games never leaks keydown handlers.
+           The board games (Chess, Draughts, Connect Four, Sudoku, Word Guess)
+           are too large to sit here and live in js/games/*.js, registering
+           themselves through window.RREGames (see js/games/core.js).
   Known failure modes: none external. All state is in-memory; refresh resets.
 */
 (function () {
@@ -26,6 +31,14 @@
     { id: "mines", name: "Minesweeper", icon: "💣", mount: mountMines },
     { id: "ttt", name: "Tic-Tac-Toe", icon: "⭕", mount: mountTicTacToe }
   ];
+
+  /* Games that live in their own file under js/games/ register themselves on
+     window.RREGames as they load. Those scripts are tagged before this one, so
+     the list is complete by now. Appending keeps the original ten first in the
+     tab bar and the default game unchanged. */
+  if (window.RREGames && window.RREGames.list.length) {
+    GAMES = GAMES.concat(window.RREGames.list);
+  }
 
   var cleanup = null;
 

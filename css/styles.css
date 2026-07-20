@@ -86,6 +86,16 @@ img { max-width: 100%; display: block; }
   .g2048-grid { height: 0; padding-bottom: 100%; position: relative; }
   .mem-card, .ttt-cell, .simon-btn, .whack-hole, .mine-cell { min-height: 64px; }
   .hero-art--photo img, .page-hero-art img, .about-inline-img { min-height: 200px; object-fit: cover; }
+  /* Board games: the grids get their height from aspect-ratio on the container
+     (chess/draughts/sudoku) or on the cell (Connect Four/Word Guess). Without
+     it both collapse, so give the cells an explicit floor instead. The values
+     are deliberately below the 64px touch target — an 8x8 or 10x10 board at
+     64px per cell would overflow every phone. */
+  .chess-sq { min-height: 42px; }
+  .dr-sq { min-height: 32px; }
+  .sud-cell { min-height: 34px; }
+  .c4-cell { min-height: 40px; }
+  .wd-tile { min-height: 50px; }
 }
 
 .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
@@ -486,6 +496,130 @@ img { max-width: 100%; display: block; }
 .mine-cell[data-n="1"] { color: #2563eb; } .mine-cell[data-n="2"] { color: #16a34a; }
 .mine-cell[data-n="3"] { color: #dc2626; } .mine-cell[data-n="4"] { color: #7c3aed; }
 .mine-cell[data-n="5"] { color: #b45309; } .mine-cell[data-n="6"] { color: #0891b2; }
+
+/* ---------- Board games (js/games/*.js) ----------
+   Chess, Draughts, Connect Four, Sudoku and Word Guess. These share the
+   .g-head / .g-msg / .g-hint furniture above and add their own boards. All
+   sizing is in relative units and the boards are square via aspect-ratio, so
+   they scale from a 320px phone to the 560px .game-stage cap without media
+   queries beyond the small-screen touch-target rule at the top of this file. */
+
+/* Shared controls */
+.g-seg { display: inline-flex; flex-wrap: wrap; gap: 4px; background: var(--indigo-50); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.g-seg-btn { font-family: var(--font-head); font-weight: 600; font-size: .8rem; padding: 6px 13px; border-radius: 999px; border: 0; background: transparent; color: var(--ink-soft); cursor: pointer; transition: .12s; }
+.g-seg-btn:hover { color: var(--brand); }
+.g-seg-btn.active { background: var(--brand); color: #fff; }
+.g-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; }
+.g-btn { font-family: var(--font-head); font-weight: 600; font-size: .85rem; padding: 9px 15px; border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--ink-soft); cursor: pointer; transition: .12s; }
+.g-btn:hover { border-color: var(--brand); color: var(--brand); }
+.g-btn.on { background: var(--brand); border-color: var(--brand); color: #fff; }
+.g-head-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* Chess */
+/* grid-template-rows is not optional here. With columns alone the rows size to
+   their content (the piece glyph), so eight rows overflow the aspect-ratio box
+   and the bottom of the board is clipped. Same reason on .dr-board/.sud-grid. */
+.chess-board { display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); aspect-ratio: 1; max-width: 440px; margin: 0 auto; border: 2px solid var(--indigo-800); border-radius: var(--radius-sm); overflow: hidden; }
+.chess-sq { border: 0; padding: 0; cursor: pointer; display: grid; place-items: center; position: relative; font-size: clamp(1.5rem, 6.5vw, 2.4rem); line-height: 1; transition: background .1s; }
+.chess-sq.light { background: #eef1f6; }
+.chess-sq.dark { background: #7f93ad; }
+.chess-sq.last { box-shadow: inset 0 0 0 3px rgba(176,122,53,.55); }
+.chess-sq.sel { box-shadow: inset 0 0 0 3px var(--gold); }
+.chess-sq.check { background: #e88a8a; }
+/* A dot for a quiet target, a ring for a capture: readable at a glance and it
+   survives on top of a piece glyph, which a background tint does not. */
+.chess-sq.tgt::after { content: ""; position: absolute; width: 26%; height: 26%; border-radius: 50%; background: rgba(35,57,93,.42); }
+.chess-sq.tgt-cap::after { content: ""; position: absolute; inset: 8%; border-radius: 50%; border: 3px solid rgba(176,122,53,.85); }
+.chess-sq .cp { position: relative; z-index: 1; }
+/* Both colours are drawn with the SOLID glyphs and separated by fill colour.
+   The outline glyphs render too thin to read on a phone. */
+/* White needs a hard outline in every direction, not a drop shadow: a white
+   glyph on the #eef1f6 light square is otherwise almost invisible. Four offset
+   shadows fake a text stroke with far better support than -webkit-text-stroke. */
+.chess-sq .cp.w { color: #fff; text-shadow: 1px 1px 0 #16233c, -1px 1px 0 #16233c, 1px -1px 0 #16233c, -1px -1px 0 #16233c, 0 2px 3px rgba(0,0,0,.3); }
+.chess-sq .cp.b { color: #14203a; text-shadow: 0 1px 0 rgba(255,255,255,.35); }
+.chess-moves { max-height: 96px; overflow-y: auto; margin: 14px auto 0; max-width: 440px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 8px 10px; font-size: .82rem; }
+.chess-moves:empty { display: none; }
+.cm-row { display: grid; grid-template-columns: 34px 1fr 1fr; gap: 6px; padding: 2px 0; }
+.cm-row .cm-n { color: var(--ink-soft); font-style: normal; }
+.cm-row b { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
+.chess-promo { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+.chess-promo.hidden { display: none; }
+.chess-promo-btn { font-size: 1.9rem; line-height: 1; width: 56px; height: 56px; border: 1px solid var(--line); border-radius: 12px; background: #fff; cursor: pointer; color: var(--indigo-800); }
+.chess-promo-btn:hover { border-color: var(--gold); background: var(--amber-100); }
+
+/* Draughts (10x10) */
+.dr-board { display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(10, 1fr); aspect-ratio: 1; max-width: 460px; margin: 0 auto; border: 2px solid var(--indigo-800); border-radius: var(--radius-sm); overflow: hidden; }
+.dr-sq { border: 0; padding: 0; display: grid; place-items: center; position: relative; cursor: default; }
+.dr-sq.light { background: #eef1f6; }
+.dr-sq.dark { background: #7f93ad; cursor: pointer; }
+.dr-sq.last { box-shadow: inset 0 0 0 2px rgba(176,122,53,.6); }
+.dr-sq.sel { box-shadow: inset 0 0 0 3px var(--gold); }
+.dr-sq.tgt::after { content: ""; position: absolute; width: 34%; height: 34%; border-radius: 50%; background: rgba(255,255,255,.75); }
+.dr-sq.taken .dr-pc { opacity: .35; filter: grayscale(1); }
+.dr-pc { width: 74%; height: 74%; border-radius: 50%; display: grid; place-items: center; font-size: clamp(.6rem, 2.4vw, .95rem); box-shadow: 0 2px 3px rgba(0,0,0,.35); }
+.dr-pc.w { background: linear-gradient(160deg, #fff, #d8dee8); color: var(--gold); border: 1px solid #b9c2d0; }
+.dr-pc.b { background: linear-gradient(160deg, #34405c, #131c30); color: var(--amber-400); border: 1px solid #0a1120; }
+.dr-pc.k { box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 0 0 2px var(--gold) inset; }
+
+/* Connect Four */
+.c4-board { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; max-width: 400px; margin: 0 auto; background: var(--indigo-600); padding: 10px; border-radius: 14px; }
+.c4-cell { aspect-ratio: 1; border: 0; border-radius: 50%; background: var(--bg-soft); cursor: pointer; padding: 0; box-shadow: inset 0 2px 4px rgba(0,0,0,.28); transition: background .12s; }
+.c4-cell.red { background: radial-gradient(circle at 35% 30%, #e4675f, #b3231a); }
+.c4-cell.yel { background: radial-gradient(circle at 35% 30%, #f0c96a, #c98f14); }
+.c4-cell.win { box-shadow: 0 0 0 3px #fff, inset 0 2px 4px rgba(0,0,0,.28); }
+
+/* Sudoku */
+.sud-grid { display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(9, 1fr); aspect-ratio: 1; max-width: 420px; margin: 0 auto; border: 2px solid var(--indigo-800); background: #fff; }
+/* Real borders, not a grid gap. The gap approach renders every separator
+   identically, which loses the 3x3 boxes — and reading the boxes is most of
+   how the puzzle is actually solved. Cells carry a hairline edge; the last
+   cell of each box carries a heavy one. box-sizing is border-box globally
+   (line 53), so the heavier border does not change the cell's size. */
+.sud-cell { border: 0 solid var(--line); border-right-width: 1px; border-bottom-width: 1px; padding: 0; background: #fff; font-family: var(--font-head); font-weight: 600; font-size: clamp(.85rem, 3.6vw, 1.25rem); color: var(--brand); cursor: pointer; display: grid; place-items: center; position: relative; }
+.sud-cell.br { border-right: 2px solid var(--indigo-800); }
+.sud-cell.bb { border-bottom: 2px solid var(--indigo-800); }
+.sud-cell:nth-child(9n) { border-right-width: 0; }
+.sud-cell:nth-child(n+73) { border-bottom-width: 0; }
+.sud-cell.given { color: var(--ink); background: var(--indigo-50); cursor: default; }
+.sud-cell.peer { background: #f4f7fb; }
+.sud-cell.given.peer { background: #e4ecf5; }
+.sud-cell.same { background: var(--amber-100); }
+.sud-cell.sel { background: var(--gold); color: #fff; }
+.sud-cell.wrong { color: var(--sold); }
+.sud-notes { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; height: 100%; font-size: .5em; color: var(--ink-soft); font-style: normal; }
+.sud-notes i { display: grid; place-items: center; font-style: normal; }
+.sud-pad { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 420px; margin: 14px auto 0; }
+.sud-key { border: 1px solid var(--line); border-radius: 8px; background: #fff; font-family: var(--font-head); font-weight: 600; font-size: 1rem; padding: 11px 0; cursor: pointer; color: var(--ink); }
+.sud-key:hover { border-color: var(--brand); color: var(--brand); }
+.sud-erase { color: var(--sold); }
+
+/* Word Guess */
+.wd-grid { display: grid; gap: 6px; max-width: 320px; margin: 0 auto; }
+.wd-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.wd-tile { aspect-ratio: 1; display: grid; place-items: center; border: 2px solid var(--line); border-radius: 8px; background: #fff; font-family: var(--font-head); font-weight: 700; font-size: clamp(1.2rem, 6vw, 1.7rem); color: var(--ink); }
+.wd-tile.active { border-color: var(--brand); }
+.wd-tile.hit { background: #2f855a; border-color: #2f855a; color: #fff; }
+.wd-tile.near { background: var(--gold); border-color: var(--gold); color: #fff; }
+.wd-tile.miss { background: #8f96a8; border-color: #8f96a8; color: #fff; }
+.wd-tile.shake { animation: wd-shake .3s; }
+@keyframes wd-shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.wd-kb { margin: 16px auto 0; max-width: 460px; display: grid; gap: 6px; }
+.wd-kb-row { display: flex; gap: 5px; justify-content: center; }
+.wd-key { flex: 1 1 auto; min-width: 0; padding: 12px 0; border: 0; border-radius: 6px; background: var(--indigo-100); font-family: var(--font-head); font-weight: 600; font-size: .85rem; text-transform: uppercase; cursor: pointer; color: var(--ink); }
+.wd-key.wide { flex: 1.6 1 auto; font-size: .72rem; }
+.wd-key.hit { background: #2f855a; color: #fff; }
+.wd-key.near { background: var(--gold); color: #fff; }
+.wd-key.miss { background: #b6bcc9; color: #fff; }
+
+/* Narrow phones. This block must sit AFTER the rules it overrides: the
+   selectors have equal specificity, so source order decides, and a media query
+   placed earlier in the file silently loses. */
+@media (max-width: 420px) {
+  .sud-pad { grid-template-columns: repeat(5, 1fr); }
+  .g-seg-btn { padding: 6px 10px; font-size: .75rem; }
+  .g-btn { padding: 8px 12px; font-size: .8rem; }
+}
 
 /* ---------- Pocket calculator (EMI page) ---------- */
 .calc { max-width: 340px; margin: 0 auto; background: var(--indigo-900); border-radius: 18px; padding: 18px; box-shadow: var(--shadow-lg); }
