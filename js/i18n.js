@@ -121,7 +121,17 @@
       "blog.sub": "Locality guides, buying checklists and honest market reads.",
       "nav.games": "Games",
       "games.eyebrow": "Take a break", "games.title": "Quick games for kids & adults",
-      "games.sub": "A little fun while you browse. No downloads, no sign-up. Pick a game and play right here."
+      "games.sub": "A little fun while you browse. No downloads, no sign-up. Pick a game and play right here.",
+      /* Tab labels. Keys are games.name.<id>, matching the id in js/games.js
+         and in each js/games/*.js registration. */
+      "games.name.g2048": "2048", "games.name.memory": "Memory Match",
+      "games.name.snake": "Snake", "games.name.breakout": "Brick Breaker",
+      "games.name.jump": "Jump Hero", "games.name.tapjump": "Sky Hop",
+      "games.name.simon": "Simon", "games.name.whack": "Whack-a-Mole",
+      "games.name.mines": "Minesweeper", "games.name.ttt": "Tic-Tac-Toe",
+      "games.name.chess": "Chess", "games.name.draughts": "Draughts",
+      "games.name.c4": "Connect Four", "games.name.sudoku": "Sudoku",
+      "games.name.wordle": "Word Guess"
     },
     te: {
       "nav.home": "హోమ్", "nav.listings": "ప్రాపర్టీలు", "nav.about": "మా గురించి",
@@ -232,7 +242,18 @@
       "blog.sub": "ప్రాంత గైడ్‌లు, కొనుగోలు చెక్‌లిస్ట్‌లు మరియు నిజాయితీ మార్కెట్ విశ్లేషణ.",
       "nav.games": "గేమ్స్",
       "games.eyebrow": "కాసేపు విश్రాంతి", "games.title": "పిల్లలు & పెద్దల కోసం చిన్న గేమ్స్",
-      "games.sub": "బ్రౌజ్ చేస్తూ కాస్త వినోదం. డౌన్‌లోడ్‌లు లేవు, సైన్-అప్ లేదు. ఒక గేమ్ ఎంచుకుని ఇక్కడే ఆడండి."
+      "games.sub": "బ్రౌజ్ చేస్తూ కాస్త వినోదం. డౌన్‌లోడ్‌లు లేవు, సైన్-అప్ లేదు. ఒక గేమ్ ఎంచుకుని ఇక్కడే ఆడండి.",
+      /* Established Telugu words are used where they exist (చదరంగం, పాము).
+         The rest are transliterations, which is how these game names are
+         normally written in Telugu UI copy. */
+      "games.name.g2048": "2048", "games.name.memory": "మెమరీ మ్యాచ్",
+      "games.name.snake": "పాము", "games.name.breakout": "ఇటుక బ్రేకర్",
+      "games.name.jump": "జంప్ హీరో", "games.name.tapjump": "స్కై హాప్",
+      "games.name.simon": "సైమన్", "games.name.whack": "వ్యాక్-ఎ-మోల్",
+      "games.name.mines": "మైన్‌స్వీపర్", "games.name.ttt": "టిక్-టాక్-టో",
+      "games.name.chess": "చదరంగం", "games.name.draughts": "చెకర్స్",
+      "games.name.c4": "కనెక్ట్ ఫోర్", "games.name.sudoku": "సుడోకు",
+      "games.name.wordle": "పద ఊహ"
     },
     hi: {
       "nav.home": "होम", "nav.listings": "प्रॉपर्टी", "nav.about": "हमारे बारे में",
@@ -342,7 +363,17 @@
       "blog.eyebrow": "जानकारी", "blog.title": "ब्लॉग और मार्केट अपडेट",
       "blog.sub": "इलाका गाइड, खरीद चेकलिस्ट और ईमानदार मार्केट विश्लेषण.",
       "games.eyebrow": "थोड़ा ब्रेक लें", "games.title": "बच्चों और बड़ों के लिए छोटे गेम्स",
-      "games.sub": "ब्राउज़ करते हुए थोड़ी मस्ती। कोई डाउनलोड नहीं, कोई साइन-अप नहीं। एक गेम चुनें और यहीं खेलें।"
+      "games.sub": "ब्राउज़ करते हुए थोड़ी मस्ती। कोई डाउनलोड नहीं, कोई साइन-अप नहीं। एक गेम चुनें और यहीं खेलें।",
+      /* Established Hindi words where they exist (शतरंज, साँप). The rest are
+         transliterations, as is normal for game names in Hindi UI copy. */
+      "games.name.g2048": "2048", "games.name.memory": "मेमोरी मैच",
+      "games.name.snake": "साँप", "games.name.breakout": "ब्रिक ब्रेकर",
+      "games.name.jump": "जंप हीरो", "games.name.tapjump": "स्काई हॉप",
+      "games.name.simon": "साइमन", "games.name.whack": "व्हैक-ए-मोल",
+      "games.name.mines": "माइनस्वीपर", "games.name.ttt": "टिक-टैक-टो",
+      "games.name.chess": "शतरंज", "games.name.draughts": "चेकर्स",
+      "games.name.c4": "कनेक्ट फोर", "games.name.sudoku": "सुडोकू",
+      "games.name.wordle": "शब्द पहेली"
     }
   };
 

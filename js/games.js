@@ -47,7 +47,11 @@
     b.className = "game-tab" + (i === 0 ? " active" : "");
     b.type = "button";
     b.setAttribute("role", "tab");
-    b.innerHTML = '<span class="gt-ic">' + g.icon + "</span>" + g.name;
+    /* The label is its own element so i18n.js can swap it. The icon sits in a
+       sibling span and is never translated. Keys are games.name.<id> in
+       js/i18n.js; a missing key falls back to the English name below. */
+    b.innerHTML = '<span class="gt-ic">' + g.icon + '</span>' +
+      '<span data-i18n="games.name.' + g.id + '">' + g.name + "</span>";
     b.addEventListener("click", function () {
       tabs.querySelectorAll(".game-tab").forEach(function (x) { x.classList.remove("active"); });
       b.classList.add("active");
@@ -55,6 +59,12 @@
     });
     tabs.appendChild(b);
   });
+
+  /* Tabs are built while the document is still parsing, so the applyLang pass
+     that i18n.js runs on DOMContentLoaded already covers them. This re-apply is
+     insurance against the script order changing later: without it, reordering
+     games.js after that event would silently leave every tab in English. */
+  if (window.rreApplyLang && window.rreLang) window.rreApplyLang(window.rreLang());
 
   function load(g) {
     if (typeof cleanup === "function") { try { cleanup(); } catch (e) {} }
